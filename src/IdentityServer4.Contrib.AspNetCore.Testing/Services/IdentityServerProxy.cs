@@ -13,7 +13,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Services
 {
     public class IdentityServerProxy
     {
-        private readonly TestServer identityServer;
+        public TestServer IdentityServer { get; }
 
         public IdentityServerProxy(IWebHostBuilder webHostBuilder)
         {
@@ -23,16 +23,16 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Services
                     "webHostBuilder must not be null");
             }
 
-            this.identityServer = new TestServer(webHostBuilder);
+            this.IdentityServer = new TestServer(webHostBuilder);
         }
 
         public async Task<DiscoveryResponse> GetDiscoverResponseAsync()
         {
-            using (var proxy = this.identityServer.CreateHandler())
+            using (var proxy = this.IdentityServer.CreateHandler())
             {
                 using (var client = new HttpClient(proxy))
                 {
-                    return await client.GetDiscoveryDocumentAsync(this.identityServer.BaseAddress.ToString());
+                    return await client.GetDiscoveryDocumentAsync(this.IdentityServer.BaseAddress.ToString());
                 }
             }
         }
@@ -44,7 +44,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Services
 
             EnsureDiscoverResponse(discoveryResponse);
 
-            using (var proxy = this.identityServer.CreateHandler())
+            using (var proxy = this.IdentityServer.CreateHandler())
             {
                 using (var client = new HttpClient(proxy))
                 {
@@ -67,7 +67,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Services
 
             EnsureDiscoverResponse(discoveryResponse);
 
-            using (var proxy = this.identityServer.CreateHandler())
+            using (var proxy = this.IdentityServer.CreateHandler())
             {
                 using (var client = new HttpClient(proxy))
                 {
@@ -86,7 +86,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Services
 
             var usedParameters = parameters ?? new Dictionary<string, string>();
 
-            using (var proxy = this.identityServer.CreateHandler())
+            using (var proxy = this.IdentityServer.CreateHandler())
             {
                 using (var client = new HttpClient(proxy))
                 {
@@ -104,7 +104,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Services
 
             EnsureDiscoverResponse(discoveryResponse);
 
-            using (var proxy = this.identityServer.CreateHandler())
+            using (var proxy = this.IdentityServer.CreateHandler())
             {
                 using (var client = new HttpClient(proxy))
                 {
@@ -122,7 +122,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Services
 
             EnsureDiscoverResponse(discoveryResponse);
 
-            using (var proxy = this.identityServer.CreateHandler())
+            using (var proxy = this.IdentityServer.CreateHandler())
             {
                 using (var client = new HttpClient(proxy))
                 {
@@ -139,7 +139,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Services
 
             EnsureDiscoverResponse(discoveryResponse);
 
-            using (var proxy = this.identityServer.CreateHandler())
+            using (var proxy = this.IdentityServer.CreateHandler())
             {
                 using (var client = new HttpClient(proxy))
                 {
@@ -156,7 +156,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Services
 
             EnsureDiscoverResponse(discoveryResponse);
 
-            using (var proxy = this.identityServer.CreateHandler())
+            using (var proxy = this.IdentityServer.CreateHandler())
             {
                 using (var client = new HttpClient(proxy))
                 {
@@ -172,7 +172,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Services
 
             EnsureDiscoverResponse(discoveryResponse);
 
-            using (var proxy = this.identityServer.CreateHandler())
+            using (var proxy = this.IdentityServer.CreateHandler())
             {
                 using (var client = new HttpClient(proxy))
                 {

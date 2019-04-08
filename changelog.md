@@ -1,3 +1,9 @@
+# [1.1.0](https://www.nuget.org/packages/IdentityServer4.Contrib.AspNetCore.Testing/1.1.0) (2019-04-08)
+
+## Features
+
+* Expose `TestServer` from class `IdentityServerProxy` in order to be able to create a handler manually.
+
 # [1.0.0](https://www.nuget.org/packages/IdentityServer4.Contrib.AspNetCore.Testing/1.0.0) (2019-04-08)
 
 ## Intial Release
