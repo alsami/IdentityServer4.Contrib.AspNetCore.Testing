@@ -1,3 +1,18 @@
+# [1.2.0](https://www.nuget.org/packages/IdentityServer4.Contrib.AspNetCore.Testing/1.2.0) (2019-04-09)
+
+## Features
+
+* Allow passing of an `IdentityServerOptionsBuilder` to use custom options in `IdentityServerWebHostBuilder`
+* Allow passing of an `IdentityServerBuilder` to use a custom builder in `IdentityServerWebHostBuilder`
+
+## Chore
+
+* Update Identity.Model to 3.10.7
+
+## Features
+
+* Expose `TestServer` from class `IdentityServerProxy` in order to be able to create a handler manually.
+
 # [1.1.0](https://www.nuget.org/packages/IdentityServer4.Contrib.AspNetCore.Testing/1.1.0) (2019-04-08)
 
 ## Features

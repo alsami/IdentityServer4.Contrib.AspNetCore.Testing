@@ -12,8 +12,8 @@
       <PackageReleaseNotes>https://github.com/cleancodelabs/IdentityServer4.Contrib.AspNetCore.Testing/blob/master/changelog.md</PackageReleaseNotes>
       <RepositoryType>git</RepositoryType>
       <RepositoryUrl>git://github.com/cleancodelabs/IdentityServer4.Contrib.AspNetCore.Testing</RepositoryUrl>
-      <Version>1.1.0</Version>
-      <FileVersion>1.1.0.0</FileVersion>
+      <Version>1.2.0</Version>
+      <FileVersion>1.2.0.0</FileVersion>
   </PropertyGroup>
   <ItemGroup>
       <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta2-18618-05">

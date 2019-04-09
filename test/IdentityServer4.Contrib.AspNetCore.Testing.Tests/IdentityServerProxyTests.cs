@@ -114,6 +114,88 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
         }
 
         [Fact]
+        public async Task
+            IdentityServerProxy_GetResourceOwnerTokenAsync_Valid_User_Custom_IdentityServerBuilder_Succeeds()
+        {
+            var clientConfiguration = new ClientConfiguration("MyClient", "MySecret");
+
+            var client = new Client
+            {
+                ClientId = clientConfiguration.Id,
+                ClientSecrets = new List<Secret>
+                {
+                    new Secret(clientConfiguration.Secret.Sha256())
+                },
+                AllowedScopes = new[] {"api1", IdentityServerConstants.StandardScopes.OfflineAccess},
+                AllowedGrantTypes = new[] {GrantType.ClientCredentials, GrantType.ResourceOwnerPassword},
+                AccessTokenType = AccessTokenType.Jwt,
+                AccessTokenLifetime = 7200,
+                AllowOfflineAccess = true
+            };
+
+            var webHostBuilder = new IdentityServerWebHostBuilder()
+                .AddClients(client)
+                .AddApiResources(new ApiResource("api1", "api1name"))
+                .UseResourceOwnerPasswordValidator(typeof(SimpleResourceOwnerPasswordValidator))
+                .UseIdentityServerBuilder(services => services
+                    .AddIdentityServer()
+                    .AddDefaultEndpoints()
+                    .AddDeveloperSigningCredential()
+                )
+                .CreateWebHostBuilder();
+
+            var identityServerProxy = new IdentityServerProxy(webHostBuilder);
+
+            var tokenResponse = await identityServerProxy.GetResourceOwnerPasswordAccessTokenAsync(clientConfiguration,
+                new UserLoginConfiguration("user", "password"),
+                "api1", "offline_access");
+
+            Assert.NotNull(tokenResponse);
+            Assert.False(tokenResponse.IsError, tokenResponse.Error ?? tokenResponse.ErrorDescription);
+            Assert.NotNull(tokenResponse.AccessToken);
+            Assert.NotNull(tokenResponse.RefreshToken);
+            Assert.Equal(7200, tokenResponse.ExpiresIn);
+            Assert.Equal("Bearer", tokenResponse.TokenType);
+        }
+
+        [Fact]
+        public async Task
+            IdentityServerProxy_GetResourceOwnerTokenAsync_Valid_User_Custom_IdentityServerBuilderOptions_Token_Endpoint_Disabled_Fails()
+        {
+            var clientConfiguration = new ClientConfiguration("MyClient", "MySecret");
+
+            var client = new Client
+            {
+                ClientId = clientConfiguration.Id,
+                ClientSecrets = new List<Secret>
+                {
+                    new Secret(clientConfiguration.Secret.Sha256())
+                },
+                AllowedScopes = new[] {"api1", IdentityServerConstants.StandardScopes.OfflineAccess},
+                AllowedGrantTypes = new[] {GrantType.ClientCredentials, GrantType.ResourceOwnerPassword},
+                AccessTokenType = AccessTokenType.Jwt,
+                AccessTokenLifetime = 7200,
+                AllowOfflineAccess = true
+            };
+
+            var webHostBuilder = new IdentityServerWebHostBuilder()
+                .AddClients(client)
+                .AddApiResources(new ApiResource("api1", "api1name"))
+                .UseResourceOwnerPasswordValidator(typeof(SimpleResourceOwnerPasswordValidator))
+                .UseIdentityServerOptionsBuilder(options => options.Endpoints.EnableTokenEndpoint = false)
+                .CreateWebHostBuilder();
+
+            var identityServerProxy = new IdentityServerProxy(webHostBuilder);
+
+            var tokenResponse = await identityServerProxy.GetResourceOwnerPasswordAccessTokenAsync(clientConfiguration,
+                new UserLoginConfiguration("user", "password"),
+                "api1", "offline_access");
+
+            Assert.NotNull(tokenResponse);
+            Assert.True(tokenResponse.IsError, tokenResponse.Error ?? tokenResponse.ErrorDescription);
+        }
+
+        [Fact]
         public async Task IdentityServerProxy_GetResourceOwnerTokenAsync_Valid_User_Typed_Validator_Succeeds()
         {
             var clientConfiguration = new ClientConfiguration("MyClient", "MySecret");

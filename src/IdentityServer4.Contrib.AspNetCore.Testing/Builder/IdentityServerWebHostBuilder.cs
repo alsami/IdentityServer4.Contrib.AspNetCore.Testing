@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using IdentityServer4.Configuration;
 using IdentityServer4.Contrib.AspNetCore.Testing.Misc;
 using IdentityServer4.Contrib.AspNetCore.Testing.Sinks;
 using IdentityServer4.Models;
@@ -19,9 +20,8 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Builder
         private readonly List<ApiResource> internalApiResources;
         private readonly List<Client> internalClients;
         private readonly List<IdentityResource> internalIdentityResources;
-
         private IWebHostBuilder internalWebHostBuilder;
-
+        private Action<IdentityServerOptions> internalIdentityServerOptionsBuilder;
         private Action<WebHostBuilderContext, IConfigurationBuilder> internalConfigurationBuilder;
         private Action<IApplicationBuilder> internalApplicationBuilder;
         private Action<WebHostBuilderContext, IServiceCollection> internalServicesBuilder;
@@ -30,18 +30,32 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Builder
         private Type internalResourceOwnerPasswordValidatorType;
         private IProfileService internalProfileService;
         private Type internalProfileServiceType;
+        private Func<IServiceCollection, IIdentityServerBuilder> internalIdentityServerBuilder;
 
         public IdentityServerWebHostBuilder()
         {
             this.internalApiResources = new List<ApiResource>();
+
             this.internalClients = new List<Client>();
+
             this.internalIdentityResources = new List<IdentityResource>();
 
             this.internalConfigurationBuilder = (context, configurationBuilder) => { };
+
             this.internalApplicationBuilder = app => { };
+
             this.internalServicesBuilder = (builder, services) => { };
+
             this.internalLoggingBuilder = (context, loggingBuilder) =>
                 loggingBuilder.AddProvider(new DefaultLoggerProvider());
+
+            this.internalIdentityServerOptionsBuilder = options =>
+            {
+                options.Events.RaiseInformationEvents = true;
+                options.Events.RaiseSuccessEvents = true;
+                options.Events.RaiseFailureEvents = true;
+                options.Events.RaiseErrorEvents = true;
+            };
         }
 
         public IdentityServerWebHostBuilder AddApiResources(params ApiResource[] apiResources)
@@ -161,6 +175,26 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Builder
             return this;
         }
 
+        public IdentityServerWebHostBuilder UseIdentityServerOptionsBuilder(
+            Action<IdentityServerOptions> identityServerOptionsBuilder)
+        {
+            this.internalIdentityServerOptionsBuilder = identityServerOptionsBuilder ??
+                                                        throw new ArgumentNullException(
+                                                            nameof(identityServerOptionsBuilder),
+                                                            $"{nameof(identityServerOptionsBuilder)} must not be null!");
+            return this;
+        }
+
+        public IdentityServerWebHostBuilder UseIdentityServerBuilder(
+            Func<IServiceCollection, IIdentityServerBuilder> identityServerBuilder)
+        {
+            this.internalIdentityServerBuilder = identityServerBuilder ??
+                                                 throw new ArgumentNullException(nameof(identityServerBuilder),
+                                                     $"{nameof(identityServerBuilder)} must not be null!");
+
+            return this;
+        }
+
         public IWebHostBuilder CreateWebHostBuilder()
         {
             if (this.internalWebHostBuilder != null)
@@ -179,58 +213,70 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Builder
                 {
                     this.internalServicesBuilder(context, services);
 
-                    services.AddSingleton<IEventSink>(new EventCaptureSink(new IdentityServerEventCaptureStore()));
+                    this.ConfigureIdentityServerServices(services);
 
-                    if (this.internalResourceOwnerPasswordValidator != null)
-                    {
-                        services.AddSingleton(sp => this.internalResourceOwnerPasswordValidator);
-                    }
+                    var identityServerBuilder = this.GetIdentityServerBuilder(services);
 
-                    if (this.internalResourceOwnerPasswordValidatorType != null)
-                    {
-                        services.AddSingleton(typeof(IResourceOwnerPasswordValidator),
-                            this.internalResourceOwnerPasswordValidatorType);
-                    }
-
-                    if (this.internalProfileService != null)
-                    {
-                        services.AddSingleton(sp => this.internalProfileService);
-                    }
-
-                    if (this.internalProfileServiceType != null)
-                    {
-                        services.AddSingleton(typeof(IProfileService),
-                            this.internalProfileServiceType);
-                    }
-
-                    var identityServerConfig = services
-                        .AddIdentityServer(options =>
-                        {
-                            options.Events.RaiseInformationEvents = true;
-                            options.Events.RaiseSuccessEvents = true;
-                            options.Events.RaiseFailureEvents = true;
-                            options.Events.RaiseErrorEvents = true;
-                        })
-                        .AddDefaultEndpoints()
-                        .AddDefaultSecretParsers()
-                        .AddDeveloperSigningCredential();
-
-                    if (this.internalClients.Any())
-                    {
-                        identityServerConfig.AddInMemoryClients(this.internalClients);
-                    }
-
-                    if (this.internalApiResources.Any())
-                    {
-                        identityServerConfig.AddInMemoryApiResources(this.internalApiResources);
-                    }
-
-                    if (this.internalIdentityResources.Any())
-                    {
-                        identityServerConfig.AddInMemoryIdentityResources(this.internalIdentityResources);
-                    }
+                    this.ConfigureIdentityServerResources(identityServerBuilder);
                 })
                 .ConfigureAppConfiguration(this.internalConfigurationBuilder);
+        }
+
+        private void ConfigureIdentityServerServices(IServiceCollection services)
+        {
+            services.AddSingleton<IEventSink>(new EventCaptureSink(new IdentityServerEventCaptureStore()));
+
+            if (this.internalResourceOwnerPasswordValidator != null)
+            {
+                services.AddSingleton(sp => this.internalResourceOwnerPasswordValidator);
+            }
+
+            if (this.internalResourceOwnerPasswordValidatorType != null)
+            {
+                services.AddSingleton(typeof(IResourceOwnerPasswordValidator),
+                    this.internalResourceOwnerPasswordValidatorType);
+            }
+
+            if (this.internalProfileService != null)
+            {
+                services.AddSingleton(sp => this.internalProfileService);
+            }
+
+            if (this.internalProfileServiceType != null)
+            {
+                services.AddSingleton(typeof(IProfileService),
+                    this.internalProfileServiceType);
+            }
+        }
+
+        private IIdentityServerBuilder GetIdentityServerBuilder(IServiceCollection services)
+        {
+            if (this.internalIdentityServerBuilder != null)
+            {
+                return this.internalIdentityServerBuilder(services);
+            }
+
+            return services.AddIdentityServer(this.internalIdentityServerOptionsBuilder)
+                .AddDefaultEndpoints()
+                .AddDefaultSecretParsers()
+                .AddDeveloperSigningCredential();
+        }
+
+        private void ConfigureIdentityServerResources(IIdentityServerBuilder identityServerBuilder)
+        {
+            if (this.internalClients.Any())
+            {
+                identityServerBuilder.AddInMemoryClients(this.internalClients);
+            }
+
+            if (this.internalApiResources.Any())
+            {
+                identityServerBuilder.AddInMemoryApiResources(this.internalApiResources);
+            }
+
+            if (!this.internalIdentityResources.Any()) return;
+
+            identityServerBuilder.AddInMemoryIdentityResources(this.internalIdentityResources);
         }
     }
 }
