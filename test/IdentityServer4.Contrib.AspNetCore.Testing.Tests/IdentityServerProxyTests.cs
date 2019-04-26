@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using IdentityModel;
 using IdentityServer4.Contrib.AspNetCore.Testing.Builder;
@@ -11,6 +12,8 @@ using IdentityServer4.Server.Models;
 using IdentityServer4.Testing.Infrastructure.Services;
 using IdentityServer4.Testing.Infrastructure.Validators;
 using IdentityServer4.Validation;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.DependencyInjection;
 using Xunit;
 using IdentityResources = IdentityServer4.Models.IdentityResources;
@@ -73,6 +76,47 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
             Assert.NotNull(tokenResponse.AccessToken);
             Assert.Equal(7200, tokenResponse.ExpiresIn);
             Assert.Equal("Bearer", tokenResponse.TokenType);
+        }
+        
+        [Fact]
+        public async Task IdentityServerProxy_GetClientCredentialsAsync_Authorize_Api_Succeeds()
+        {
+            var clientConfiguration = new ClientConfiguration("MyClient", "MySecret");
+
+            var client = new Client
+            {
+                ClientId = clientConfiguration.Id,
+                ClientSecrets = new List<Secret>
+                {
+                    new Secret(clientConfiguration.Secret.Sha256())
+                },
+                AllowedScopes = new[] {"api1"},
+                AllowedGrantTypes = new[] {GrantType.ClientCredentials},
+                AccessTokenType = AccessTokenType.Jwt,
+                AccessTokenLifetime = 7200
+            };
+
+            var webHostBuilder = new IdentityServerWebHostBuilder()
+                .AddClients(client)
+                .AddApiResources(new ApiResource("api1", "api1name"))
+                .CreateWebHostBuilder();
+            
+            var identityServerProxy = new IdentityServerProxy(webHostBuilder);
+
+            var tokenResponse = await identityServerProxy.GetClientAccessTokenAsync(clientConfiguration, "api1");
+
+            var apiServer = new TestServer(new WebHostBuilder()
+                .ConfigureServices(services =>
+                    services.AddSingleton(identityServerProxy.IdentityServer.CreateHandler()))
+                .UseStartup<IdentityServer4.Api.Startup>());
+
+            var apiClient = apiServer.CreateClient();
+            
+            apiClient.SetBearerToken(tokenResponse.AccessToken);
+
+            var apiResponse = await apiClient.GetAsync("api/auth");
+            
+            Assert.True(apiResponse.IsSuccessStatusCode, "should have been authenticated!");
         }
 
         [Fact]

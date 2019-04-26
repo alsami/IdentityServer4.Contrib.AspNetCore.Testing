@@ -17,6 +17,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\IdentityServer4.Api\IdentityServer4.Api.csproj" />
       <ProjectReference Include="..\IdentityServer4.Server\IdentityServer4.Server.csproj" />
       <ProjectReference Include="..\IdentityServer4.Testing.Infrastructure\IdentityServer4.Testing.Infrastructure.csproj" />
     </ItemGroup>
