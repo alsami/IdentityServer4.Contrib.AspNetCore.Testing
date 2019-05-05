@@ -1,3 +1,9 @@
+# [1.3.0](https://www.nuget.org/packages/IdentityServer4.Contrib.AspNetCore.Testing/1.3.0) (2019-05-05)
+
+## Features
+
+* Add constructor to `IdentityServerProxy` to directly pass in a `TestServer`
+
 # [1.2.0](https://www.nuget.org/packages/IdentityServer4.Contrib.AspNetCore.Testing/1.2.0) (2019-04-09)
 
 ## Features

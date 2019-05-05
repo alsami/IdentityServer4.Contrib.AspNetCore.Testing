@@ -26,6 +26,8 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Services
             this.IdentityServer = new TestServer(webHostBuilder);
         }
 
+        public IdentityServerProxy(TestServer identityServer) => this.IdentityServer = identityServer;
+
         public async Task<DiscoveryResponse> GetDiscoverResponseAsync()
         {
             using (var proxy = this.IdentityServer.CreateHandler())
