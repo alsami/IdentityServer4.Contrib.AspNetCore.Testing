@@ -1,3 +1,10 @@
+# [1.4.0](https://www.nuget.org/packages/IdentityServer4.Contrib.AspNetCore.Testing/1.4.0) (2019-07-19)
+
+## Chore
+
+* Update `IdentityServer4` to version 2.5.0
+* Update `IdentitxModel` to version 3.10.10
+
 # [1.3.0](https://www.nuget.org/packages/IdentityServer4.Contrib.AspNetCore.Testing/1.3.0) (2019-05-05)
 
 ## Features
