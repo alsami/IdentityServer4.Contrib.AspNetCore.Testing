@@ -29,10 +29,10 @@ namespace IdentityServer4.Api
                     options.Authority = "http://localhost";
                     options.JwtBackChannelHandler = this.identityServerMessageHandler;
                 });
-            services.AddMvc();
+            services.AddMvc(options => options.EnableEndpointRouting = false);
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app)
         {
             app.UseAuthentication();
             app.UseMvc();
