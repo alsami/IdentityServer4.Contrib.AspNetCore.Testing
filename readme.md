@@ -1,9 +1,9 @@
 # IdentityServer4.Contrib.AspNetCore.Testing
 
-![NuGet](https://img.shields.io/nuget/dt/IdentityServer4.Contrib.AspNetCore.Testing.svg)
-![Nuget](https://img.shields.io/nuget/v/Identityserver4.contrib.aspnetcore.testing)
-![NuGet](https://img.shields.io/nuget/vpre/IdentityServer4.Contrib.AspNetCore.Testing.svg)
-![Build Status](https://travis-ci.com/cleancodelabs/IdentityServer4.Contrib.AspNetCore.Testing.svg?branch=master)
+[![NuGet](https://img.shields.io/nuget/dt/IdentityServer4.Contrib.AspNetCore.Testing.svg)](https://www.nuget.org/packages/IdentityServer4.Contrib.AspNetCore.Testing)
+[![Nuget](https://img.shields.io/nuget/v/Identityserver4.contrib.aspnetcore.testing)](https://www.nuget.org/packages/IdentityServer4.Contrib.AspNetCore.Testing)
+[![NuGet](https://img.shields.io/nuget/vpre/IdentityServer4.Contrib.AspNetCore.Testing.svg)](https://www.nuget.org/packages/IdentityServer4.Contrib.AspNetCore.Testing)
+[![Build Status](https://travis-ci.com/cleancodelabs/IdentityServer4.Contrib.AspNetCore.Testing.svg?branch=master)](https://travis-ci.com/cleancodelabs/IdentityServer4.Contrib.AspNetCore.Testing)
 
 This is a cross platform library, written in `.netstandard 2.0`, that serves as a testing framework for [IdentityServer4](http://docs.identityserver.io/en/latest/) using [Microsoft.AspNetCore.Mvc.Testing](https://docs.microsoft.com/en-us/aspnet/core/test/integration-tests?view=aspnetcore-2.2) and makes it easy to test your web-applications with `IdentityServer4`.
 
