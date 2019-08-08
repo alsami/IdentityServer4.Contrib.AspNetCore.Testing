@@ -1,3 +1,13 @@
+# [3.0.0](https://www.nuget.org/packages/IdentityServer4.Contrib.AspNetCore.Testing/3.0.0) (2019-09-23)
+
+## Breaking changes
+
+* .NET-Core 3 is now required.
+
+## Features
+
+* .NET-Core 3 support!
+
 # [1.4.0](https://www.nuget.org/packages/IdentityServer4.Contrib.AspNetCore.Testing/1.4.0) (2019-07-19)
 
 ## Chore

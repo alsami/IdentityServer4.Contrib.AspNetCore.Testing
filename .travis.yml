@@ -1,8 +1,9 @@
+sudo: required
 dist: bionic
 language: csharp
-solution: IndentityServer4.Contrib.AspNetCore.Testing.sln
+solution: IdentityServer4.Contrib.Caching
 mono: none
-dotnet: 2.2.105
+dotnet: 3.0.100
 stages:
   - build
   - test

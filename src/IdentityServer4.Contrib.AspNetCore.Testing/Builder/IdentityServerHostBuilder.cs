@@ -15,12 +15,12 @@ using Microsoft.Extensions.Logging;
 
 namespace IdentityServer4.Contrib.AspNetCore.Testing.Builder
 {
-    public class IdentityServerWebHostBuilder
+    public class IdentityServerHostBuilder
     {
         private readonly List<ApiResource> internalApiResources;
         private readonly List<Client> internalClients;
         private readonly List<IdentityResource> internalIdentityResources;
-        private IWebHostBuilder internalWebHostBuilder;
+        private IWebHostBuilder internalHostBuilder;
         private Action<IdentityServerOptions> internalIdentityServerOptionsBuilder;
         private Action<WebHostBuilderContext, IConfigurationBuilder> internalConfigurationBuilder;
         private Action<IApplicationBuilder> internalApplicationBuilder;
@@ -32,7 +32,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Builder
         private Type internalProfileServiceType;
         private Func<IServiceCollection, IIdentityServerBuilder> internalIdentityServerBuilder;
 
-        public IdentityServerWebHostBuilder()
+        public IdentityServerHostBuilder()
         {
             this.internalApiResources = new List<ApiResource>();
 
@@ -58,7 +58,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Builder
             };
         }
 
-        public IdentityServerWebHostBuilder AddApiResources(params ApiResource[] apiResources)
+        public IdentityServerHostBuilder AddApiResources(params ApiResource[] apiResources)
         {
             if (!apiResources?.Any() ?? true)
             {
@@ -70,7 +70,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Builder
             return this;
         }
 
-        public IdentityServerWebHostBuilder AddClients(params Client[] clients)
+        public IdentityServerHostBuilder AddClients(params Client[] clients)
         {
             if (!clients?.Any() ?? true)
             {
@@ -82,7 +82,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Builder
             return this;
         }
 
-        public IdentityServerWebHostBuilder AddIdentityResources(params IdentityResource[] identityResources)
+        public IdentityServerHostBuilder AddIdentityResources(params IdentityResource[] identityResources)
         {
             if (!identityResources?.Any() ?? true)
             {
@@ -94,14 +94,14 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Builder
             return this;
         }
 
-        public IdentityServerWebHostBuilder UseApplicationBuilder(Action<IApplicationBuilder> applicationBuilder)
+        public IdentityServerHostBuilder UseApplicationBuilder(Action<IApplicationBuilder> applicationBuilder)
         {
             this.internalApplicationBuilder = applicationBuilder;
 
             return this;
         }
 
-        public IdentityServerWebHostBuilder UseConfigurationBuilder(
+        public IdentityServerHostBuilder UseConfigurationBuilder(
             Action<WebHostBuilderContext, IConfigurationBuilder> configurationBuilder)
         {
             this.internalConfigurationBuilder = configurationBuilder;
@@ -109,7 +109,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Builder
             return this;
         }
 
-        public IdentityServerWebHostBuilder UseServices(
+        public IdentityServerHostBuilder UseServices(
             Action<WebHostBuilderContext, IServiceCollection> servicesBuilder)
         {
             this.internalServicesBuilder = servicesBuilder;
@@ -117,7 +117,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Builder
             return this;
         }
 
-        public IdentityServerWebHostBuilder UseLoggingBuilder(
+        public IdentityServerHostBuilder UseLoggingBuilder(
             Action<WebHostBuilderContext, ILoggingBuilder> loggingBuilder)
         {
             this.internalLoggingBuilder = loggingBuilder ??
@@ -127,7 +127,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Builder
             return this;
         }
 
-        public IdentityServerWebHostBuilder UseResourceOwnerPasswordValidator(Type type)
+        public IdentityServerHostBuilder UseResourceOwnerPasswordValidator(Type type)
         {
             if (!typeof(IResourceOwnerPasswordValidator).IsAssignableFrom(type))
             {
@@ -140,7 +140,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Builder
             return this;
         }
 
-        public IdentityServerWebHostBuilder UseResourceOwnerPasswordValidator<TResourceOwnerPasswordValidator>(
+        public IdentityServerHostBuilder UseResourceOwnerPasswordValidator<TResourceOwnerPasswordValidator>(
             TResourceOwnerPasswordValidator resourceOwnerPasswordValidator)
             where TResourceOwnerPasswordValidator : class, IResourceOwnerPasswordValidator
         {
@@ -148,7 +148,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Builder
             return this;
         }
 
-        public IdentityServerWebHostBuilder UseProfileService(Type type)
+        public IdentityServerHostBuilder UseProfileService(Type type)
         {
             if (!typeof(IProfileService).IsAssignableFrom(type))
             {
@@ -161,21 +161,21 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Builder
             return this;
         }
 
-        public IdentityServerWebHostBuilder UseProfileService<TProfileService>(
+        public IdentityServerHostBuilder UseProfileService<TProfileService>(
             TProfileService profileService) where TProfileService : class, IProfileService
         {
             this.internalProfileService = profileService;
             return this;
         }
 
-        public IdentityServerWebHostBuilder UseWebHostBuilder(IWebHostBuilder webHostBuilder)
+        public IdentityServerHostBuilder UseWebHostBuilder(IWebHostBuilder webHostBuilder)
         {
-            this.internalWebHostBuilder = webHostBuilder ?? throw new ArgumentNullException(nameof(webHostBuilder));
+            this.internalHostBuilder = webHostBuilder ?? throw new ArgumentNullException(nameof(webHostBuilder));
 
             return this;
         }
 
-        public IdentityServerWebHostBuilder UseIdentityServerOptionsBuilder(
+        public IdentityServerHostBuilder UseIdentityServerOptionsBuilder(
             Action<IdentityServerOptions> identityServerOptionsBuilder)
         {
             this.internalIdentityServerOptionsBuilder = identityServerOptionsBuilder ??
@@ -185,7 +185,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Builder
             return this;
         }
 
-        public IdentityServerWebHostBuilder UseIdentityServerBuilder(
+        public IdentityServerHostBuilder UseIdentityServerBuilder(
             Func<IServiceCollection, IIdentityServerBuilder> identityServerBuilder)
         {
             this.internalIdentityServerBuilder = identityServerBuilder ??
@@ -195,15 +195,14 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Builder
             return this;
         }
 
-        public IWebHostBuilder CreateWebHostBuilder()
+        public IWebHostBuilder CreateWebHostBuider()
         {
-            if (this.internalWebHostBuilder != null)
+            if (this.internalHostBuilder != null)
             {
-                return this.internalWebHostBuilder;
+                return this.internalHostBuilder;
             }
 
             return new WebHostBuilder()
-                .ConfigureLogging(this.internalLoggingBuilder)
                 .Configure(builder =>
                 {
                     builder.UseIdentityServer();

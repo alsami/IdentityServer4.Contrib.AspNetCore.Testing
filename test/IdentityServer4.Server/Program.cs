@@ -1,11 +1,9 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
-using IdentityServer4.Server.Models;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.DependencyInjection;
 using Serilog;
 using Serilog.Sinks.SystemConsole.Themes;
 
@@ -13,7 +11,7 @@ namespace IdentityServer4.Server
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static Task Main(string[] args)
         {
             Log.Logger = new LoggerConfiguration()
                 .Enrich.FromLogContext()
@@ -26,11 +24,13 @@ namespace IdentityServer4.Server
                     theme: AnsiConsoleTheme.Literate)
                 .CreateLogger();
 
-            CreateWebHostBuilder(args).Build().Run();
+            using var host = CreateWebHostBuilder(args).Build();
+
+            return host.RunAsync();
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] _) =>
-            new WebHostBuilder()
+            WebHost.CreateDefaultBuilder()
                 .UseStartup<Startup>()
                 .UseSerilog();
     }
