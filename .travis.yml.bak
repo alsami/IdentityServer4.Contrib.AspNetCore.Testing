@@ -1,13 +1,8 @@
-sudo: required
 dist: bionic
 language: csharp
 solution: IndentityServer4.Contrib.AspNetCore.Testing.sln
 mono: none
-addons:
-  snaps:
-    - name: dotnet-sdk
-      classic: true
-      channel: latest/beta
+dotnet: 2.2.105
 stages:
   - build
   - test
@@ -16,18 +11,12 @@ jobs:
   include:
     - stage: build
       name: build solution
-      before_script:
-        - sudo snap alias dotnet-sdk.dotnet dotnet
       script: dotnet restore && dotnet build
     - stage: test
       name: run-tests
-      before_script:
-        - sudo snap alias dotnet-sdk.dotnet dotnet
       script: ./run-tests.sh
     - stage: publish
       name: publish-packages
       if: tag IS present
-      before_script:
-        - sudo snap alias dotnet-sdk.dotnet dotnet
       script: ./publish-packages.sh "$NUGET_SOURCE" "$IDENTITYSERVER_NUGET_APIKEY" "$TRAVIS_TAG"
 

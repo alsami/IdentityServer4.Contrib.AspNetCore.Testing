@@ -28,7 +28,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Services
 
         public IdentityServerProxy(TestServer identityServer) => this.IdentityServer = identityServer;
 
-        public async Task<DiscoveryResponse> GetDiscoverResponseAsync()
+        public async Task<DiscoveryDocumentResponse> GetDiscoverResponseAsync()
         {
             using (var proxy = this.IdentityServer.CreateHandler())
             {
@@ -188,7 +188,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Services
         }
 
         private static Task<TokenResponse> ExecuteResourceOwnerAccessTokenRequestAsync(HttpMessageInvoker client,
-            DiscoveryResponse discoveryResponse,
+            DiscoveryDocumentResponse discoveryResponse,
             ClientConfiguration clientConfiguration, UserLoginConfiguration userLoginConfiguration,
             IDictionary<string, string> parameters, IEnumerable<string> scopes)
             => client.RequestPasswordTokenAsync(new PasswordTokenRequest
@@ -204,7 +204,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Services
             });
 
         private static Task<TokenResponse> ExecuteRefreshAccessTokenRequestAsync(HttpMessageInvoker client,
-            DiscoveryResponse discoveryResponse,
+            DiscoveryDocumentResponse discoveryResponse,
             ClientConfiguration clientConfiguration, string refreshToken, IDictionary<string, string> parameters,
             IEnumerable<string> scopes)
             => client.RequestRefreshTokenAsync(new RefreshTokenRequest
@@ -219,7 +219,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Services
             });
 
         private static Task<TokenResponse> ExecuteClientAccessTokenRequestAsync(HttpMessageInvoker client,
-            DiscoveryResponse discoveryResponse,
+            DiscoveryDocumentResponse discoveryResponse,
             ClientConfiguration clientConfiguration, IDictionary<string, string> parameters, IEnumerable<string> scopes)
             => client.RequestClientCredentialsTokenAsync(new ClientCredentialsTokenRequest
             {
@@ -231,7 +231,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Services
                 Parameters = parameters
             });
 
-        private static void EnsureDiscoverResponse(DiscoveryResponse discoveryResponse)
+        private static void EnsureDiscoverResponse(DiscoveryDocumentResponse discoveryResponse)
         {
             if (!discoveryResponse.IsError)
             {

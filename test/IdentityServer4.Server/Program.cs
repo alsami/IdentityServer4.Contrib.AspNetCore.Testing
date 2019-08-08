@@ -6,6 +6,7 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Serilog;
 using Serilog.Sinks.SystemConsole.Themes;
 
@@ -30,7 +31,7 @@ namespace IdentityServer4.Server
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] _) =>
-            new WebHostBuilder()
+            WebHost.CreateDefaultBuilder()
                 .UseStartup<Startup>()
                 .UseSerilog();
     }

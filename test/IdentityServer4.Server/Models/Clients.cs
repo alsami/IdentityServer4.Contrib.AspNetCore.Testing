@@ -7,6 +7,7 @@ namespace IdentityServer4.Server.Models
     {
         public const string Id = "sampleclient";
         public const string Secret = "samplesecret";
+
         public static IEnumerable<Client> GetClients
             => new List<Client>
             {
@@ -18,7 +19,10 @@ namespace IdentityServer4.Server.Models
                         new Secret(Clients.Secret.Sha256())
                     },
                     AllowedScopes = new List<string>
-                        {"api1",IdentityServerConstants.StandardScopes.OpenId, IdentityServerConstants.StandardScopes.Profile},
+                    {
+                        "api1", IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile
+                    },
                     AllowedGrantTypes = new List<string>
                     {
                         GrantType.ResourceOwnerPassword

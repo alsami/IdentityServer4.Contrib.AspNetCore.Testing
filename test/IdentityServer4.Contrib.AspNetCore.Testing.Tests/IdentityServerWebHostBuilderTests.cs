@@ -1,14 +1,16 @@
 ﻿using System;
 using System.IO;
+using System.Net;
 using System.Reflection;
 using IdentityServer4.Contrib.AspNetCore.Testing.Builder;
 using IdentityServer4.Services;
 using IdentityServer4.Testing.Infrastructure.Services;
 using IdentityServer4.Testing.Infrastructure.Validators;
 using IdentityServer4.Validation;
-using Microsoft.AspNetCore.Hosting.Internal;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting.Internal;
 using Microsoft.Extensions.Logging;
 using Serilog;
 using Serilog.Sinks.SystemConsole.Themes;
@@ -21,16 +23,13 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
         [Fact]
         public void IdentityServerWebHostBuilder_UseConfigurationBuilder_HasSettings()
         {
-            var webHost = new IdentityServerWebHostBuilder()
+            var webHost = new IdentityServerHostBuilder()
                 .UseConfigurationBuilder((context, builder) =>
                 {
-                    context.HostingEnvironment = new HostingEnvironment
-                    {
-                        ContentRootPath = AppContext.BaseDirectory
-                    };
+                    context.HostingEnvironment.WebRootPath = AppContext.BaseDirectory;
                     builder.AddJsonFile(Path.Combine(AppContext.BaseDirectory, "testappsettings.json"), false);
                 })
-                .CreateWebHostBuilder()
+                .CreateWebHostBuider()
                 .Build();
 
             var configuration = webHost.Services.GetRequiredService<IConfiguration>();
@@ -44,9 +43,9 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
         [Fact]
         public void IdentityServerWebHostBuilder_UseProfileService_Resolveable()
         {
-            var webHost = new IdentityServerWebHostBuilder()
+            var webHost = new IdentityServerHostBuilder()
                 .UseProfileService(new SimpleProfileService())
-                .CreateWebHostBuilder()
+                .CreateWebHostBuider()
                 .Build();
 
             webHost.Services.GetRequiredService<IProfileService>();
@@ -55,9 +54,9 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
         [Fact]
         public void IdentityServerWebHostBuilder_UseProfileService_Typed_Resolveable()
         {
-            var webHost = new IdentityServerWebHostBuilder()
+            var webHost = new IdentityServerHostBuilder()
                 .UseProfileService(typeof(SimpleProfileService))
-                .CreateWebHostBuilder()
+                .CreateWebHostBuider()
                 .Build();
 
             webHost.Services.GetRequiredService<IProfileService>();
@@ -66,16 +65,16 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
         [Fact]
         public void IdentityServerWebHostBuilder_UseProfileService_Typed_Invalid_Throws()
         {
-            Assert.Throws<ArgumentException>(() => new IdentityServerWebHostBuilder()
+            Assert.Throws<ArgumentException>(() => new IdentityServerHostBuilder()
                 .UseProfileService(typeof(ExtensionsGrantValidator)));
         }
 
         [Fact]
         public void IdentityServerWebHostBuilder_UseResourceOwnerPasswordValidator_Resolveable()
         {
-            var webHost = new IdentityServerWebHostBuilder()
+            var webHost = new IdentityServerHostBuilder()
                 .UseResourceOwnerPasswordValidator(new SimpleResourceOwnerPasswordValidator())
-                .CreateWebHostBuilder()
+                .CreateWebHostBuider()
                 .Build();
 
             webHost.Services.GetRequiredService<IResourceOwnerPasswordValidator>();
@@ -86,10 +85,10 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
         {
             InitializeSerilog();
 
-            var webHost = new IdentityServerWebHostBuilder()
+            var webHost = new IdentityServerHostBuilder()
                 .UseLoggingBuilder((context, builder) => builder.AddSerilog())
                 .UseResourceOwnerPasswordValidator(typeof(ResourceOwnerValidatorWithDependencies))
-                .CreateWebHostBuilder()
+                .CreateWebHostBuider()
                 .Build();
 
             webHost.Services.GetRequiredService<IResourceOwnerPasswordValidator>();
@@ -98,9 +97,9 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
         [Fact]
         public void IdentityServerWebHostBuilder_UseResourceOwnerPasswordValidator_Typed_Resolveable()
         {
-            var webHost = new IdentityServerWebHostBuilder()
+            var webHost = new IdentityServerHostBuilder()
                 .UseResourceOwnerPasswordValidator(typeof(SimpleResourceOwnerPasswordValidator))
-                .CreateWebHostBuilder()
+                .CreateWebHostBuider()
                 .Build();
 
             webHost.Services.GetRequiredService<IResourceOwnerPasswordValidator>();
@@ -109,7 +108,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
         [Fact]
         public void IdentityServerWebHostBuilder_UseResourceOwnerPasswordValidator_Typed_Invalid_Throws()
         {
-            Assert.Throws<ArgumentException>(() => new IdentityServerWebHostBuilder()
+            Assert.Throws<ArgumentException>(() => new IdentityServerHostBuilder()
                 .UseResourceOwnerPasswordValidator(typeof(ExtensionsGrantValidator)));
         }
 
@@ -118,9 +117,10 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
         {
             InitializeSerilog();
 
-            var webHost = new IdentityServerWebHostBuilder()
+            var webHost = new IdentityServerHostBuilder()
                 .UseLoggingBuilder((context, builder) => builder.AddSerilog())
-                .CreateWebHostBuilder()
+                .CreateWebHostBuider()
+                .UseContentRoot(AppContext.BaseDirectory)
                 .Build();
 
             var logger = webHost
