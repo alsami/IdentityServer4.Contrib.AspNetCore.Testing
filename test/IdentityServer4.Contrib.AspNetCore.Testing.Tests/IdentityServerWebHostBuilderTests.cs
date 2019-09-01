@@ -36,7 +36,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
 
             var configuration = webHost.Services.GetRequiredService<IConfiguration>();
             var hostingEnvironment =
-                webHost.Services.GetRequiredService<Microsoft.Extensions.Hosting.IHostingEnvironment>();
+                webHost.Services.GetRequiredService<IWebHostEnvironment>();
 
             Assert.Equal("PropValue", configuration["Prop"]);
             Assert.Equal(AppContext.BaseDirectory, hostingEnvironment.ContentRootPath);
