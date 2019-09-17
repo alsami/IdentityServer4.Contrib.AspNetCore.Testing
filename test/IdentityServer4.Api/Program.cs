@@ -1,6 +1,4 @@
 using System;
-using Microsoft.AspNetCore;
-using Microsoft.AspNetCore.Hosting;
 
 namespace IdentityServer4.Api
 {

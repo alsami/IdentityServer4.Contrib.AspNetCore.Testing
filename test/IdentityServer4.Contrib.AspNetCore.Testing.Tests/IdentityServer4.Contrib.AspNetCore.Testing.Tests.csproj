@@ -8,10 +8,10 @@
 
     <ItemGroup>
         <FrameworkReference Include="Microsoft.AspNetCore.App" />
-        <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.0.0-preview9.19423.4" />
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.0.0-rc1.19456.10" />
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.3.0-preview-20190828-03" />
         <PackageReference Include="Serilog.Extensions.Logging" Version="3.0.2-dev-10256" />
-        <PackageReference Include="Serilog.Sinks.Console" Version="3.1.2-dev-00823" />
+        <PackageReference Include="Serilog.Sinks.Console" Version="3.1.2-dev-00824" />
         <PackageReference Include="Serilog.Sinks.RollingFile" Version="3.3.1-dev-00771" />
         <PackageReference Include="xunit" Version="2.4.1" />
         <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1" />

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Net;
 using System.Reflection;
 using System.Threading.Tasks;
 using IdentityServer4.Contrib.AspNetCore.Testing.Builder;
@@ -11,7 +10,6 @@ using IdentityServer4.Validation;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting.Internal;
 using Microsoft.Extensions.Logging;
 using Serilog;
 using Serilog.Events;
