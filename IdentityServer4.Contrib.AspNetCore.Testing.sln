@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.28729.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{171C9B08-8431-4E4C-A343-CA8D277A2419}"
+ProjectSection(SolutionItems) = preProject
+	src\Directory.Build.props = src\Directory.Build.props
+EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{FED78C85-8EE1-4C8E-9758-44CAF0070C10}"
 EndProject
@@ -13,7 +16,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "misc", "misc", "{E2FB8DD0-B
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 		changelog.md = changelog.md
-		src\Directory.Build.props = src\Directory.Build.props
 		LICENSE = LICENSE
 		publish-packages.sh = publish-packages.sh
 		readme.md = readme.md
