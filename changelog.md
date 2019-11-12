@@ -1,3 +1,10 @@
+# [3.0.2](https://www.nuget.org/packages/IdentityServer4.Contrib.AspNetCore.Testing/3.0.2) (2019-11-12)
+
+## Features
+
+* Update `IdentityServer4` to 3.0.2
+* Update `IdentityModel` to 4.1.0
+
 # [3.0.1](https://www.nuget.org/packages/IdentityServer4.Contrib.AspNetCore.Testing/3.0.1) (2019-09-25)
 
 ## Features
