@@ -30,7 +30,7 @@ This library is supposed to be used within test-projects. Please checkout the [p
 ### Load the discover-document
 
 ```csharp
-var webHostBuilder = new IdentityServerWebHostBuilder()
+var webHostBuilder = new IdentityServerHostBuilder()
     .AddClients(new Client
     {
         ClientId = "MyClient",
@@ -67,7 +67,7 @@ var client = new Client
     AccessTokenLifetime = 7200
 };
 
-var webHostBuilder = new IdentityServerWebHostBuilder()
+var webHostBuilder = new IdentityServerHostBuilder()
     .AddClients(client)
     .AddApiResources(new ApiResource("api1", "api1name"))
     .CreateWebHostBuilder();
