@@ -18,7 +18,7 @@ using Xunit;
 
 namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
 {
-    public class IdentityServerWebHostBuilderTests
+    public class IdentityServerHostBuilderTests
     {
         private static void InitializeSerilog()
         {
@@ -67,7 +67,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
 
             var logger = webHost
                 .Services
-                .GetRequiredService<ILogger<IdentityServerWebHostBuilderTests>>();
+                .GetRequiredService<ILogger<IdentityServerHostBuilderTests>>();
 
             var path = Path.Combine(AppContext.BaseDirectory, "Logs",
                 $"{Assembly.GetExecutingAssembly().GetName().Name}-{DateTime.UtcNow:yyyyMMdd}.log");
