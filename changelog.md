@@ -1,19 +1,29 @@
+# [3.1.1](https://www.nuget.org/packages/IdentityServer4.Contrib.AspNetCore.Testing/3.1.1) (2019-12-26)
+
+## Chore
+
+* Update `IdentityServer4` to version `3.1.0`
+
 # [3.1.0](https://www.nuget.org/packages/IdentityServer4.Contrib.AspNetCore.Testing/3.1.0) (2019-12-11)
 
-## Features
+## Breaking changes
+
+* .NET Core 3.1 is now required
+
+## Chore
 
 * Update dependencies to `3.1.0`
 
 # [3.0.2](https://www.nuget.org/packages/IdentityServer4.Contrib.AspNetCore.Testing/3.0.2) (2019-11-12)
 
-## Features
+## Chore
 
 * Update `IdentityServer4` to 3.0.2
 * Update `IdentityModel` to 4.1.0
 
 # [3.0.1](https://www.nuget.org/packages/IdentityServer4.Contrib.AspNetCore.Testing/3.0.1) (2019-09-25)
 
-## Features
+## Chore
 
 * Update `IdentityServer4` to 3.0.1
 
@@ -22,6 +32,7 @@
 ## Breaking changes
 
 * .NET-Core 3 is now required.
+* `IdentityServerWebHostBuilder` has been renamed to `IdentityServerHostBuilder`
 
 ## Features
 
