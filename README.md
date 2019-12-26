@@ -30,7 +30,7 @@ This library is supposed to be used within test-projects. Please checkout the [p
 ### Load the discover-document
 
 ```csharp
-var webHostBuilder = new IdentityServerWebHostBuilder()
+var webHostBuilder = new IdentityServerHostBuilder()
     .AddClients(new Client
     {
         ClientId = "MyClient",
@@ -67,7 +67,7 @@ var client = new Client
     AccessTokenLifetime = 7200
 };
 
-var webHostBuilder = new IdentityServerWebHostBuilder()
+var webHostBuilder = new IdentityServerHostBuilder()
     .AddClients(client)
     .AddApiResources(new ApiResource("api1", "api1name"))
     .CreateWebHostBuilder();
@@ -99,7 +99,7 @@ var client = new Client
     AllowOfflineAccess = true
 };
 
-var webHostBuilder = new IdentityServerWebHostBuilder()
+var webHostBuilder = new IdentityServerHostBuilder()
     .AddClients(client)
     .AddApiResources(new ApiResource("api1", "api1name"))
     .UseResourceOwnerPasswordValidator(typeof(SimpleResourceOwnerPasswordValidator))
@@ -134,7 +134,7 @@ var client = new Client
     AllowOfflineAccess = true
 };
 
-var webHostBuilder = new IdentityServerWebHostBuilder()
+var webHostBuilder = new IdentityServerHostBuilder()
     .AddClients(client)
     .AddApiResources(new ApiResource("api1", "api1name"))
     .UseResourceOwnerPasswordValidator(new SimpleResourceOwnerPasswordValidator())
@@ -183,7 +183,7 @@ var client = new Client
     AllowOfflineAccess = true
 };
 
-var webHostBuilder = new IdentityServerWebHostBuilder()
+var webHostBuilder = new IdentityServerHostBuilder()
     .AddClients(client)
     .AddApiResources(new ApiResource("api1", "api1name"))
     .AddIdentityResources(new IdentityResources.OpenId(), new IdentityResources.Profile())
@@ -234,7 +234,7 @@ var client = new Client
     AllowOfflineAccess = true
 };
 
-var webHostBuilder = new IdentityServerWebHostBuilder()
+var webHostBuilder = new IdentityServerHostBuilder()
     .AddClients(client)
     .AddApiResources(new ApiResource("api1", "api1name"))
     .AddIdentityResources(new IdentityResources.OpenId(), new IdentityResources.Profile())
@@ -264,7 +264,7 @@ Assert.NotNull(tokenResponse.RefreshToken);
 ### Using an existing `WebHostBuilder`
 
 ```csharp
-var webHostBuilder = new IdentityServerWebHostBuilder()
+var webHostBuilder = new IdentityServerHostBuilder()
     .UseWebHostBuilder(Program.CreateWebHostBuilder(new string[] { }))
     .CreateWebHostBuilder();
 
