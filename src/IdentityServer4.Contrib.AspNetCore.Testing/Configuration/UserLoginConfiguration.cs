@@ -2,14 +2,14 @@
 {
     public class UserLoginConfiguration
     {
-        public string Username { get; }
-
-        public string Password { get; }
-
         public UserLoginConfiguration(string username, string password)
         {
             Username = username;
             Password = password;
         }
+
+        public string Username { get; }
+
+        public string Password { get; }
     }
 }

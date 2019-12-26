@@ -20,6 +20,20 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
 {
     public class IdentityServerWebHostBuilderTests
     {
+        private static void InitializeSerilog()
+        {
+            Log.Logger = new LoggerConfiguration()
+                .Enrich.FromLogContext()
+                .MinimumLevel.Debug()
+                .WriteTo.RollingFile(Path.Combine(AppContext.BaseDirectory, "Logs",
+                    $"{Assembly.GetExecutingAssembly().GetName().Name}.log"))
+                .WriteTo.Console(
+                    outputTemplate:
+                    "[{Timestamp:HH:mm:ss} {Level}] {SourceContext}{NewLine}{Message:lj}{NewLine}{Exception}{NewLine}",
+                    theme: AnsiConsoleTheme.Literate, restrictedToMinimumLevel: LogEventLevel.Error)
+                .CreateLogger();
+        }
+
         [Fact]
         public void IdentityServerWebHostBuilder_UseConfigurationBuilder_HasSettings()
         {
@@ -38,78 +52,6 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
 
             Assert.Equal("PropValue", configuration["Prop"]);
             Assert.Equal(AppContext.BaseDirectory, hostingEnvironment.ContentRootPath);
-        }
-
-        [Fact]
-        public void IdentityServerWebHostBuilder_UseProfileService_Resolveable()
-        {
-            var webHost = new IdentityServerHostBuilder()
-                .UseProfileService(new SimpleProfileService())
-                .CreateWebHostBuider()
-                .Build();
-
-            webHost.Services.GetRequiredService<IProfileService>();
-        }
-
-        [Fact]
-        public void IdentityServerWebHostBuilder_UseProfileService_Typed_Resolveable()
-        {
-            var webHost = new IdentityServerHostBuilder()
-                .UseProfileService(typeof(SimpleProfileService))
-                .CreateWebHostBuider()
-                .Build();
-
-            webHost.Services.GetRequiredService<IProfileService>();
-        }
-
-        [Fact]
-        public void IdentityServerWebHostBuilder_UseProfileService_Typed_Invalid_Throws()
-        {
-            Assert.Throws<ArgumentException>(() => new IdentityServerHostBuilder()
-                .UseProfileService(typeof(ExtensionsGrantValidator)));
-        }
-
-        [Fact]
-        public void IdentityServerWebHostBuilder_UseResourceOwnerPasswordValidator_Resolveable()
-        {
-            var webHost = new IdentityServerHostBuilder()
-                .UseResourceOwnerPasswordValidator(new SimpleResourceOwnerPasswordValidator())
-                .CreateWebHostBuider()
-                .Build();
-
-            webHost.Services.GetRequiredService<IResourceOwnerPasswordValidator>();
-        }
-
-        [Fact]
-        public void IdentityServerWebHostBuilder_UseResourceOwnerPasswordValidator_With_Dependencies_Resolveable()
-        {
-            InitializeSerilog();
-
-            var webHost = new IdentityServerHostBuilder()
-                .UseLoggingBuilder((context, builder) => builder.AddSerilog())
-                .UseResourceOwnerPasswordValidator(typeof(ResourceOwnerValidatorWithDependencies))
-                .CreateWebHostBuider()
-                .Build();
-
-            webHost.Services.GetRequiredService<IResourceOwnerPasswordValidator>();
-        }
-
-        [Fact]
-        public void IdentityServerWebHostBuilder_UseResourceOwnerPasswordValidator_Typed_Resolveable()
-        {
-            var webHost = new IdentityServerHostBuilder()
-                .UseResourceOwnerPasswordValidator(typeof(SimpleResourceOwnerPasswordValidator))
-                .CreateWebHostBuider()
-                .Build();
-
-            webHost.Services.GetRequiredService<IResourceOwnerPasswordValidator>();
-        }
-
-        [Fact]
-        public void IdentityServerWebHostBuilder_UseResourceOwnerPasswordValidator_Typed_Invalid_Throws()
-        {
-            Assert.Throws<ArgumentException>(() => new IdentityServerHostBuilder()
-                .UseResourceOwnerPasswordValidator(typeof(ExtensionsGrantValidator)));
         }
 
         [Fact]
@@ -136,15 +78,76 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
             Assert.True(File.Exists(path));
         }
 
-        private static void InitializeSerilog() => Log.Logger = new LoggerConfiguration()
-            .Enrich.FromLogContext()
-            .MinimumLevel.Debug()
-            .WriteTo.RollingFile(Path.Combine(AppContext.BaseDirectory, "Logs",
-                $"{Assembly.GetExecutingAssembly().GetName().Name}.log"))
-            .WriteTo.Console(
-                outputTemplate:
-                "[{Timestamp:HH:mm:ss} {Level}] {SourceContext}{NewLine}{Message:lj}{NewLine}{Exception}{NewLine}",
-                theme: AnsiConsoleTheme.Literate, restrictedToMinimumLevel: LogEventLevel.Error)
-            .CreateLogger();
+        [Fact]
+        public void IdentityServerWebHostBuilder_UseProfileService_Resolveable()
+        {
+            var webHost = new IdentityServerHostBuilder()
+                .UseProfileService(new SimpleProfileService())
+                .CreateWebHostBuider()
+                .Build();
+
+            webHost.Services.GetRequiredService<IProfileService>();
+        }
+
+        [Fact]
+        public void IdentityServerWebHostBuilder_UseProfileService_Typed_Invalid_Throws()
+        {
+            Assert.Throws<ArgumentException>(() => new IdentityServerHostBuilder()
+                .UseProfileService(typeof(ExtensionsGrantValidator)));
+        }
+
+        [Fact]
+        public void IdentityServerWebHostBuilder_UseProfileService_Typed_Resolveable()
+        {
+            var webHost = new IdentityServerHostBuilder()
+                .UseProfileService(typeof(SimpleProfileService))
+                .CreateWebHostBuider()
+                .Build();
+
+            webHost.Services.GetRequiredService<IProfileService>();
+        }
+
+        [Fact]
+        public void IdentityServerWebHostBuilder_UseResourceOwnerPasswordValidator_Resolveable()
+        {
+            var webHost = new IdentityServerHostBuilder()
+                .UseResourceOwnerPasswordValidator(new SimpleResourceOwnerPasswordValidator())
+                .CreateWebHostBuider()
+                .Build();
+
+            webHost.Services.GetRequiredService<IResourceOwnerPasswordValidator>();
+        }
+
+        [Fact]
+        public void IdentityServerWebHostBuilder_UseResourceOwnerPasswordValidator_Typed_Invalid_Throws()
+        {
+            Assert.Throws<ArgumentException>(() => new IdentityServerHostBuilder()
+                .UseResourceOwnerPasswordValidator(typeof(ExtensionsGrantValidator)));
+        }
+
+        [Fact]
+        public void IdentityServerWebHostBuilder_UseResourceOwnerPasswordValidator_Typed_Resolveable()
+        {
+            var webHost = new IdentityServerHostBuilder()
+                .UseResourceOwnerPasswordValidator(typeof(SimpleResourceOwnerPasswordValidator))
+                .CreateWebHostBuider()
+                .Build();
+
+            webHost.Services.GetRequiredService<IResourceOwnerPasswordValidator>();
+        }
+
+        [Fact]
+        public void IdentityServerWebHostBuilder_UseResourceOwnerPasswordValidator_With_Dependencies_Resolveable()
+        {
+            InitializeSerilog();
+
+            var webHost = new IdentityServerHostBuilder()
+                .UseLoggingBuilder((context, builder) => builder.AddSerilog())
+                .UseResourceOwnerPasswordValidator(typeof(ResourceOwnerValidatorWithDependencies))
+                .CreateWebHostBuider()
+                .Build();
+
+            webHost.Services.GetRequiredService<IResourceOwnerPasswordValidator>();
+        }
     }
 }

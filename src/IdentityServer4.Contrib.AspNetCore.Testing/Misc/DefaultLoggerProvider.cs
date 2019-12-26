@@ -8,14 +8,17 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Misc
 
         public DefaultLoggerProvider(ILoggerFactory loggerFactor = null)
         {
-            this.loggerFactory = loggerFactor ?? new LoggerFactory();
+            loggerFactory = loggerFactor ?? new LoggerFactory();
         }
 
-        public ILogger CreateLogger(string categoryName) => this.loggerFactory.CreateLogger(categoryName);
+        public ILogger CreateLogger(string categoryName)
+        {
+            return loggerFactory.CreateLogger(categoryName);
+        }
 
         public void Dispose()
         {
-            this.loggerFactory.Dispose();
+            loggerFactory.Dispose();
         }
     }
 }

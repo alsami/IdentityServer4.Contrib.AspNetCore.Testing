@@ -6,7 +6,8 @@ namespace IdentityServer4.Server.Models
     public static class TestUsers
     {
         public static List<TestUser> GeTestUsers()
-            => new List<TestUser>
+        {
+            return new List<TestUser>
             {
                 new TestUser
                 {
@@ -16,5 +17,6 @@ namespace IdentityServer4.Server.Models
                     SubjectId = "user1"
                 }
             };
+        }
     }
 }

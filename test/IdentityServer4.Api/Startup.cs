@@ -21,7 +21,7 @@ namespace IdentityServer4.Api
                 {
                     options.RequireHttpsMetadata = false;
                     options.Authority = "http://localhost";
-                    options.JwtBackChannelHandler = this.identityServerMessageHandler;
+                    options.JwtBackChannelHandler = identityServerMessageHandler;
                 });
             services.AddMvc(options => options.EnableEndpointRouting = false);
         }

@@ -8,9 +8,12 @@ namespace IdentityServer4.Api
     public class AuthController
     {
         [HttpGet]
-        public IActionResult TestAuth() => new OkObjectResult(new
+        public IActionResult TestAuth()
         {
-            Message = "This endpoint would not be reachable, if the authentication was not working"
-        });
+            return new OkObjectResult(new
+            {
+                Message = "This endpoint would not be reachable, if the authentication was not working"
+            });
+        }
     }
 }

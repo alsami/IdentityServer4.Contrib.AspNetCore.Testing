@@ -11,55 +11,46 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Misc
 
         public IdentityServerEventCaptureStore()
         {
-            this.events = new List<Event>();
+            events = new List<Event>();
         }
 
         public void AddEvent(Event @event)
         {
-            if (@event == null)
-            {
-                throw new ArgumentNullException(nameof(@event));
-            }
+            if (@event == null) throw new ArgumentNullException(nameof(@event));
 
-            this.events.Add(@event);
+            events.Add(@event);
         }
 
         public Event GetById(int id)
         {
-            return this.events.FirstOrDefault(e => e.Id == id);
+            return events.FirstOrDefault(e => e.Id == id);
         }
 
         public IEnumerable<Event> GetEvents()
         {
-            return this.events.AsReadOnly();
+            return events.AsReadOnly();
         }
 
         public bool ContainsEventType(EventTypes eventType)
         {
-            var @event = this.events.FirstOrDefault(e => e.EventType == eventType);
+            var @event = events.FirstOrDefault(e => e.EventType == eventType);
             return @event != null;
         }
 
         public bool ContainsMessage(string message, StringComparison comparison = StringComparison.OrdinalIgnoreCase)
         {
-            if (string.IsNullOrWhiteSpace(message))
-            {
-                throw new ArgumentNullException(nameof(message));
-            }
+            if (string.IsNullOrWhiteSpace(message)) throw new ArgumentNullException(nameof(message));
 
-            var matchingEvents = this.events.Where(e => string.Compare(e.Message, message, comparison) == 0);
+            var matchingEvents = events.Where(e => string.Compare(e.Message, message, comparison) == 0);
             return matchingEvents.Any();
         }
 
         public bool ContainsMessageStartsWith(string value,
             StringComparison comparison = StringComparison.OrdinalIgnoreCase)
         {
-            if (string.IsNullOrWhiteSpace(value))
-            {
-                throw new ArgumentNullException(nameof(value));
-            }
+            if (string.IsNullOrWhiteSpace(value)) throw new ArgumentNullException(nameof(value));
 
-            var matchingEvents = this.events.Where(e => e.Message.StartsWith(value, comparison));
+            var matchingEvents = events.Where(e => e.Message.StartsWith(value, comparison));
             return matchingEvents.Any();
         }
     }

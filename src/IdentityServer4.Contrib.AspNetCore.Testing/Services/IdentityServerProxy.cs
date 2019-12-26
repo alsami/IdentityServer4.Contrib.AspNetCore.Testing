@@ -13,28 +13,29 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Services
 {
     public class IdentityServerProxy
     {
-        public TestServer IdentityServer { get; }
-
         public IdentityServerProxy(IWebHostBuilder webHostBuilder)
         {
             if (webHostBuilder == null)
-            {
                 throw new ArgumentNullException(nameof(webHostBuilder),
                     "webHostBuilder must not be null");
-            }
 
-            this.IdentityServer = new TestServer(webHostBuilder);
+            IdentityServer = new TestServer(webHostBuilder);
         }
 
-        public IdentityServerProxy(TestServer identityServer) => this.IdentityServer = identityServer;
+        public IdentityServerProxy(TestServer identityServer)
+        {
+            IdentityServer = identityServer;
+        }
+
+        public TestServer IdentityServer { get; }
 
         public async Task<DiscoveryDocumentResponse> GetDiscoverResponseAsync()
         {
-            using (var proxy = this.IdentityServer.CreateHandler())
+            using (var proxy = IdentityServer.CreateHandler())
             {
                 using (var client = new HttpClient(proxy))
                 {
-                    return await client.GetDiscoveryDocumentAsync(this.IdentityServer.BaseAddress.ToString());
+                    return await client.GetDiscoveryDocumentAsync(IdentityServer.BaseAddress.ToString());
                 }
             }
         }
@@ -42,11 +43,11 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Services
         public async Task<TokenResponse> GetTokenAsync(ClientConfiguration clientConfiguration, string grantType,
             IDictionary<string, string> parameters)
         {
-            var discoveryResponse = await this.GetDiscoverResponseAsync();
+            var discoveryResponse = await GetDiscoverResponseAsync();
 
             EnsureDiscoverResponse(discoveryResponse);
 
-            using (var proxy = this.IdentityServer.CreateHandler())
+            using (var proxy = IdentityServer.CreateHandler())
             {
                 using (var client = new HttpClient(proxy))
                 {
@@ -56,7 +57,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Services
                         ClientId = clientConfiguration.Id,
                         ClientSecret = clientConfiguration.Secret,
                         GrantType = grantType,
-                        Parameters = parameters,
+                        Parameters = parameters
                     });
                 }
             }
@@ -65,11 +66,11 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Services
         public async Task<TokenResponse> GetClientAccessTokenAsync(ClientConfiguration clientConfiguration,
             params string[] scopes)
         {
-            var discoveryResponse = await this.GetDiscoverResponseAsync();
+            var discoveryResponse = await GetDiscoverResponseAsync();
 
             EnsureDiscoverResponse(discoveryResponse);
 
-            using (var proxy = this.IdentityServer.CreateHandler())
+            using (var proxy = IdentityServer.CreateHandler())
             {
                 using (var client = new HttpClient(proxy))
                 {
@@ -82,13 +83,13 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Services
         public async Task<TokenResponse> GetClientAccessTokenAsync(ClientConfiguration clientConfiguration,
             IDictionary<string, string> parameters, params string[] scopes)
         {
-            var discoveryResponse = await this.GetDiscoverResponseAsync();
+            var discoveryResponse = await GetDiscoverResponseAsync();
 
             EnsureDiscoverResponse(discoveryResponse);
 
             var usedParameters = parameters ?? new Dictionary<string, string>();
 
-            using (var proxy = this.IdentityServer.CreateHandler())
+            using (var proxy = IdentityServer.CreateHandler())
             {
                 using (var client = new HttpClient(proxy))
                 {
@@ -102,11 +103,11 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Services
             ClientConfiguration clientConfiguration, UserLoginConfiguration userLoginConfiguration,
             params string[] scopes)
         {
-            var discoveryResponse = await this.GetDiscoverResponseAsync();
+            var discoveryResponse = await GetDiscoverResponseAsync();
 
             EnsureDiscoverResponse(discoveryResponse);
 
-            using (var proxy = this.IdentityServer.CreateHandler())
+            using (var proxy = IdentityServer.CreateHandler())
             {
                 using (var client = new HttpClient(proxy))
                 {
@@ -120,11 +121,11 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Services
             ClientConfiguration clientConfiguration, UserLoginConfiguration userLoginConfiguration,
             Dictionary<string, string> parameters)
         {
-            var discoveryResponse = await this.GetDiscoverResponseAsync();
+            var discoveryResponse = await GetDiscoverResponseAsync();
 
             EnsureDiscoverResponse(discoveryResponse);
 
-            using (var proxy = this.IdentityServer.CreateHandler())
+            using (var proxy = IdentityServer.CreateHandler())
             {
                 using (var client = new HttpClient(proxy))
                 {
@@ -137,11 +138,11 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Services
         public async Task<TokenResponse> GetRefreshTokenAsync(ClientConfiguration clientConfiguration,
             string refreshToken, params string[] scopes)
         {
-            var discoveryResponse = await this.GetDiscoverResponseAsync();
+            var discoveryResponse = await GetDiscoverResponseAsync();
 
             EnsureDiscoverResponse(discoveryResponse);
 
-            using (var proxy = this.IdentityServer.CreateHandler())
+            using (var proxy = IdentityServer.CreateHandler())
             {
                 using (var client = new HttpClient(proxy))
                 {
@@ -154,11 +155,11 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Services
         public async Task<TokenResponse> GetRefreshTokenAsync(ClientConfiguration clientConfiguration,
             string refreshToken, IDictionary<string, string> parameters)
         {
-            var discoveryResponse = await this.GetDiscoverResponseAsync();
+            var discoveryResponse = await GetDiscoverResponseAsync();
 
             EnsureDiscoverResponse(discoveryResponse);
 
-            using (var proxy = this.IdentityServer.CreateHandler())
+            using (var proxy = IdentityServer.CreateHandler())
             {
                 using (var client = new HttpClient(proxy))
                 {
@@ -170,11 +171,11 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Services
 
         public async Task<UserInfoResponse> GetUserInfoAsync(string accessToken)
         {
-            var discoveryResponse = await this.GetDiscoverResponseAsync();
+            var discoveryResponse = await GetDiscoverResponseAsync();
 
             EnsureDiscoverResponse(discoveryResponse);
 
-            using (var proxy = this.IdentityServer.CreateHandler())
+            using (var proxy = IdentityServer.CreateHandler())
             {
                 using (var client = new HttpClient(proxy))
                 {
@@ -191,7 +192,8 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Services
             DiscoveryDocumentResponse discoveryResponse,
             ClientConfiguration clientConfiguration, UserLoginConfiguration userLoginConfiguration,
             IDictionary<string, string> parameters, IEnumerable<string> scopes)
-            => client.RequestPasswordTokenAsync(new PasswordTokenRequest
+        {
+            return client.RequestPasswordTokenAsync(new PasswordTokenRequest
             {
                 UserName = userLoginConfiguration.Username,
                 Password = userLoginConfiguration.Password,
@@ -202,12 +204,14 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Services
                 Scope = string.Join(" ", scopes),
                 Parameters = parameters
             });
+        }
 
         private static Task<TokenResponse> ExecuteRefreshAccessTokenRequestAsync(HttpMessageInvoker client,
             DiscoveryDocumentResponse discoveryResponse,
             ClientConfiguration clientConfiguration, string refreshToken, IDictionary<string, string> parameters,
             IEnumerable<string> scopes)
-            => client.RequestRefreshTokenAsync(new RefreshTokenRequest
+        {
+            return client.RequestRefreshTokenAsync(new RefreshTokenRequest
             {
                 RefreshToken = refreshToken,
                 ClientId = clientConfiguration.Id,
@@ -217,11 +221,13 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Services
                 Scope = string.Join(" ", scopes),
                 Parameters = parameters
             });
+        }
 
         private static Task<TokenResponse> ExecuteClientAccessTokenRequestAsync(HttpMessageInvoker client,
             DiscoveryDocumentResponse discoveryResponse,
             ClientConfiguration clientConfiguration, IDictionary<string, string> parameters, IEnumerable<string> scopes)
-            => client.RequestClientCredentialsTokenAsync(new ClientCredentialsTokenRequest
+        {
+            return client.RequestClientCredentialsTokenAsync(new ClientCredentialsTokenRequest
             {
                 Address = discoveryResponse.TokenEndpoint,
                 ClientId = clientConfiguration.Id,
@@ -230,13 +236,11 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Services
                 Scope = string.Join(" ", scopes),
                 Parameters = parameters
             });
+        }
 
         private static void EnsureDiscoverResponse(DiscoveryDocumentResponse discoveryResponse)
         {
-            if (!discoveryResponse.IsError)
-            {
-                return;
-            }
+            if (!discoveryResponse.IsError) return;
 
             throw new InvalidOperationException(
                 $"Cannot continue since discover-request has failed with message:\n{discoveryResponse.Error}");

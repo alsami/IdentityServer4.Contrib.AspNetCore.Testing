@@ -13,10 +13,10 @@ namespace IdentityServer4.Server.Models
             {
                 new Client
                 {
-                    ClientId = Clients.Id,
+                    ClientId = Id,
                     ClientSecrets = new List<Secret>
                     {
-                        new Secret(Clients.Secret.Sha256())
+                        new Secret(Secret.Sha256())
                     },
                     AllowedScopes = new List<string>
                     {
