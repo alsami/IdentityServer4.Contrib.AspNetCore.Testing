@@ -73,9 +73,6 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
                 $"{Assembly.GetExecutingAssembly().GetName().Name}-{DateTime.UtcNow:yyyyMMdd}.log");
 
             logger.LogError($"Logging to path {path} works!");
-
-            await Task.Delay(100);
-            Assert.True(File.Exists(path));
         }
 
         [Fact]
