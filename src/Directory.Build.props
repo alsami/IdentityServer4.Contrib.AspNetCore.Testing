@@ -1,8 +1,8 @@
 <Project>
   <PropertyGroup>
-      <LangVersion>7.2</LangVersion>
+      <LangVersion>8.0</LangVersion>
       <IsPackable>true</IsPackable>
-      <Copyright>2019©CleanCode-Labs</Copyright>
+      <Copyright>2020©CleanCode-Labs</Copyright>
       <Authors>Sami Al Khatib</Authors>
       <Description>OpenID Connect and OAuth 2.0 Testing-Framework for ASP.NET Core and IdentityServer4</Description>
       <PackageTags>OAuth2;OAuth 2.0;OpenID Connect;Security;Identity;IdentityServer;IdentityServer4;AspNetCore;AspNetCore Testing;IntegrationTesting;Testing;IdentityServer Proxy;</PackageTags>
@@ -12,8 +12,8 @@
       <PackageReleaseNotes>https://github.com/cleancodelabs/IdentityServer4.Contrib.AspNetCore.Testing/blob/master/changelog.md</PackageReleaseNotes>
       <RepositoryType>git</RepositoryType>
       <RepositoryUrl>git://github.com/cleancodelabs/IdentityServer4.Contrib.AspNetCore.Testing</RepositoryUrl>
-      <Version>3.1.1</Version>
-      <FileVersion>3.1.1.0</FileVersion>
+      <Version>4.0.0-rc.0</Version>
+      <FileVersion>4.0.0</FileVersion>
       <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>

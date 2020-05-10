@@ -1,3 +1,23 @@
+# [4.0.0-rc.0](https://www.nuget.org/packages/IdentityServer4.Contrib.AspNetCore.Testing/4.0.0) (2020-05-10)
+
+## Features
+
+* Support for `IdentityServer4` version 4 preview 3
+* New class `IdentityServerTestHostBuilder` which allows defining an `IHostBuilder`
+* New class `IdentityServerTestWebHostBuilder` which contains the already defined logic of `IdentityServerHostBuilder`
+* New class `IdentityServerHostProxy` which takes an `IHostBuilder` for creation of the `TestServer`
+* New class `IdentityServerWebHostProxy` which contains the already defined logic of `IdentityServerProxy`
+
+## Breaking changes
+
+* When defining an `ApiResource` according `ApiScope` is required to be passed along. This is a breaking-change introduced through the update of `IdentityServer4` to version 4. The according builder used validates that api-scopes are present when using api-resources. It will throw an exception if not.
+* For more details on the breaking changes of `IdentityServer4` please check out the [changelog](https://github.com/IdentityServer/IdentityServer4/releases/tag/4.0.0-preview.4) ot it.
+
+## Deprecation notice
+
+* `IdentityServerHostBuilder` has been marked as deprecated and will be removed with version 5. Please use `IdentityServerTestHostBuilder` or `IdentityServerTestWebHostBuilder` instead
+* `IdentityServerProxy` has been marked as deprecated and will be removed with version 5. Please use `IdentityServerHostProxy` or `IdentityServerWebHostProxy` instead.
+
 # [3.1.1](https://www.nuget.org/packages/IdentityServer4.Contrib.AspNetCore.Testing/3.1.1) (2019-12-26)
 
 ## Chore
