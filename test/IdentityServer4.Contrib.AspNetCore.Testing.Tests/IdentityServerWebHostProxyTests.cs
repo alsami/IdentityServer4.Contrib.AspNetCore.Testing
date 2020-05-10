@@ -22,7 +22,7 @@ using Program = IdentityServer4.Server.Program;
 
 namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
 {
-    public class IdentityServerProxyTests
+    public class IdentityServerWebHostProxyTests
     {
         [Fact]
         public async Task IdentityServerProxy_GetClientCredentialsAsync_Authorize_Api_Succeeds()
@@ -42,13 +42,13 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
                 AccessTokenLifetime = 7200
             };
 
-            var webHostBuilder = new IdentityServerHostBuilder()
+            var webHostBuilder = new IdentityServerTestWebHostBuilder()
                 .AddClients(client)
                 .AddApiResources(new ApiResource("api1", "api1name"))
                 .AddApiScopes(new ApiScope("api1"))
                 .CreateWebHostBuider();
 
-            var identityServerProxy = new IdentityServerProxy(webHostBuilder);
+            var identityServerProxy = new IdentityServerWebHostProxy(webHostBuilder);
 
             var tokenResponse = await identityServerProxy.GetClientAccessTokenAsync(clientConfiguration, "api1");
 
@@ -86,13 +86,13 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
                 AccessTokenLifetime = 7200
             };
 
-            var webHostBuilder = new IdentityServerHostBuilder()
+            var webHostBuilder = new IdentityServerTestWebHostBuilder()
                 .AddClients(client)
                 .AddApiResources(new ApiResource("api1", "api1name"))
                 .AddApiScopes(new ApiScope("api1"))
                 .CreateWebHostBuider();
 
-            var identityServerProxy = new IdentityServerProxy(webHostBuilder);
+            var identityServerProxy = new IdentityServerWebHostProxy(webHostBuilder);
 
             var tokenResponse = await identityServerProxy.GetClientAccessTokenAsync(clientConfiguration, "api1");
 
@@ -121,13 +121,13 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
                 AccessTokenLifetime = 7200
             };
 
-            var webHostBuilder = new IdentityServerHostBuilder()
+            var webHostBuilder = new IdentityServerTestWebHostBuilder()
                 .AddClients(client)
                 .AddApiResources(new ApiResource("api1", "api1name"))
                 .AddApiScopes(new ApiScope("api1"))
                 .CreateWebHostBuider();
 
-            var identityServerProxy = new IdentityServerProxy(webHostBuilder);
+            var identityServerProxy = new IdentityServerWebHostProxy(webHostBuilder);
 
             var tokenResponse = await identityServerProxy.GetClientAccessTokenAsync(clientConfiguration,
                 new Dictionary<string, string>
@@ -145,7 +145,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
         [Fact]
         public async Task IdentityServerProxy_GetDiscoverDocumentAsync_Succeeds()
         {
-            var webHostBuilder = new IdentityServerHostBuilder()
+            var webHostBuilder = new IdentityServerTestWebHostBuilder()
                 .AddClients(new Client
                 {
                     ClientId = "MyClient",
@@ -155,9 +155,10 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
                     }
                 })
                 .AddApiResources(new ApiResource())
+                .AddApiScopes(new ApiScope())
                 .CreateWebHostBuider();
 
-            var identityServerClient = new IdentityServerProxy(webHostBuilder);
+            var identityServerClient = new IdentityServerWebHostProxy(webHostBuilder);
             var discoveryResponse = await identityServerClient.GetDiscoverResponseAsync();
 
             Assert.NotNull(discoveryResponse);
@@ -183,14 +184,14 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
                 AllowOfflineAccess = true
             };
 
-            var webHostBuilder = new IdentityServerHostBuilder()
+            var webHostBuilder = new IdentityServerTestWebHostBuilder()
                 .AddClients(client)
                 .AddApiResources(new ApiResource("api1", "api1name"))
                 .UseResourceOwnerPasswordValidator(new SimpleResourceOwnerPasswordValidator())
                 .AddApiScopes(new ApiScope("api1"))
                 .CreateWebHostBuider();
 
-            var identityServerProxy = new IdentityServerProxy(webHostBuilder);
+            var identityServerProxy = new IdentityServerWebHostProxy(webHostBuilder);
 
             var scopes = new[] {"api1", "offline_access"};
 
@@ -234,14 +235,14 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
                 AllowOfflineAccess = true
             };
 
-            var webHostBuilder = new IdentityServerHostBuilder()
+            var webHostBuilder = new IdentityServerTestWebHostBuilder()
                 .AddClients(client)
                 .AddApiResources(new ApiResource("api1", "api1name"))
                 .AddApiScopes(new ApiScope("api1"))
                 .UseResourceOwnerPasswordValidator(new SimpleResourceOwnerPasswordValidator())
                 .CreateWebHostBuider();
 
-            var identityServerProxy = new IdentityServerProxy(webHostBuilder);
+            var identityServerProxy = new IdentityServerWebHostProxy(webHostBuilder);
 
             const string scopes = "api1 offline_access";
 
@@ -274,11 +275,11 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
         [Fact]
         public async Task IdentityServerProxy_GetResourceOwnerTokenAsync_Custom_WebHost_Succeeds()
         {
-            var host = new IdentityServerHostBuilder()
+            var host = new IdentityServerTestWebHostBuilder()
                 .UseWebHostBuilder(Program.CreateWebHostBuilder(new string[] { }))
                 .CreateWebHostBuider();
 
-            var proxy = new IdentityServerProxy(host);
+            var proxy = new IdentityServerWebHostProxy(host);
 
             var scopes = new[] {"api1", "offline_access", "openid", "profile"};
 
@@ -308,13 +309,14 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
                 AllowOfflineAccess = true
             };
 
-            var webHostBuilder = new IdentityServerHostBuilder()
+            var webHostBuilder = new IdentityServerTestWebHostBuilder()
                 .AddClients(client)
                 .AddApiResources(new ApiResource("api1", "api1name"))
+                .AddApiScopes(new ApiScope())
                 .UseResourceOwnerPasswordValidator(new SimpleResourceOwnerPasswordValidator())
                 .CreateWebHostBuider();
 
-            var identityServerClient = new IdentityServerProxy(webHostBuilder);
+            var identityServerClient = new IdentityServerWebHostProxy(webHostBuilder);
 
             var tokenResponse = await identityServerClient.GetResourceOwnerPasswordAccessTokenAsync(clientConfiguration,
                 new UserLoginConfiguration("user", "password1"),
@@ -344,7 +346,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
                 AllowOfflineAccess = true
             };
 
-            var webHostBuilder = new IdentityServerHostBuilder()
+            var webHostBuilder = new IdentityServerTestWebHostBuilder()
                 .AddClients(client)
                 .AddApiResources(new ApiResource("api1", "api1name"))
                 .AddApiScopes(new ApiScope("api1"))
@@ -356,7 +358,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
                 )
                 .CreateWebHostBuider();
 
-            var identityServerProxy = new IdentityServerProxy(webHostBuilder);
+            var identityServerProxy = new IdentityServerWebHostProxy(webHostBuilder);
 
             var tokenResponse = await identityServerProxy.GetResourceOwnerPasswordAccessTokenAsync(clientConfiguration,
                 new UserLoginConfiguration("user", "password"),
@@ -390,14 +392,15 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
                 AllowOfflineAccess = true
             };
 
-            var webHostBuilder = new IdentityServerHostBuilder()
+            var webHostBuilder = new IdentityServerTestWebHostBuilder()
                 .AddClients(client)
                 .AddApiResources(new ApiResource("api1", "api1name"))
+                .AddApiScopes(new ApiScope("api1"))
                 .UseResourceOwnerPasswordValidator(typeof(SimpleResourceOwnerPasswordValidator))
                 .UseIdentityServerOptionsBuilder(options => options.Endpoints.EnableTokenEndpoint = false)
                 .CreateWebHostBuider();
 
-            var identityServerProxy = new IdentityServerProxy(webHostBuilder);
+            var identityServerProxy = new IdentityServerWebHostProxy(webHostBuilder);
 
             var tokenResponse = await identityServerProxy.GetResourceOwnerPasswordAccessTokenAsync(clientConfiguration,
                 new UserLoginConfiguration("user", "password"),
@@ -426,14 +429,14 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
                 AllowOfflineAccess = true
             };
 
-            var webHostBuilder = new IdentityServerHostBuilder()
+            var webHostBuilder = new IdentityServerTestWebHostBuilder()
                 .UseResourceOwnerPasswordValidator(new SimpleResourceOwnerPasswordValidator())
                 .AddClients(client)
                 .AddApiResources(new ApiResource("api1", "api1name"))
                 .AddApiScopes(new ApiScope("api1"))
                 .CreateWebHostBuider();
 
-            var identityServerProxy = new IdentityServerProxy(webHostBuilder);
+            var identityServerProxy = new IdentityServerWebHostProxy(webHostBuilder);
 
             var tokenResponse = await identityServerProxy.GetResourceOwnerPasswordAccessTokenAsync(clientConfiguration,
                 new UserLoginConfiguration("user", "password"),
@@ -466,14 +469,14 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
                 AllowOfflineAccess = true
             };
 
-            var webHostBuilder = new IdentityServerHostBuilder()
+            var webHostBuilder = new IdentityServerTestWebHostBuilder()
                 .AddClients(client)
                 .AddApiResources(new ApiResource("api1", "api1name"))
                 .AddApiScopes(new ApiScope("api1"))
                 .UseResourceOwnerPasswordValidator(typeof(SimpleResourceOwnerPasswordValidator))
                 .CreateWebHostBuider();
 
-            var identityServerProxy = new IdentityServerProxy(webHostBuilder);
+            var identityServerProxy = new IdentityServerWebHostProxy(webHostBuilder);
 
             var tokenResponse = await identityServerProxy.GetResourceOwnerPasswordAccessTokenAsync(clientConfiguration,
                 new UserLoginConfiguration("user", "password"),
@@ -506,14 +509,14 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
                 AllowOfflineAccess = true
             };
 
-            var webHostBuilder = new IdentityServerHostBuilder()
+            var webHostBuilder = new IdentityServerTestWebHostBuilder()
                 .AddClients(client)
                 .AddApiResources(new ApiResource("api1", "api1name"))
                 .AddApiScopes(new ApiScope("api1"))
                 .UseResourceOwnerPasswordValidator(new SimpleResourceOwnerPasswordValidator())
                 .CreateWebHostBuider();
 
-            var identityServerProxy = new IdentityServerProxy(webHostBuilder);
+            var identityServerProxy = new IdentityServerWebHostProxy(webHostBuilder);
 
             var tokenResponse = await identityServerProxy.GetResourceOwnerPasswordAccessTokenAsync(clientConfiguration,
                 new UserLoginConfiguration("user", "password"),
@@ -553,7 +556,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
                 AllowOfflineAccess = true
             };
 
-            var webHostBuilder = new IdentityServerHostBuilder()
+            var webHostBuilder = new IdentityServerTestWebHostBuilder()
                 .AddClients(client)
                 .AddApiResources(new ApiResource("api1", "api1name"))
                 .AddApiScopes(new ApiScope("api1"))
@@ -562,7 +565,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
                     collection.AddScoped<IExtensionGrantValidator, ExtensionsGrantValidator>())
                 .CreateWebHostBuider();
 
-            var identityServerProxy = new IdentityServerProxy(webHostBuilder);
+            var identityServerProxy = new IdentityServerWebHostProxy(webHostBuilder);
 
             var scopes = new[] {"api1", "offline_access", "openid", "profile"};
 
@@ -604,7 +607,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
                 AllowOfflineAccess = true
             };
 
-            var webHostBuilder = new IdentityServerHostBuilder()
+            var webHostBuilder = new IdentityServerTestWebHostBuilder()
                 .AddClients(client)
                 .AddApiResources(new ApiResource("api1", "api1name"))
                 .AddApiScopes(new ApiScope("api1"))
@@ -613,7 +616,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
                 .UseProfileService(new SimpleProfileService())
                 .CreateWebHostBuider();
 
-            var identityServerProxy = new IdentityServerProxy(webHostBuilder);
+            var identityServerProxy = new IdentityServerWebHostProxy(webHostBuilder);
 
             var scopes = new[] {"api1", "offline_access", "openid", "profile"};
 

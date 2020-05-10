@@ -9,6 +9,9 @@ ProjectSection(SolutionItems) = preProject
 EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{FED78C85-8EE1-4C8E-9758-44CAF0070C10}"
+ProjectSection(SolutionItems) = preProject
+	test\Directory.Build.props = test\Directory.Build.props
+EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer4.Contrib.AspNetCore.Testing", "src\IdentityServer4.Contrib.AspNetCore.Testing\IdentityServer4.Contrib.AspNetCore.Testing.csproj", "{5169FE1E-64A2-4BF0-9DA0-2480107FD444}"
 EndProject
@@ -30,6 +33,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer4.Server", "test\IdentityServer4.Server\IdentityServer4.Server.csproj", "{C5F387EC-B6A4-4A5C-8C35-9411CE71B35A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer4.Api", "test\IdentityServer4.Api\IdentityServer4.Api.csproj", "{CBDE7CC3-DC74-44CE-86E7-6A902504B227}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{4D0745D0-8182-488D-8E06-403D9EC57785}"
+ProjectSection(SolutionItems) = preProject
+	docs\IdentityServerTestWebHostBuilder = docs\IdentityServerTestWebHostBuilder
+EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

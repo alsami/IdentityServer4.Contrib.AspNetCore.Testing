@@ -26,9 +26,9 @@ namespace IdentityServer4.Server
                 .AddTestUsers(TestUsers.GeTestUsers())
                 .AddInMemoryClients(Clients.GetClients)
                 .AddInMemoryApiResources(ApiResources.GetApiResources)
-                .AddInMemoryApiScopes(new []
+                .AddInMemoryApiScopes(new[]
                 {
-                    new ApiScope("api1"), 
+                    new ApiScope("api1"),
                 })
                 .AddInMemoryIdentityResources(IdentityResources.GetIdentityResources);
         }
