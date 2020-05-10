@@ -11,29 +11,29 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Misc
 
         public IdentityServerEventCaptureStore()
         {
-            events = new List<Event>();
+            this.events = new List<Event>();
         }
 
         public void AddEvent(Event @event)
         {
             if (@event == null) throw new ArgumentNullException(nameof(@event));
 
-            events.Add(@event);
+            this.events.Add(@event);
         }
 
         public Event GetById(int id)
         {
-            return events.FirstOrDefault(e => e.Id == id);
+            return this.events.FirstOrDefault(e => e.Id == id);
         }
 
         public IEnumerable<Event> GetEvents()
         {
-            return events.AsReadOnly();
+            return this.events.AsReadOnly();
         }
 
         public bool ContainsEventType(EventTypes eventType)
         {
-            var @event = events.FirstOrDefault(e => e.EventType == eventType);
+            var @event = this.events.FirstOrDefault(e => e.EventType == eventType);
             return @event != null;
         }
 
@@ -41,7 +41,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Misc
         {
             if (string.IsNullOrWhiteSpace(message)) throw new ArgumentNullException(nameof(message));
 
-            var matchingEvents = events.Where(e => string.Compare(e.Message, message, comparison) == 0);
+            var matchingEvents = this.events.Where(e => string.Compare(e.Message, message, comparison) == 0);
             return matchingEvents.Any();
         }
 
@@ -50,7 +50,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Misc
         {
             if (string.IsNullOrWhiteSpace(value)) throw new ArgumentNullException(nameof(value));
 
-            var matchingEvents = events.Where(e => e.Message.StartsWith(value, comparison));
+            var matchingEvents = this.events.Where(e => e.Message.StartsWith(value, comparison));
             return matchingEvents.Any();
         }
     }

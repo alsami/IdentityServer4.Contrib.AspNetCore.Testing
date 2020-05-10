@@ -4,8 +4,8 @@
     {
         public UserLoginConfiguration(string username, string password)
         {
-            Username = username;
-            Password = password;
+            this.Username = username;
+            this.Password = password;
         }
 
         public string Username { get; }

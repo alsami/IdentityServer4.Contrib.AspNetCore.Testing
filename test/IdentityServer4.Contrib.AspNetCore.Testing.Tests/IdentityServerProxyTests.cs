@@ -45,6 +45,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
             var webHostBuilder = new IdentityServerHostBuilder()
                 .AddClients(client)
                 .AddApiResources(new ApiResource("api1", "api1name"))
+                .AddApiScopes(new ApiScope("api1"))
                 .CreateWebHostBuider();
 
             var identityServerProxy = new IdentityServerProxy(webHostBuilder);
@@ -88,6 +89,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
             var webHostBuilder = new IdentityServerHostBuilder()
                 .AddClients(client)
                 .AddApiResources(new ApiResource("api1", "api1name"))
+                .AddApiScopes(new ApiScope("api1"))
                 .CreateWebHostBuider();
 
             var identityServerProxy = new IdentityServerProxy(webHostBuilder);
@@ -122,6 +124,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
             var webHostBuilder = new IdentityServerHostBuilder()
                 .AddClients(client)
                 .AddApiResources(new ApiResource("api1", "api1name"))
+                .AddApiScopes(new ApiScope("api1"))
                 .CreateWebHostBuider();
 
             var identityServerProxy = new IdentityServerProxy(webHostBuilder);
@@ -184,6 +187,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
                 .AddClients(client)
                 .AddApiResources(new ApiResource("api1", "api1name"))
                 .UseResourceOwnerPasswordValidator(new SimpleResourceOwnerPasswordValidator())
+                .AddApiScopes(new ApiScope("api1"))
                 .CreateWebHostBuider();
 
             var identityServerProxy = new IdentityServerProxy(webHostBuilder);
@@ -233,6 +237,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
             var webHostBuilder = new IdentityServerHostBuilder()
                 .AddClients(client)
                 .AddApiResources(new ApiResource("api1", "api1name"))
+                .AddApiScopes(new ApiScope("api1"))
                 .UseResourceOwnerPasswordValidator(new SimpleResourceOwnerPasswordValidator())
                 .CreateWebHostBuider();
 
@@ -342,6 +347,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
             var webHostBuilder = new IdentityServerHostBuilder()
                 .AddClients(client)
                 .AddApiResources(new ApiResource("api1", "api1name"))
+                .AddApiScopes(new ApiScope("api1"))
                 .UseResourceOwnerPasswordValidator(typeof(SimpleResourceOwnerPasswordValidator))
                 .UseIdentityServerBuilder(services => services
                     .AddIdentityServer()
@@ -421,9 +427,10 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
             };
 
             var webHostBuilder = new IdentityServerHostBuilder()
+                .UseResourceOwnerPasswordValidator(new SimpleResourceOwnerPasswordValidator())
                 .AddClients(client)
                 .AddApiResources(new ApiResource("api1", "api1name"))
-                .UseResourceOwnerPasswordValidator(new SimpleResourceOwnerPasswordValidator())
+                .AddApiScopes(new ApiScope("api1"))
                 .CreateWebHostBuider();
 
             var identityServerProxy = new IdentityServerProxy(webHostBuilder);
@@ -462,6 +469,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
             var webHostBuilder = new IdentityServerHostBuilder()
                 .AddClients(client)
                 .AddApiResources(new ApiResource("api1", "api1name"))
+                .AddApiScopes(new ApiScope("api1"))
                 .UseResourceOwnerPasswordValidator(typeof(SimpleResourceOwnerPasswordValidator))
                 .CreateWebHostBuider();
 
@@ -501,6 +509,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
             var webHostBuilder = new IdentityServerHostBuilder()
                 .AddClients(client)
                 .AddApiResources(new ApiResource("api1", "api1name"))
+                .AddApiScopes(new ApiScope("api1"))
                 .UseResourceOwnerPasswordValidator(new SimpleResourceOwnerPasswordValidator())
                 .CreateWebHostBuider();
 
@@ -547,6 +556,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
             var webHostBuilder = new IdentityServerHostBuilder()
                 .AddClients(client)
                 .AddApiResources(new ApiResource("api1", "api1name"))
+                .AddApiScopes(new ApiScope("api1"))
                 .AddIdentityResources(new IdentityResources.OpenId(), new IdentityResources.Profile())
                 .UseServices((context, collection) =>
                     collection.AddScoped<IExtensionGrantValidator, ExtensionsGrantValidator>())
@@ -597,6 +607,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
             var webHostBuilder = new IdentityServerHostBuilder()
                 .AddClients(client)
                 .AddApiResources(new ApiResource("api1", "api1name"))
+                .AddApiScopes(new ApiScope("api1"))
                 .AddIdentityResources(new IdentityResources.OpenId(), new IdentityResources.Profile())
                 .UseResourceOwnerPasswordValidator(new SimpleResourceOwnerPasswordValidator())
                 .UseProfileService(new SimpleProfileService())

@@ -1,8 +1,10 @@
 ﻿using System.Threading.Tasks;
+using IdentityServer4.Models;
 using IdentityServer4.Server.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using IdentityResources = IdentityServer4.Server.Models.IdentityResources;
 
 namespace IdentityServer4.Server
 {
@@ -24,6 +26,10 @@ namespace IdentityServer4.Server
                 .AddTestUsers(TestUsers.GeTestUsers())
                 .AddInMemoryClients(Clients.GetClients)
                 .AddInMemoryApiResources(ApiResources.GetApiResources)
+                .AddInMemoryApiScopes(new []
+                {
+                    new ApiScope("api1"), 
+                })
                 .AddInMemoryIdentityResources(IdentityResources.GetIdentityResources);
         }
 

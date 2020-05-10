@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
-using System.Threading.Tasks;
 using IdentityServer4.Contrib.AspNetCore.Testing.Builder;
 using IdentityServer4.Services;
 using IdentityServer4.Testing.Infrastructure.Services;
@@ -55,7 +54,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
         }
 
         [Fact]
-        public async Task IdentityServerWebHostBuilder_UseLoggingBuilder_Serilog_Expect_Logger_And_Provider()
+        public void IdentityServerWebHostBuilder_UseLoggingBuilder_Serilog_Expect_Logger_And_Provider()
         {
             InitializeSerilog();
 

@@ -18,8 +18,10 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Builder
     public class IdentityServerHostBuilder
     {
         private readonly List<ApiResource> internalApiResources;
+        private readonly List<ApiScope> internalApiScopes;
         private readonly List<Client> internalClients;
         private readonly List<IdentityResource> internalIdentityResources;
+
         private Action<IApplicationBuilder> internalApplicationBuilder;
         private Action<WebHostBuilderContext, IConfigurationBuilder> internalConfigurationBuilder;
         private IWebHostBuilder internalHostBuilder;
@@ -34,22 +36,24 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Builder
 
         public IdentityServerHostBuilder()
         {
-            internalApiResources = new List<ApiResource>();
+            this.internalApiResources = new List<ApiResource>();
 
-            internalClients = new List<Client>();
+            this.internalApiScopes = new List<ApiScope>();
 
-            internalIdentityResources = new List<IdentityResource>();
+            this.internalClients = new List<Client>();
 
-            internalConfigurationBuilder = (context, configurationBuilder) => { };
+            this.internalIdentityResources = new List<IdentityResource>();
 
-            internalApplicationBuilder = app => { };
+            this.internalConfigurationBuilder = (context, configurationBuilder) => { };
 
-            internalServicesBuilder = (builder, services) => { };
+            this.internalApplicationBuilder = app => { };
 
-            internalLoggingBuilder = (context, loggingBuilder) =>
+            this.internalServicesBuilder = (builder, services) => { };
+
+            this.internalLoggingBuilder = (context, loggingBuilder) =>
                 loggingBuilder.AddProvider(new DefaultLoggerProvider());
 
-            internalIdentityServerOptionsBuilder = options =>
+            this.internalIdentityServerOptionsBuilder = options =>
             {
                 options.Events.RaiseInformationEvents = true;
                 options.Events.RaiseSuccessEvents = true;
@@ -63,7 +67,17 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Builder
             if (!apiResources?.Any() ?? true)
                 throw new ArgumentException("ApiResources must not be null or empty", nameof(apiResources));
 
-            internalApiResources.AddRange(apiResources);
+            this.internalApiResources.AddRange(apiResources);
+
+            return this;
+        }
+
+        public IdentityServerHostBuilder AddApiScopes(params ApiScope[] apiScopes)
+        {
+            if (!apiScopes?.Any() ?? true)
+                throw new ArgumentException("ApiScopes must not be null or empty", nameof(apiScopes));
+
+            this.internalApiScopes.AddRange(apiScopes);
 
             return this;
         }
@@ -73,7 +87,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Builder
             if (!clients?.Any() ?? true)
                 throw new ArgumentException("Clients must not be null or empty", nameof(clients));
 
-            internalClients.AddRange(clients);
+            this.internalClients.AddRange(clients);
 
             return this;
         }
@@ -83,14 +97,15 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Builder
             if (!identityResources?.Any() ?? true)
                 throw new ArgumentException("Clients must not be null or empty", nameof(identityResources));
 
-            internalIdentityResources.AddRange(identityResources);
+            this.internalIdentityResources.AddRange(identityResources);
 
             return this;
         }
 
         public IdentityServerHostBuilder UseApplicationBuilder(Action<IApplicationBuilder> applicationBuilder)
         {
-            internalApplicationBuilder = applicationBuilder;
+            this.internalApplicationBuilder =
+                applicationBuilder ?? throw new ArgumentNullException(nameof(applicationBuilder));
 
             return this;
         }
@@ -98,7 +113,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Builder
         public IdentityServerHostBuilder UseConfigurationBuilder(
             Action<WebHostBuilderContext, IConfigurationBuilder> configurationBuilder)
         {
-            internalConfigurationBuilder = configurationBuilder;
+            this.internalConfigurationBuilder = configurationBuilder;
 
             return this;
         }
@@ -106,7 +121,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Builder
         public IdentityServerHostBuilder UseServices(
             Action<WebHostBuilderContext, IServiceCollection> servicesBuilder)
         {
-            internalServicesBuilder = servicesBuilder;
+            this.internalServicesBuilder = servicesBuilder;
 
             return this;
         }
@@ -114,9 +129,9 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Builder
         public IdentityServerHostBuilder UseLoggingBuilder(
             Action<WebHostBuilderContext, ILoggingBuilder> loggingBuilder)
         {
-            internalLoggingBuilder = loggingBuilder ??
-                                     throw new ArgumentNullException(nameof(loggingBuilder),
-                                         "loggingBuilder must not be null");
+            this.internalLoggingBuilder = loggingBuilder ??
+                                          throw new ArgumentNullException(nameof(loggingBuilder),
+                                              "loggingBuilder must not be null");
 
             return this;
         }
@@ -127,7 +142,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Builder
                 throw new ArgumentException($"Type must be assignable to {nameof(IResourceOwnerPasswordValidator)}",
                     nameof(type));
 
-            internalResourceOwnerPasswordValidatorType = type;
+            this.internalResourceOwnerPasswordValidatorType = type;
 
             return this;
         }
@@ -136,7 +151,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Builder
             TResourceOwnerPasswordValidator resourceOwnerPasswordValidator)
             where TResourceOwnerPasswordValidator : class, IResourceOwnerPasswordValidator
         {
-            internalResourceOwnerPasswordValidator = resourceOwnerPasswordValidator;
+            this.internalResourceOwnerPasswordValidator = resourceOwnerPasswordValidator;
             return this;
         }
 
@@ -146,7 +161,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Builder
                 throw new ArgumentException($"Type must be assignable to {nameof(IProfileService)}",
                     nameof(type));
 
-            internalProfileServiceType = type;
+            this.internalProfileServiceType = type;
 
             return this;
         }
@@ -154,13 +169,13 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Builder
         public IdentityServerHostBuilder UseProfileService<TProfileService>(
             TProfileService profileService) where TProfileService : class, IProfileService
         {
-            internalProfileService = profileService;
+            this.internalProfileService = profileService;
             return this;
         }
 
         public IdentityServerHostBuilder UseWebHostBuilder(IWebHostBuilder webHostBuilder)
         {
-            internalHostBuilder = webHostBuilder ?? throw new ArgumentNullException(nameof(webHostBuilder));
+            this.internalHostBuilder = webHostBuilder ?? throw new ArgumentNullException(nameof(webHostBuilder));
 
             return this;
         }
@@ -168,69 +183,77 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Builder
         public IdentityServerHostBuilder UseIdentityServerOptionsBuilder(
             Action<IdentityServerOptions> identityServerOptionsBuilder)
         {
-            internalIdentityServerOptionsBuilder = identityServerOptionsBuilder ??
-                                                   throw new ArgumentNullException(
-                                                       nameof(identityServerOptionsBuilder),
-                                                       $"{nameof(identityServerOptionsBuilder)} must not be null!");
+            this.internalIdentityServerOptionsBuilder = identityServerOptionsBuilder ??
+                                                        throw new ArgumentNullException(
+                                                            nameof(identityServerOptionsBuilder),
+                                                            $"{nameof(identityServerOptionsBuilder)} must not be null!");
             return this;
         }
 
         public IdentityServerHostBuilder UseIdentityServerBuilder(
             Func<IServiceCollection, IIdentityServerBuilder> identityServerBuilder)
         {
-            internalIdentityServerBuilder = identityServerBuilder ??
-                                            throw new ArgumentNullException(nameof(identityServerBuilder),
-                                                $"{nameof(identityServerBuilder)} must not be null!");
+            this.internalIdentityServerBuilder = identityServerBuilder ??
+                                                 throw new ArgumentNullException(nameof(identityServerBuilder),
+                                                     $"{nameof(identityServerBuilder)} must not be null!");
 
             return this;
         }
 
         public IWebHostBuilder CreateWebHostBuider()
         {
-            if (internalHostBuilder != null) return internalHostBuilder;
+            if (this.internalHostBuilder != null) return this.internalHostBuilder;
+
+            this.Validate();
 
             return new WebHostBuilder()
                 .Configure(builder =>
                 {
                     builder.UseIdentityServer();
-                    internalApplicationBuilder(builder);
+                    this.internalApplicationBuilder(builder);
                 })
                 .ConfigureServices((context, services) =>
                 {
-                    internalServicesBuilder(context, services);
+                    this.internalServicesBuilder(context, services);
 
-                    ConfigureIdentityServerServices(services);
+                    this.ConfigureIdentityServerServices(services);
 
-                    var identityServerBuilder = GetIdentityServerBuilder(services);
+                    var identityServerBuilder = this.GetIdentityServerBuilder(services);
 
-                    ConfigureIdentityServerResources(identityServerBuilder);
+                    this.ConfigureIdentityServerResources(identityServerBuilder);
                 })
-                .ConfigureAppConfiguration(internalConfigurationBuilder);
+                .ConfigureAppConfiguration(this.internalConfigurationBuilder);
+        }
+
+        private void Validate()
+        {
+            if (this.internalApiResources.Any() && this.internalApiResources.Count != this.internalApiScopes.Count)
+                throw new InvalidOperationException(
+                    "IdentityServer4 version 4 requires API scopes for each API resource!");
         }
 
         private void ConfigureIdentityServerServices(IServiceCollection services)
         {
             services.AddSingleton<IEventSink>(new EventCaptureSink(new IdentityServerEventCaptureStore()));
 
-            if (internalResourceOwnerPasswordValidator != null)
-                services.AddSingleton(sp => internalResourceOwnerPasswordValidator);
+            if (this.internalResourceOwnerPasswordValidator != null)
+                services.AddSingleton(sp => this.internalResourceOwnerPasswordValidator);
 
-            if (internalResourceOwnerPasswordValidatorType != null)
+            if (this.internalResourceOwnerPasswordValidatorType != null)
                 services.AddSingleton(typeof(IResourceOwnerPasswordValidator),
-                    internalResourceOwnerPasswordValidatorType);
+                    this.internalResourceOwnerPasswordValidatorType);
 
-            if (internalProfileService != null) services.AddSingleton(sp => internalProfileService);
+            if (this.internalProfileService != null) services.AddSingleton(sp => this.internalProfileService);
 
-            if (internalProfileServiceType != null)
-                services.AddSingleton(typeof(IProfileService),
-                    internalProfileServiceType);
+            if (this.internalProfileServiceType != null)
+                services.AddSingleton(typeof(IProfileService), this.internalProfileServiceType);
         }
 
         private IIdentityServerBuilder GetIdentityServerBuilder(IServiceCollection services)
         {
-            if (internalIdentityServerBuilder != null) return internalIdentityServerBuilder(services);
+            if (this.internalIdentityServerBuilder != null) return this.internalIdentityServerBuilder(services);
 
-            return services.AddIdentityServer(internalIdentityServerOptionsBuilder)
+            return services.AddIdentityServer(this.internalIdentityServerOptionsBuilder)
                 .AddDefaultEndpoints()
                 .AddDefaultSecretParsers()
                 .AddDeveloperSigningCredential();
@@ -238,13 +261,16 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Builder
 
         private void ConfigureIdentityServerResources(IIdentityServerBuilder identityServerBuilder)
         {
-            if (internalClients.Any()) identityServerBuilder.AddInMemoryClients(internalClients);
+            if (this.internalClients.Any()) identityServerBuilder.AddInMemoryClients(this.internalClients);
 
-            if (internalApiResources.Any()) identityServerBuilder.AddInMemoryApiResources(internalApiResources);
+            if (this.internalApiResources.Any())
+                identityServerBuilder.AddInMemoryApiResources(this.internalApiResources);
 
-            if (!internalIdentityResources.Any()) return;
+            if (this.internalApiScopes.Any())
+                identityServerBuilder.AddInMemoryApiScopes(this.internalApiScopes);
 
-            identityServerBuilder.AddInMemoryIdentityResources(internalIdentityResources);
+            if (this.internalIdentityResources.Any())
+                identityServerBuilder.AddInMemoryIdentityResources(this.internalIdentityResources);
         }
     }
 }
