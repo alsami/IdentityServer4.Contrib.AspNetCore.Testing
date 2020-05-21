@@ -24,6 +24,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "misc", "misc", "{E2FB8DD0-B
 		run-tests.sh = run-tests.sh
 		.travis.yml = .travis.yml
 		README.md = README.md
+		global.json = global.json
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer4.Contrib.AspNetCore.Testing.Tests", "test\IdentityServer4.Contrib.AspNetCore.Testing.Tests\IdentityServer4.Contrib.AspNetCore.Testing.Tests.csproj", "{4EB5ED1E-87BA-4E7A-AE4E-CDAA8923483A}"

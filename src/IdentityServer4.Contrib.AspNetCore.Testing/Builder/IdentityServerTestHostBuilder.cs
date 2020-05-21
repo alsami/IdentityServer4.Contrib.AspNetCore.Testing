@@ -11,7 +11,7 @@ using Microsoft.Extensions.Logging;
 
 namespace IdentityServer4.Contrib.AspNetCore.Testing.Builder
 {
-    public sealed class IdentityServerTestHostBuilder : AbstractIdentityServerHostBuilder<IdentityServerTestHostBuilder>
+    public class IdentityServerTestHostBuilder : AbstractIdentityServerHostBuilder<IdentityServerTestHostBuilder>
     {
         private Action<HostBuilderContext, ILoggingBuilder> internalLoggingBuilder;
         private Action<HostBuilderContext, IConfigurationBuilder> internalConfigurationBuilder;
@@ -53,7 +53,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Builder
             return this;
         }
 
-        public IHostBuilder CreateHostBuilder()
+        public virtual IHostBuilder CreateHostBuilder()
         {
             this.Validate();
 

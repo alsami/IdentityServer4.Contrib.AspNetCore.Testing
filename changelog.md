@@ -1,4 +1,11 @@
-# [4.0.0-rc.0](https://www.nuget.org/packages/IdentityServer4.Contrib.AspNetCore.Testing/4.0.0) (2020-05-10)
+# [4.0.0-rc.1](https://www.nuget.org/packages/IdentityServer4.Contrib.AspNetCore.Testing/4.0.0-rc.1) (2020-05-21)
+
+## Features
+
+* Support for `IdentityServer4` version 4 preview 5
+* New class `IdentityServerTestHostCustomContainerBuilder` which extends `IdentityServerTestHostBuilder` and allows hooking in a third-party container while building the host. You can find an `Autofac` sample in the tests.
+
+# [4.0.0-rc.0](https://www.nuget.org/packages/IdentityServer4.Contrib.AspNetCore.Testing/4.0.0-rc.0) (2020-05-10)
 
 ## Features
 

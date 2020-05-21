@@ -181,7 +181,8 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Builder
         {
             if (this.internalIdentityServerBuilder != null) return this.internalIdentityServerBuilder(services);
 
-            return services.AddIdentityServer(this.internalIdentityServerOptionsBuilder)
+            return services
+                .AddIdentityServer(this.internalIdentityServerOptionsBuilder)
                 .AddDefaultEndpoints()
                 .AddDefaultSecretParsers()
                 .AddDeveloperSigningCredential();
@@ -201,7 +202,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Builder
                 identityServerBuilder.AddInMemoryIdentityResources(this.internalIdentityResources);
         }
 
-        protected void Validate()
+        protected virtual void Validate()
         {
             if (this.internalApiResources.Any() && this.internalApiResources.Count != this.internalApiScopes.Count)
                 throw new InvalidOperationException(
