@@ -12,7 +12,7 @@
       <PackageReleaseNotes>https://github.com/cleancodelabs/IdentityServer4.Contrib.AspNetCore.Testing/blob/master/changelog.md</PackageReleaseNotes>
       <RepositoryType>git</RepositoryType>
       <RepositoryUrl>git://github.com/cleancodelabs/IdentityServer4.Contrib.AspNetCore.Testing</RepositoryUrl>
-      <Version>4.0.0-rc.1</Version>
+      <Version>4.0.0-rc.2</Version>
       <FileVersion>4.0.0</FileVersion>
       <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>

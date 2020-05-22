@@ -202,7 +202,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Builder
                 identityServerBuilder.AddInMemoryIdentityResources(this.internalIdentityResources);
         }
 
-        protected virtual void Validate()
+        protected void Validate()
         {
             if (this.internalApiResources.Any() && this.internalApiResources.Count != this.internalApiScopes.Count)
                 throw new InvalidOperationException(

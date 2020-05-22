@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using IdentityServer4.Contrib.AspNetCore.Testing.Builder;
 using IdentityServer4.Contrib.AspNetCore.Testing.Configuration;
@@ -30,12 +29,11 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
                 AccessTokenLifetime = 7200
             };
 
-            var hostBuilder = new IdentityServerTestHostCustomContainerBuilder<ContainerBuilder>()
-                .UseServiceProviderFactory(new AutofacServiceProviderFactory(), ContainerBuilderConfiguration.ConfigureContainer)
+            var hostBuilder = new IdentityServerTestHostBuilder()
                 .AddClients(client)
                 .AddApiResources(new ApiResource("api1", "api1name"))
                 .AddApiScopes(new ApiScope("api1"))
-                .CreateHostBuilder();
+                .CreateHostBuilder(new AutofacServiceProviderFactory(), ContainerBuilderConfiguration.ConfigureContainer);
 
             var identityServerProxy = new IdentityServerHostProxy(hostBuilder);
 

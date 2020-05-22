@@ -7,11 +7,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+
 // ReSharper disable UnusedMember.Global
 
 namespace IdentityServer4.Contrib.AspNetCore.Testing.Builder
 {
-    public class IdentityServerTestHostBuilder : AbstractIdentityServerHostBuilder<IdentityServerTestHostBuilder>
+    public sealed class IdentityServerTestHostBuilder : AbstractIdentityServerHostBuilder<IdentityServerTestHostBuilder>
     {
         private Action<HostBuilderContext, ILoggingBuilder> internalLoggingBuilder;
         private Action<HostBuilderContext, IConfigurationBuilder> internalConfigurationBuilder;
@@ -53,10 +54,28 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Builder
             return this;
         }
 
-        public virtual IHostBuilder CreateHostBuilder()
+        public IHostBuilder CreateHostBuilder()
         {
             this.Validate();
 
+            return this.CreateHostBuilderInternal();
+        }
+
+        public IHostBuilder CreateHostBuilder<TContainer>(
+            IServiceProviderFactory<TContainer> serviceProviderFactory, Action<TContainer> containerSetupAction)
+        {
+            if (serviceProviderFactory is null) throw new ArgumentNullException(nameof(serviceProviderFactory));
+            if (containerSetupAction is null) throw new ArgumentNullException(nameof(containerSetupAction));
+
+            this.Validate();
+
+            return this.CreateHostBuilderInternal()
+                .UseServiceProviderFactory(serviceProviderFactory)
+                .ConfigureContainer(containerSetupAction);
+        }
+
+        private IHostBuilder CreateHostBuilderInternal()
+        {
             return new HostBuilder()
                 .ConfigureLogging(this.internalLoggingBuilder)
                 .ConfigureWebHost(webHostBuilder =>

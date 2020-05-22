@@ -1,3 +1,9 @@
+# [4.0.0-rc.2](https://www.nuget.org/packages/IdentityServer4.Contrib.AspNetCore.Testing/4.0.0-rc.1) (2020-05-22)
+
+## Features
+
+* Remove class `IdentityServerTestHostCustomContainerBuilder` and add overload to build a host with custom service provider in `IdentityServerTestHostBuilder` class
+
 # [4.0.0-rc.1](https://www.nuget.org/packages/IdentityServer4.Contrib.AspNetCore.Testing/4.0.0-rc.1) (2020-05-21)
 
 ## Features

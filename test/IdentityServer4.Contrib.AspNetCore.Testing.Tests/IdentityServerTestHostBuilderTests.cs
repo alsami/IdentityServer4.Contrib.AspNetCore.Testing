@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
-using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using IdentityServer4.Contrib.AspNetCore.Testing.Builder;
 using IdentityServer4.Contrib.AspNetCore.Testing.Configuration;
@@ -20,13 +19,12 @@ using Xunit;
 
 namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
 {
-    public class IdentityServerTestHostCustomContainerBuilder
+    public class IdentityServerTestHostBuilderTests
     {
         [Fact]
         public void CreateHostBuilder_UseProfileServiceTypedButOfWrongType_ThrowsArgumentException()
         {
-            Assert.Throws<ArgumentException>(() => new IdentityServerTestHostCustomContainerBuilder<ContainerBuilder>()
-                .UseProfileService(typeof(ExtensionsGrantValidator)));
+            Assert.Throws<ArgumentException>(() => new IdentityServerTestHostBuilder().UseProfileService(typeof(ExtensionsGrantValidator)));
         }
 
         [Fact]
@@ -34,13 +32,12 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
         {
             var (client, apiResource, apiScope) = CreateTestData();
 
-            var builder = new IdentityServerTestHostCustomContainerBuilder<ContainerBuilder>()
-                .UseServiceProviderFactory(new AutofacServiceProviderFactory(), ContainerBuilderConfiguration.ConfigureContainer)
+            var builder = new IdentityServerTestHostBuilder()
                 .UseProfileService(typeof(SimpleProfileService))
                 .AddClients(client)
                 .AddApiResources(apiResource)
                 .AddApiScopes(apiScope)
-                .CreateHostBuilder();
+                .CreateHostBuilder(new AutofacServiceProviderFactory(), ContainerBuilderConfiguration.ConfigureContainer);
 
             var host = builder.Start();
             host.Services.GetRequiredService<IProfileService>();
@@ -49,7 +46,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
         [Fact]
         public void CreateHostBuilder_UseResourceOwnerPasswordValidatorTypedButOfWrongType_ThrowsArgumentException()
         {
-            Assert.Throws<ArgumentException>(() => new IdentityServerTestHostCustomContainerBuilder<ContainerBuilder>()
+            Assert.Throws<ArgumentException>(() => new IdentityServerTestHostBuilder()
                 .UseResourceOwnerPasswordValidator(typeof(ExtensionsGrantValidator)));
         }
 
@@ -58,13 +55,12 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
         {
             var (client, apiResource, apiScope) = CreateTestData();
 
-            var builder = new IdentityServerTestHostCustomContainerBuilder<ContainerBuilder>()
-                .UseServiceProviderFactory(new AutofacServiceProviderFactory(), ContainerBuilderConfiguration.ConfigureContainer)
+            var builder = new IdentityServerTestHostBuilder()
                 .UseResourceOwnerPasswordValidator(typeof(SimpleResourceOwnerPasswordValidator))
                 .AddClients(client)
                 .AddApiResources(apiResource)
                 .AddApiScopes(apiScope)
-                .CreateHostBuilder();
+                .CreateHostBuilder(new AutofacServiceProviderFactory(), ContainerBuilderConfiguration.ConfigureContainer);
 
             var host = builder.Start();
             host.Services.GetRequiredService<IResourceOwnerPasswordValidator>();
@@ -78,14 +74,13 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
 
             var (client, apiResource, apiScope) = CreateTestData();
 
-            var builder = new IdentityServerTestHostCustomContainerBuilder<ContainerBuilder>()
-                .UseServiceProviderFactory(new AutofacServiceProviderFactory(), ContainerBuilderConfiguration.ConfigureContainer)
+            var builder = new IdentityServerTestHostBuilder()
                 .UseLoggingBuilder((context, loggingBuilder) => loggingBuilder.AddSerilog())
                 .UseResourceOwnerPasswordValidator(typeof(ResourceOwnerValidatorWithDependencies))
                 .AddClients(client)
                 .AddApiResources(apiResource)
                 .AddApiScopes(apiScope)
-                .CreateHostBuilder();
+                .CreateHostBuilder(new AutofacServiceProviderFactory(), ContainerBuilderConfiguration.ConfigureContainer);
 
             var host = builder.Start();
             host.Services.GetRequiredService<IResourceOwnerPasswordValidator>();
@@ -96,12 +91,11 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
         {
             var (client, apiResource, apiScope) = CreateTestData();
 
-            var builder = new IdentityServerTestHostCustomContainerBuilder<ContainerBuilder>()
-                .UseServiceProviderFactory(new AutofacServiceProviderFactory(), ContainerBuilderConfiguration.ConfigureContainer)
+            var builder = new IdentityServerTestHostBuilder()
                 .AddClients(client)
                 .AddApiResources(apiResource)
                 .AddApiScopes(apiScope)
-                .CreateHostBuilder();
+                .CreateHostBuilder(new AutofacServiceProviderFactory(), ContainerBuilderConfiguration.ConfigureContainer);
 
             var host = builder.Start();
 
