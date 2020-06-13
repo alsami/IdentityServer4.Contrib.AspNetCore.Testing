@@ -3,7 +3,7 @@ dist: bionic
 language: csharp
 solution: IdentityServer4.Contrib.Caching
 mono: none
-dotnet: 3.1.300
+dotnet: 3.1.301
 stages:
   - build
   - test
