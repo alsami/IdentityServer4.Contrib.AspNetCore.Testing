@@ -254,4 +254,4 @@ var tokenResponse = await proxy.GetResourceOwnerPasswordAccessTokenAsync(
 Assert.False(tokenResponse.IsError, tokenResponse.Error ?? tokenResponse.ErrorDescription);
 ```
 
-For more samples and usages, please also have a look at the [tests](https://github.com/cleancodelabs/IdentityServer4.Contrib.AspNetCore.Testing/tree/master/test).
+For more samples and usages, please also have a look at the [tests](https://github.com/alsami/IdentityServer4.Contrib.AspNetCore.Testing/tree/master/test).

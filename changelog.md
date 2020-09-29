@@ -126,7 +126,7 @@ This is the inital release of the package. This release contains two mandatory c
 * `IdentityServerWebHostBuilder`
 * `IdentityServerProxy`
 
-### [IdentityServerWebHostBuilder](https://github.com/cleancodelabs/IdentityServer4.Contrib.AspNetCore.Testing/blob/master/src/IdentityServer4.Contrib.AspNetCore.Testing/Builder/IdentityServerWebHostBuilder.cs)
+### [IdentityServerWebHostBuilder](https://github.com/alsami/IdentityServer4.Contrib.AspNetCore.Testing/blob/master/src/IdentityServer4.Contrib.AspNetCore.Testing/Builder/IdentityServerWebHostBuilder.cs)
 
 The `IdentityServerWebHostBuilder` class is a fluent-builder that contains the following functions
 
@@ -152,7 +152,7 @@ The `IdentityServerWebHostBuilder` class is a fluent-builder that contains the f
 
 When calling `CreateWebHostBuilder()` a `WebHostBuilder` is created based on the configuration. With that builder we create the `IdentityServerProxy`.
 
-### [IdentityServerProxy](https://github.com/cleancodelabs/IdentityServer4.Contrib.AspNetCore.Testing/blob/master/src/IdentityServer4.Contrib.AspNetCore.Testing/Services/IdentityServerProxy.cs)
+### [IdentityServerProxy](https://github.com/alsami/IdentityServer4.Contrib.AspNetCore.Testing/blob/master/src/IdentityServer4.Contrib.AspNetCore.Testing/Services/IdentityServerProxy.cs)
 
 The `IndentityServerProxy`, as the name says, serves as a proxy for `IdentityServer4` and takes a `WebHostBuilder` as constructor parameter, then creates a `TestServer` from `Microsoft.AspNetCore.Mvc.Testing`
 
