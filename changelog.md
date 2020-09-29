@@ -1,3 +1,9 @@
+# [4.1.0](https://www.nuget.org/packages/IdentityServer4.Contrib.AspNetCore.Testing/4.1.0) (2020-09-29)
+
+## Features
+
+* Support for `IdentityServer4` version 4.1
+
 # [4.0.0](https://www.nuget.org/packages/IdentityServer4.Contrib.AspNetCore.Testing/4.0.0) (2020-06-20)
 
 ## Features
