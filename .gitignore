@@ -331,3 +331,6 @@ ASALocalRun/
 
 # JetBrains Rider
 .idea/
+
+# CodeCoverage
+coverage/
