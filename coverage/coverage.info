@@ -1,0 +1,932 @@
+SF:/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/test/IdentityServer4.Testing.Infrastructure/Validators/ExtensionsGrantValidator.cs
+FN:13,System.Threading.Tasks.Task IdentityServer4.Testing.Infrastructure.Validators.ExtensionsGrantValidator::ValidateAsync(IdentityServer4.Validation.ExtensionGrantValidationContext)
+FNDA:1,System.Threading.Tasks.Task IdentityServer4.Testing.Infrastructure.Validators.ExtensionsGrantValidator::ValidateAsync(IdentityServer4.Validation.ExtensionGrantValidationContext)
+DA:14,1
+DA:16,0
+DA:17,0
+DA:18,0
+DA:21,1
+DA:22,1
+DA:23,1
+DA:24,1
+DA:26,1
+BRDA:14,31,0,1
+BRDA:14,31,1,0
+BRDA:14,64,0,0
+BRDA:14,64,1,1
+FN:28,System.String IdentityServer4.Testing.Infrastructure.Validators.ExtensionsGrantValidator::get_GrantType()
+FNDA:3,System.String IdentityServer4.Testing.Infrastructure.Validators.ExtensionsGrantValidator::get_GrantType()
+DA:29,3
+LF:10
+LH:7
+BRF:4
+BRH:2
+FNF:2
+FNH:2
+end_of_record
+SF:/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/test/IdentityServer4.Testing.Infrastructure/Validators/ResourceOwnerValidatorWithDependencies.cs
+FN:9,System.Void IdentityServer4.Testing.Infrastructure.Validators.ResourceOwnerValidatorWithDependencies::.ctor(Microsoft.Extensions.Logging.ILogger`1<IdentityServer4.Testing.Infrastructure.Validators.ResourceOwnerValidatorWithDependencies>)
+FNDA:2,System.Void IdentityServer4.Testing.Infrastructure.Validators.ResourceOwnerValidatorWithDependencies::.ctor(Microsoft.Extensions.Logging.ILogger`1<IdentityServer4.Testing.Infrastructure.Validators.ResourceOwnerValidatorWithDependencies>)
+DA:10,2
+DA:12,2
+DA:13,2
+LF:3
+LH:3
+BRF:0
+BRH:0
+FNF:1
+FNH:1
+end_of_record
+SF:/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/test/IdentityServer4.Testing.Infrastructure/Validators/SimpleResourceOwnerPasswordValidator.cs
+FN:13,System.Threading.Tasks.Task IdentityServer4.Testing.Infrastructure.Validators.SimpleResourceOwnerPasswordValidator::ValidateAsync(IdentityServer4.Validation.ResourceOwnerPasswordValidationContext)
+FNDA:7,System.Threading.Tasks.Task IdentityServer4.Testing.Infrastructure.Validators.SimpleResourceOwnerPasswordValidator::ValidateAsync(IdentityServer4.Validation.ResourceOwnerPasswordValidationContext)
+DA:14,7
+DA:16,0
+DA:17,0
+DA:18,0
+DA:21,7
+DA:22,7
+DA:23,7
+DA:24,7
+DA:25,7
+DA:27,7
+BRDA:14,16,0,7
+BRDA:14,16,1,0
+BRDA:14,34,0,0
+BRDA:14,34,1,7
+LF:10
+LH:7
+BRF:4
+BRH:2
+FNF:1
+FNH:1
+end_of_record
+SF:/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/test/IdentityServer4.Testing.Infrastructure/Services/SimpleProfileService.cs
+FN:15,System.Threading.Tasks.Task IdentityServer4.Testing.Infrastructure.Services.SimpleProfileService::GetProfileDataAsync(IdentityServer4.Models.ProfileDataRequestContext)
+FNDA:4,System.Threading.Tasks.Task IdentityServer4.Testing.Infrastructure.Services.SimpleProfileService::GetProfileDataAsync(IdentityServer4.Models.ProfileDataRequestContext)
+DA:16,4
+DA:18,2
+DA:19,2
+DA:20,2
+DA:21,2
+DA:23,2
+FN:27,System.Threading.Tasks.Task IdentityServer4.Testing.Infrastructure.Services.SimpleProfileService::IsActiveAsync(IdentityServer4.Models.IsActiveContext)
+FNDA:3,System.Threading.Tasks.Task IdentityServer4.Testing.Infrastructure.Services.SimpleProfileService::IsActiveAsync(IdentityServer4.Models.IsActiveContext)
+DA:28,3
+DA:29,3
+LF:8
+LH:8
+BRF:0
+BRH:0
+FNF:2
+FNH:2
+end_of_record
+SF:/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/src/IdentityServer4.Contrib.AspNetCore.Testing/Sinks/EventCaptureSink.cs
+FN:18,System.Threading.Tasks.Task IdentityServer4.Contrib.AspNetCore.Testing.Sinks.EventCaptureSink::PersistAsync(IdentityServer4.Events.Event)
+FNDA:32,System.Threading.Tasks.Task IdentityServer4.Contrib.AspNetCore.Testing.Sinks.EventCaptureSink::PersistAsync(IdentityServer4.Events.Event)
+DA:19,32
+DA:20,32
+FN:11,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Sinks.EventCaptureSink::.ctor(IdentityServer4.Contrib.AspNetCore.Testing.Misc.IdentityServerEventCaptureStore)
+FNDA:26,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Sinks.EventCaptureSink::.ctor(IdentityServer4.Contrib.AspNetCore.Testing.Misc.IdentityServerEventCaptureStore)
+DA:12,26
+DA:14,26
+DA:15,26
+LF:5
+LH:5
+BRF:0
+BRH:0
+FNF:2
+FNH:2
+end_of_record
+SF:/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/src/IdentityServer4.Contrib.AspNetCore.Testing/Services/AbstractIdentityServerProxy.cs
+FN:151,System.Threading.Tasks.Task`1<IdentityModel.Client.TokenResponse> IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy::ExecuteResourceOwnerAccessTokenRequestAsync(System.Net.Http.HttpMessageInvoker,IdentityModel.Client.DiscoveryDocumentResponse,IdentityServer4.Contrib.AspNetCore.Testing.Configuration.ClientConfiguration,IdentityServer4.Contrib.AspNetCore.Testing.Configuration.UserLoginConfiguration,System.Collections.Generic.IDictionary`2<System.String,System.String>,System.Collections.Generic.IEnumerable`1<System.String>)
+FNDA:10,System.Threading.Tasks.Task`1<IdentityModel.Client.TokenResponse> IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy::ExecuteResourceOwnerAccessTokenRequestAsync(System.Net.Http.HttpMessageInvoker,IdentityModel.Client.DiscoveryDocumentResponse,IdentityServer4.Contrib.AspNetCore.Testing.Configuration.ClientConfiguration,IdentityServer4.Contrib.AspNetCore.Testing.Configuration.UserLoginConfiguration,System.Collections.Generic.IDictionary`2<System.String,System.String>,System.Collections.Generic.IEnumerable`1<System.String>)
+DA:152,10
+DA:153,10
+DA:154,10
+DA:155,10
+DA:156,10
+DA:157,10
+DA:158,10
+DA:159,10
+DA:160,10
+DA:161,10
+DA:162,10
+FN:167,System.Threading.Tasks.Task`1<IdentityModel.Client.TokenResponse> IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy::ExecuteRefreshAccessTokenRequestAsync(System.Net.Http.HttpMessageInvoker,IdentityModel.Client.DiscoveryDocumentResponse,IdentityServer4.Contrib.AspNetCore.Testing.Configuration.ClientConfiguration,System.String,System.Collections.Generic.IDictionary`2<System.String,System.String>,System.Collections.Generic.IEnumerable`1<System.String>)
+FNDA:2,System.Threading.Tasks.Task`1<IdentityModel.Client.TokenResponse> IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy::ExecuteRefreshAccessTokenRequestAsync(System.Net.Http.HttpMessageInvoker,IdentityModel.Client.DiscoveryDocumentResponse,IdentityServer4.Contrib.AspNetCore.Testing.Configuration.ClientConfiguration,System.String,System.Collections.Generic.IDictionary`2<System.String,System.String>,System.Collections.Generic.IEnumerable`1<System.String>)
+DA:168,2
+DA:169,2
+DA:170,2
+DA:171,2
+DA:172,2
+DA:173,2
+DA:174,2
+DA:175,2
+DA:176,2
+DA:177,2
+FN:181,System.Threading.Tasks.Task`1<IdentityModel.Client.TokenResponse> IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy::ExecuteClientAccessTokenRequestAsync(System.Net.Http.HttpMessageInvoker,IdentityModel.Client.DiscoveryDocumentResponse,IdentityServer4.Contrib.AspNetCore.Testing.Configuration.ClientConfiguration,System.Collections.Generic.IDictionary`2<System.String,System.String>,System.Collections.Generic.IEnumerable`1<System.String>)
+FNDA:3,System.Threading.Tasks.Task`1<IdentityModel.Client.TokenResponse> IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy::ExecuteClientAccessTokenRequestAsync(System.Net.Http.HttpMessageInvoker,IdentityModel.Client.DiscoveryDocumentResponse,IdentityServer4.Contrib.AspNetCore.Testing.Configuration.ClientConfiguration,System.Collections.Generic.IDictionary`2<System.String,System.String>,System.Collections.Generic.IEnumerable`1<System.String>)
+DA:182,3
+DA:183,3
+DA:184,3
+DA:185,3
+DA:186,3
+DA:187,3
+DA:188,3
+DA:189,3
+DA:190,3
+FN:193,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy::EnsureDiscoverResponse(IdentityModel.Client.ProtocolResponse)
+FNDA:34,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy::EnsureDiscoverResponse(IdentityModel.Client.ProtocolResponse)
+DA:194,34
+DA:196,0
+DA:197,0
+BRDA:194,6,0,17
+BRDA:194,6,1,0
+FN:18,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy/<GetDiscoverResponseAsync>d__2::MoveNext()
+FNDA:19,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy/<GetDiscoverResponseAsync>d__2::MoveNext()
+DA:19,19
+DA:20,19
+DA:21,19
+DA:22,19
+FN:26,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy/<GetTokenAsync>d__3::MoveNext()
+FNDA:1,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy/<GetTokenAsync>d__3::MoveNext()
+DA:27,1
+DA:29,1
+DA:31,1
+DA:32,1
+DA:34,1
+DA:35,1
+DA:36,1
+DA:37,1
+DA:38,1
+DA:39,1
+DA:40,1
+DA:41,1
+DA:42,1
+FN:46,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy/<GetClientAccessTokenAsync>d__4::MoveNext()
+FNDA:2,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy/<GetClientAccessTokenAsync>d__4::MoveNext()
+DA:47,2
+DA:49,2
+DA:51,2
+DA:52,2
+DA:54,2
+DA:55,2
+DA:56,2
+FN:60,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy/<GetClientAccessTokenAsync>d__5::MoveNext()
+FNDA:1,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy/<GetClientAccessTokenAsync>d__5::MoveNext()
+DA:61,1
+DA:63,1
+DA:65,1
+DA:67,1
+DA:68,1
+DA:70,1
+DA:71,1
+DA:72,1
+BRDA:65,132,0,0
+BRDA:65,132,1,1
+FN:77,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy/<GetResourceOwnerPasswordAccessTokenAsync>d__6::MoveNext()
+FNDA:8,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy/<GetResourceOwnerPasswordAccessTokenAsync>d__6::MoveNext()
+DA:78,8
+DA:80,8
+DA:82,8
+DA:83,8
+DA:85,8
+DA:86,8
+DA:87,8
+FN:92,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy/<GetResourceOwnerPasswordAccessTokenAsync>d__7::MoveNext()
+FNDA:2,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy/<GetResourceOwnerPasswordAccessTokenAsync>d__7::MoveNext()
+DA:93,2
+DA:95,2
+DA:97,2
+DA:98,2
+DA:100,2
+DA:101,2
+DA:102,2
+FN:106,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy/<GetRefreshTokenAsync>d__8::MoveNext()
+FNDA:1,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy/<GetRefreshTokenAsync>d__8::MoveNext()
+DA:107,1
+DA:109,1
+DA:111,1
+DA:112,1
+DA:114,1
+DA:115,1
+DA:116,1
+FN:120,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy/<GetRefreshTokenAsync>d__9::MoveNext()
+FNDA:1,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy/<GetRefreshTokenAsync>d__9::MoveNext()
+DA:121,1
+DA:123,1
+DA:125,1
+DA:126,1
+DA:128,1
+DA:129,1
+DA:130,1
+FN:133,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy/<GetUserInfoAsync>d__10::MoveNext()
+FNDA:1,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy/<GetUserInfoAsync>d__10::MoveNext()
+DA:134,1
+DA:136,1
+DA:138,1
+DA:139,1
+DA:141,1
+DA:142,1
+DA:143,1
+DA:144,1
+DA:145,1
+DA:146,1
+LF:103
+LH:101
+BRF:4
+BRH:2
+FNF:13
+FNH:13
+end_of_record
+SF:/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/src/IdentityServer4.Contrib.AspNetCore.Testing/Services/IdentityServerHostProxy.cs
+FN:18,Microsoft.AspNetCore.TestHost.TestServer IdentityServer4.Contrib.AspNetCore.Testing.Services.IdentityServerHostProxy::get_IdentityServer()
+FNDA:2,Microsoft.AspNetCore.TestHost.TestServer IdentityServer4.Contrib.AspNetCore.Testing.Services.IdentityServerHostProxy::get_IdentityServer()
+DA:19,2
+FN:11,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.IdentityServerHostProxy::.ctor(Microsoft.Extensions.Hosting.IHostBuilder)
+FNDA:1,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.IdentityServerHostProxy::.ctor(Microsoft.Extensions.Hosting.IHostBuilder)
+DA:12,1
+DA:14,0
+DA:16,1
+DA:17,1
+BRDA:14,7,0,0
+BRDA:14,7,1,1
+FN:22,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.IdentityServerHostProxy/<DisposeAsync>d__4::MoveNext()
+FNDA:0,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.IdentityServerHostProxy/<DisposeAsync>d__4::MoveNext()
+DA:23,0
+DA:25,0
+DA:26,0
+BRDA:23,23,0,0
+BRDA:23,23,1,0
+LF:8
+LH:4
+BRF:4
+BRH:1
+FNF:3
+FNH:2
+end_of_record
+SF:/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/src/IdentityServer4.Contrib.AspNetCore.Testing/Services/IdentityServerProxy.cs
+FN:10,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.IdentityServerProxy::.ctor(Microsoft.AspNetCore.Hosting.IWebHostBuilder)
+FNDA:0,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.IdentityServerProxy::.ctor(Microsoft.AspNetCore.Hosting.IWebHostBuilder)
+DA:11,0
+DA:13,0
+FN:14,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.IdentityServerProxy::.ctor(Microsoft.AspNetCore.TestHost.TestServer)
+FNDA:0,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.IdentityServerProxy::.ctor(Microsoft.AspNetCore.TestHost.TestServer)
+DA:15,0
+DA:17,0
+LF:4
+LH:0
+BRF:0
+BRH:0
+FNF:2
+FNH:0
+end_of_record
+SF:/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/src/IdentityServer4.Contrib.AspNetCore.Testing/Services/IdentityServerWebHostProxy.cs
+FN:23,Microsoft.AspNetCore.TestHost.TestServer IdentityServer4.Contrib.AspNetCore.Testing.Services.IdentityServerWebHostProxy::get_IdentityServer()
+FNDA:54,Microsoft.AspNetCore.TestHost.TestServer IdentityServer4.Contrib.AspNetCore.Testing.Services.IdentityServerWebHostProxy::get_IdentityServer()
+DA:24,54
+FN:8,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.IdentityServerWebHostProxy::.ctor(Microsoft.AspNetCore.Hosting.IWebHostBuilder)
+FNDA:15,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.IdentityServerWebHostProxy::.ctor(Microsoft.AspNetCore.Hosting.IWebHostBuilder)
+DA:9,15
+DA:11,15
+DA:12,0
+DA:13,0
+DA:15,15
+DA:16,15
+BRDA:11,7,0,0
+BRDA:11,7,1,15
+FN:18,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.IdentityServerWebHostProxy::.ctor(Microsoft.AspNetCore.TestHost.TestServer)
+FNDA:0,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.IdentityServerWebHostProxy::.ctor(Microsoft.AspNetCore.TestHost.TestServer)
+DA:19,0
+DA:21,0
+DA:22,0
+LF:10
+LH:5
+BRF:2
+BRH:1
+FNF:3
+FNH:2
+end_of_record
+SF:/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/src/IdentityServer4.Contrib.AspNetCore.Testing/Misc/DefaultLoggerProvider.cs
+FN:15,Microsoft.Extensions.Logging.ILogger IdentityServer4.Contrib.AspNetCore.Testing.Misc.DefaultLoggerProvider::CreateLogger(System.String)
+FNDA:872,Microsoft.Extensions.Logging.ILogger IdentityServer4.Contrib.AspNetCore.Testing.Misc.DefaultLoggerProvider::CreateLogger(System.String)
+DA:16,872
+FN:20,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Misc.DefaultLoggerProvider::Dispose()
+FNDA:0,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Misc.DefaultLoggerProvider::Dispose()
+DA:21,0
+DA:22,0
+FN:8,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Misc.DefaultLoggerProvider::.ctor(Microsoft.Extensions.Logging.ILoggerFactory)
+FNDA:23,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Misc.DefaultLoggerProvider::.ctor(Microsoft.Extensions.Logging.ILoggerFactory)
+DA:9,23
+DA:11,23
+DA:12,23
+BRDA:11,9,0,23
+BRDA:11,9,1,23
+LF:6
+LH:4
+BRF:2
+BRH:2
+FNF:3
+FNH:2
+end_of_record
+SF:/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/src/IdentityServer4.Contrib.AspNetCore.Testing/Misc/IdentityServerEventCaptureStore.cs
+FN:18,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Misc.IdentityServerEventCaptureStore::AddEvent(IdentityServer4.Events.Event)
+FNDA:0,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Misc.IdentityServerEventCaptureStore::AddEvent(IdentityServer4.Events.Event)
+DA:19,0
+DA:21,32
+DA:22,32
+BRDA:19,1,0,0
+BRDA:19,1,1,32
+FN:25,IdentityServer4.Events.Event IdentityServer4.Contrib.AspNetCore.Testing.Misc.IdentityServerEventCaptureStore::GetById(System.Int32)
+FNDA:0,IdentityServer4.Events.Event IdentityServer4.Contrib.AspNetCore.Testing.Misc.IdentityServerEventCaptureStore::GetById(System.Int32)
+DA:26,0
+FN:30,System.Collections.Generic.IEnumerable`1<IdentityServer4.Events.Event> IdentityServer4.Contrib.AspNetCore.Testing.Misc.IdentityServerEventCaptureStore::GetEvents()
+FNDA:0,System.Collections.Generic.IEnumerable`1<IdentityServer4.Events.Event> IdentityServer4.Contrib.AspNetCore.Testing.Misc.IdentityServerEventCaptureStore::GetEvents()
+DA:31,0
+FN:35,System.Boolean IdentityServer4.Contrib.AspNetCore.Testing.Misc.IdentityServerEventCaptureStore::ContainsEventType(IdentityServer4.Events.EventTypes)
+FNDA:0,System.Boolean IdentityServer4.Contrib.AspNetCore.Testing.Misc.IdentityServerEventCaptureStore::ContainsEventType(IdentityServer4.Events.EventTypes)
+DA:36,0
+DA:37,0
+FN:41,System.Boolean IdentityServer4.Contrib.AspNetCore.Testing.Misc.IdentityServerEventCaptureStore::ContainsMessage(System.String,System.StringComparison)
+FNDA:0,System.Boolean IdentityServer4.Contrib.AspNetCore.Testing.Misc.IdentityServerEventCaptureStore::ContainsMessage(System.String,System.StringComparison)
+DA:42,0
+DA:44,0
+DA:45,0
+BRDA:42,31,0,0
+BRDA:42,31,1,0
+FN:50,System.Boolean IdentityServer4.Contrib.AspNetCore.Testing.Misc.IdentityServerEventCaptureStore::ContainsMessageStartsWith(System.String,System.StringComparison)
+FNDA:0,System.Boolean IdentityServer4.Contrib.AspNetCore.Testing.Misc.IdentityServerEventCaptureStore::ContainsMessageStartsWith(System.String,System.StringComparison)
+DA:51,0
+DA:53,0
+DA:54,0
+BRDA:51,31,0,0
+BRDA:51,31,1,0
+FN:11,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Misc.IdentityServerEventCaptureStore::.ctor()
+FNDA:26,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Misc.IdentityServerEventCaptureStore::.ctor()
+DA:12,26
+DA:14,26
+DA:15,26
+LF:16
+LH:5
+BRF:6
+BRH:1
+FNF:7
+FNH:2
+end_of_record
+SF:/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/src/IdentityServer4.Contrib.AspNetCore.Testing/Configuration/ClientConfiguration.cs
+FN:10,System.String IdentityServer4.Contrib.AspNetCore.Testing.Configuration.ClientConfiguration::get_Id()
+FNDA:34,System.String IdentityServer4.Contrib.AspNetCore.Testing.Configuration.ClientConfiguration::get_Id()
+DA:11,34
+FN:12,System.String IdentityServer4.Contrib.AspNetCore.Testing.Configuration.ClientConfiguration::get_Secret()
+FNDA:34,System.String IdentityServer4.Contrib.AspNetCore.Testing.Configuration.ClientConfiguration::get_Secret()
+DA:13,34
+FN:4,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Configuration.ClientConfiguration::.ctor(System.String,System.String)
+FNDA:19,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Configuration.ClientConfiguration::.ctor(System.String,System.String)
+DA:5,19
+DA:7,19
+DA:8,19
+DA:9,19
+LF:6
+LH:6
+BRF:0
+BRH:0
+FNF:3
+FNH:3
+end_of_record
+SF:/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/src/IdentityServer4.Contrib.AspNetCore.Testing/Configuration/UserLoginConfiguration.cs
+FN:10,System.String IdentityServer4.Contrib.AspNetCore.Testing.Configuration.UserLoginConfiguration::get_Username()
+FNDA:10,System.String IdentityServer4.Contrib.AspNetCore.Testing.Configuration.UserLoginConfiguration::get_Username()
+DA:11,10
+FN:12,System.String IdentityServer4.Contrib.AspNetCore.Testing.Configuration.UserLoginConfiguration::get_Password()
+FNDA:10,System.String IdentityServer4.Contrib.AspNetCore.Testing.Configuration.UserLoginConfiguration::get_Password()
+DA:13,10
+FN:4,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Configuration.UserLoginConfiguration::.ctor(System.String,System.String)
+FNDA:10,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Configuration.UserLoginConfiguration::.ctor(System.String,System.String)
+DA:5,10
+DA:7,10
+DA:8,10
+DA:9,10
+LF:6
+LH:6
+BRF:0
+BRH:0
+FNF:3
+FNH:3
+end_of_record
+SF:/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/src/IdentityServer4.Contrib.AspNetCore.Testing/Builder/AbstractIdentityServerHostBuilder.cs
+FN:55,TBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::AddApiResources(IdentityServer4.Models.ApiResource[])
+FNDA:19,TBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::AddApiResources(IdentityServer4.Models.ApiResource[])
+DA:56,19
+DA:57,0
+DA:59,19
+DA:61,19
+BRDA:56,1,0,0
+BRDA:56,1,1,19
+BRDA:56,15,0,0
+BRDA:56,15,1,19
+FN:65,TBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::AddApiScopes(IdentityServer4.Models.ApiScope[])
+FNDA:19,TBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::AddApiScopes(IdentityServer4.Models.ApiScope[])
+DA:66,19
+DA:67,0
+DA:69,19
+DA:71,19
+BRDA:66,1,0,0
+BRDA:66,1,1,19
+BRDA:66,15,0,0
+BRDA:66,15,1,19
+FN:75,TBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::AddClients(IdentityServer4.Models.Client[])
+FNDA:19,TBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::AddClients(IdentityServer4.Models.Client[])
+DA:76,19
+DA:77,0
+DA:79,19
+DA:81,19
+BRDA:76,1,0,0
+BRDA:76,1,1,19
+BRDA:76,15,0,0
+BRDA:76,15,1,19
+FN:85,TBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::AddIdentityResources(IdentityServer4.Models.IdentityResource[])
+FNDA:2,TBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::AddIdentityResources(IdentityServer4.Models.IdentityResource[])
+DA:86,2
+DA:87,0
+DA:89,2
+DA:91,2
+BRDA:86,1,0,0
+BRDA:86,1,1,2
+BRDA:86,15,0,0
+BRDA:86,15,1,2
+FN:96,TBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::UseApplicationBuilder(System.Action`1<Microsoft.AspNetCore.Builder.IApplicationBuilder>)
+FNDA:0,TBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::UseApplicationBuilder(System.Action`1<Microsoft.AspNetCore.Builder.IApplicationBuilder>)
+DA:97,0
+DA:98,0
+DA:100,0
+BRDA:97,3,0,0
+BRDA:97,3,1,0
+FN:104,TBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::UseResourceOwnerPasswordValidator(System.Type)
+FNDA:9,TBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::UseResourceOwnerPasswordValidator(System.Type)
+DA:105,9
+DA:106,2
+DA:107,2
+DA:109,7
+DA:111,7
+BRDA:105,16,0,2
+BRDA:105,16,1,7
+FN:117,TBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::UseResourceOwnerPasswordValidator(TResourceOwnerPasswordValidator)
+FNDA:7,TBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::UseResourceOwnerPasswordValidator(TResourceOwnerPasswordValidator)
+DA:118,7
+DA:120,7
+FN:124,TBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::UseProfileService(System.Type)
+FNDA:4,TBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::UseProfileService(System.Type)
+DA:125,4
+DA:126,2
+DA:127,2
+DA:129,2
+DA:131,2
+BRDA:125,16,0,2
+BRDA:125,16,1,2
+FN:136,TBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::UseProfileService(TProfileService)
+FNDA:2,TBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::UseProfileService(TProfileService)
+DA:137,2
+DA:139,2
+FN:144,TBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::UseIdentityServerOptionsBuilder(System.Action`1<IdentityServer4.Configuration.IdentityServerOptions>)
+FNDA:1,TBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::UseIdentityServerOptionsBuilder(System.Action`1<IdentityServer4.Configuration.IdentityServerOptions>)
+DA:145,1
+DA:146,1
+DA:147,1
+DA:148,1
+DA:150,1
+BRDA:145,3,0,0
+BRDA:145,3,1,1
+FN:155,TBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::UseIdentityServerBuilder(System.Func`2<Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.DependencyInjection.IIdentityServerBuilder>)
+FNDA:1,TBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::UseIdentityServerBuilder(System.Func`2<Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.DependencyInjection.IIdentityServerBuilder>)
+DA:156,1
+DA:157,1
+DA:158,1
+DA:160,1
+BRDA:156,3,0,0
+BRDA:156,3,1,1
+FN:164,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::ConfigureIdentityServerServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+FNDA:26,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::ConfigureIdentityServerServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+DA:165,26
+DA:167,26
+DA:168,14
+DA:170,26
+DA:171,7
+DA:172,7
+DA:174,30
+DA:176,26
+DA:177,2
+DA:178,26
+BRDA:167,23,0,7
+BRDA:167,23,1,26
+BRDA:170,56,0,7
+BRDA:170,56,1,26
+BRDA:174,87,0,2
+BRDA:174,87,1,26
+BRDA:176,120,0,2
+BRDA:176,120,1,26
+FN:181,Microsoft.Extensions.DependencyInjection.IIdentityServerBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::CreatePreconfiguredIdentityServerBuilder(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+FNDA:27,Microsoft.Extensions.DependencyInjection.IIdentityServerBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::CreatePreconfiguredIdentityServerBuilder(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+DA:182,27
+DA:184,25
+DA:185,25
+DA:186,25
+DA:187,25
+DA:188,25
+BRDA:182,6,0,1
+BRDA:182,6,1,25
+FN:192,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::ConfigureIdentityServerResources(Microsoft.Extensions.DependencyInjection.IIdentityServerBuilder)
+FNDA:45,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::ConfigureIdentityServerResources(Microsoft.Extensions.DependencyInjection.IIdentityServerBuilder)
+DA:193,45
+DA:195,26
+DA:196,19
+DA:198,26
+DA:199,19
+DA:201,26
+DA:202,2
+DA:203,26
+BRDA:193,11,0,19
+BRDA:193,11,1,26
+BRDA:195,37,0,19
+BRDA:195,37,1,26
+BRDA:198,63,0,19
+BRDA:198,63,1,26
+BRDA:201,89,0,2
+BRDA:201,89,1,26
+FN:206,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::Validate()
+FNDA:26,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::Validate()
+DA:207,26
+DA:208,0
+DA:209,0
+DA:210,26
+BRDA:207,11,0,19
+BRDA:207,35,0,0
+BRDA:207,11,1,26
+BRDA:207,35,1,26
+FN:32,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::.ctor()
+FNDA:31,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::.ctor()
+DA:33,31
+DA:35,50
+DA:37,31
+DA:39,31
+DA:41,31
+DA:43,31
+DA:45,31
+DA:46,31
+DA:47,48
+DA:48,48
+DA:49,48
+DA:50,48
+DA:51,48
+DA:52,31
+BRDA:35,13,0,2
+BRDA:35,13,1,31
+BRDA:45,94,0,2
+BRDA:45,94,1,31
+LF:84
+LH:75
+BRF:52
+BRH:39
+FNF:16
+FNH:15
+end_of_record
+SF:/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/src/IdentityServer4.Contrib.AspNetCore.Testing/Builder/IdentityServerTestHostBuilder.cs
+FN:33,IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestHostBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestHostBuilder::UseConfigurationBuilder(System.Action`2<Microsoft.Extensions.Hosting.HostBuilderContext,Microsoft.Extensions.Configuration.IConfigurationBuilder>)
+FNDA:0,IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestHostBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestHostBuilder::UseConfigurationBuilder(System.Action`2<Microsoft.Extensions.Hosting.HostBuilderContext,Microsoft.Extensions.Configuration.IConfigurationBuilder>)
+DA:34,0
+DA:36,0
+FN:41,IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestHostBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestHostBuilder::UseServices(System.Action`2<Microsoft.Extensions.Hosting.HostBuilderContext,Microsoft.Extensions.DependencyInjection.IServiceCollection>)
+FNDA:0,IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestHostBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestHostBuilder::UseServices(System.Action`2<Microsoft.Extensions.Hosting.HostBuilderContext,Microsoft.Extensions.DependencyInjection.IServiceCollection>)
+DA:42,0
+DA:44,0
+FN:49,IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestHostBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestHostBuilder::UseLoggingBuilder(System.Action`2<Microsoft.Extensions.Hosting.HostBuilderContext,Microsoft.Extensions.Logging.ILoggingBuilder>)
+FNDA:1,IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestHostBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestHostBuilder::UseLoggingBuilder(System.Action`2<Microsoft.Extensions.Hosting.HostBuilderContext,Microsoft.Extensions.Logging.ILoggingBuilder>)
+DA:50,1
+DA:51,1
+DA:52,1
+DA:54,1
+BRDA:50,3,0,0
+BRDA:50,3,1,1
+FN:58,Microsoft.Extensions.Hosting.IHostBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestHostBuilder::CreateHostBuilder()
+FNDA:0,Microsoft.Extensions.Hosting.IHostBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestHostBuilder::CreateHostBuilder()
+DA:59,0
+DA:61,0
+FN:66,Microsoft.Extensions.Hosting.IHostBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestHostBuilder::CreateHostBuilder(Microsoft.Extensions.DependencyInjection.IServiceProviderFactory`1<TContainer>,System.Action`1<TContainer>)
+FNDA:0,Microsoft.Extensions.Hosting.IHostBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestHostBuilder::CreateHostBuilder(Microsoft.Extensions.DependencyInjection.IServiceProviderFactory`1<TContainer>,System.Action`1<TContainer>)
+DA:67,0
+DA:68,0
+DA:70,5
+DA:72,5
+DA:73,5
+DA:74,5
+BRDA:67,1,0,0
+BRDA:67,1,1,5
+BRDA:68,15,0,0
+BRDA:68,15,1,5
+FN:78,Microsoft.Extensions.Hosting.IHostBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestHostBuilder::CreateHostBuilderInternal()
+FNDA:5,Microsoft.Extensions.Hosting.IHostBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestHostBuilder::CreateHostBuilderInternal()
+DA:79,5
+DA:80,5
+DA:81,5
+DA:82,5
+DA:83,10
+DA:84,10
+DA:85,10
+DA:86,10
+DA:87,15
+DA:88,15
+DA:89,15
+DA:90,10
+DA:91,5
+DA:92,5
+DA:93,10
+DA:94,5
+DA:95,10
+DA:96,5
+DA:97,10
+DA:98,5
+DA:99,10
+DA:100,10
+DA:101,5
+FN:20,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestHostBuilder::.ctor()
+FNDA:7,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestHostBuilder::.ctor()
+DA:21,7
+DA:23,12
+DA:25,12
+DA:27,7
+DA:28,11
+DA:29,7
+LF:45
+LH:37
+BRF:6
+BRH:3
+FNF:7
+FNH:4
+end_of_record
+SF:/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/src/IdentityServer4.Contrib.AspNetCore.Testing/Builder/IdentityServerTestWebHostBuilder.cs
+FN:31,IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestWebHostBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestWebHostBuilder::UseConfigurationBuilder(System.Action`2<Microsoft.AspNetCore.Hosting.WebHostBuilderContext,Microsoft.Extensions.Configuration.IConfigurationBuilder>)
+FNDA:1,IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestWebHostBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestWebHostBuilder::UseConfigurationBuilder(System.Action`2<Microsoft.AspNetCore.Hosting.WebHostBuilderContext,Microsoft.Extensions.Configuration.IConfigurationBuilder>)
+DA:32,1
+DA:34,1
+FN:39,IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestWebHostBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestWebHostBuilder::UseServices(System.Action`2<Microsoft.AspNetCore.Hosting.WebHostBuilderContext,Microsoft.Extensions.DependencyInjection.IServiceCollection>)
+FNDA:1,IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestWebHostBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestWebHostBuilder::UseServices(System.Action`2<Microsoft.AspNetCore.Hosting.WebHostBuilderContext,Microsoft.Extensions.DependencyInjection.IServiceCollection>)
+DA:40,1
+DA:42,1
+FN:47,IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestWebHostBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestWebHostBuilder::UseLoggingBuilder(System.Action`2<Microsoft.AspNetCore.Hosting.WebHostBuilderContext,Microsoft.Extensions.Logging.ILoggingBuilder>)
+FNDA:2,IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestWebHostBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestWebHostBuilder::UseLoggingBuilder(System.Action`2<Microsoft.AspNetCore.Hosting.WebHostBuilderContext,Microsoft.Extensions.Logging.ILoggingBuilder>)
+DA:48,2
+DA:49,2
+DA:50,2
+DA:52,2
+BRDA:48,3,0,0
+BRDA:48,3,1,2
+FN:56,IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestWebHostBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestWebHostBuilder::UseWebHostBuilder(Microsoft.AspNetCore.Hosting.IWebHostBuilder)
+FNDA:1,IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestWebHostBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestWebHostBuilder::UseWebHostBuilder(Microsoft.AspNetCore.Hosting.IWebHostBuilder)
+DA:57,1
+DA:59,1
+BRDA:57,3,0,0
+BRDA:57,3,1,1
+FN:63,Microsoft.AspNetCore.Hosting.IWebHostBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestWebHostBuilder::CreateWebHostBuider()
+FNDA:23,Microsoft.AspNetCore.Hosting.IWebHostBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestWebHostBuilder::CreateWebHostBuider()
+DA:64,23
+DA:66,21
+DA:68,21
+DA:69,21
+DA:70,21
+DA:71,21
+DA:72,35
+DA:73,35
+DA:74,35
+DA:75,21
+DA:76,21
+DA:77,42
+DA:78,21
+DA:79,42
+DA:80,21
+DA:81,42
+DA:82,21
+DA:83,42
+DA:84,42
+DA:85,21
+BRDA:64,6,0,1
+BRDA:64,6,1,21
+FN:18,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestWebHostBuilder::.ctor()
+FNDA:24,System.Void IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestWebHostBuilder::.ctor()
+DA:19,24
+DA:21,44
+DA:23,44
+DA:25,24
+DA:26,43
+DA:27,24
+LF:36
+LH:36
+BRF:6
+BRH:4
+FNF:6
+FNH:6
+end_of_record
+SF:/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/test/IdentityServer4.Api/AuthController.cs
+FN:12,Microsoft.AspNetCore.Mvc.IActionResult IdentityServer4.Api.AuthController::TestAuth()
+FNDA:0,Microsoft.AspNetCore.Mvc.IActionResult IdentityServer4.Api.AuthController::TestAuth()
+DA:13,0
+DA:14,0
+DA:15,0
+DA:16,0
+LF:4
+LH:0
+BRF:0
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/test/IdentityServer4.Api/Program.cs
+FN:8,System.Void IdentityServer4.Api.Program::Main(System.String[])
+FNDA:0,System.Void IdentityServer4.Api.Program::Main(System.String[])
+DA:9,0
+LF:1
+LH:0
+BRF:0
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/test/IdentityServer4.Api/Startup.cs
+FN:18,System.Void IdentityServer4.Api.Startup::ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+FNDA:0,System.Void IdentityServer4.Api.Startup::ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+DA:19,0
+DA:20,0
+DA:21,0
+DA:22,0
+DA:23,0
+DA:24,0
+DA:25,0
+DA:26,0
+DA:27,0
+FN:30,System.Void IdentityServer4.Api.Startup::Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder)
+FNDA:0,System.Void IdentityServer4.Api.Startup::Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder)
+DA:31,0
+DA:32,0
+DA:33,0
+FN:11,System.Void IdentityServer4.Api.Startup::.ctor(System.Net.Http.HttpMessageHandler)
+FNDA:0,System.Void IdentityServer4.Api.Startup::.ctor(System.Net.Http.HttpMessageHandler)
+DA:12,0
+DA:14,0
+DA:15,0
+LF:15
+LH:0
+BRF:0
+BRH:0
+FNF:3
+FNH:0
+end_of_record
+SF:/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/test/IdentityServer4.Server/Program.cs
+FN:15,System.Threading.Tasks.Task IdentityServer4.Server.Program::Main(System.String[])
+FNDA:0,System.Threading.Tasks.Task IdentityServer4.Server.Program::Main(System.String[])
+DA:16,0
+DA:18,0
+DA:19,0
+FN:22,Microsoft.AspNetCore.Hosting.IWebHostBuilder IdentityServer4.Server.Program::CreateWebHostBuilder(System.String[])
+FNDA:0,Microsoft.AspNetCore.Hosting.IWebHostBuilder IdentityServer4.Server.Program::CreateWebHostBuilder(System.String[])
+DA:23,0
+DA:24,0
+DA:25,0
+FN:29,System.Void IdentityServer4.Server.Program::ConfigureLogger(Microsoft.AspNetCore.Hosting.WebHostBuilderContext,Serilog.LoggerConfiguration)
+FNDA:0,System.Void IdentityServer4.Server.Program::ConfigureLogger(Microsoft.AspNetCore.Hosting.WebHostBuilderContext,Serilog.LoggerConfiguration)
+DA:30,0
+DA:31,0
+DA:32,0
+DA:33,0
+DA:34,0
+DA:35,0
+DA:36,0
+DA:37,0
+DA:38,0
+LF:15
+LH:0
+BRF:0
+BRH:0
+FNF:3
+FNH:0
+end_of_record
+SF:/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/test/IdentityServer4.Server/Startup.cs
+FN:14,System.Void IdentityServer4.Server.Startup::ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+FNDA:0,System.Void IdentityServer4.Server.Startup::ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+DA:15,0
+DA:16,0
+DA:17,0
+DA:18,0
+DA:19,0
+DA:20,0
+DA:21,0
+DA:22,0
+DA:23,0
+DA:24,0
+DA:25,0
+DA:26,0
+DA:27,0
+DA:28,0
+DA:29,0
+DA:30,0
+DA:31,0
+DA:32,0
+DA:33,0
+DA:34,0
+FN:37,System.Void IdentityServer4.Server.Startup::Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder)
+FNDA:0,System.Void IdentityServer4.Server.Startup::Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder)
+DA:38,0
+DA:40,0
+DA:41,0
+DA:42,0
+DA:43,0
+DA:44,0
+DA:45,0
+DA:46,0
+LF:28
+LH:0
+BRF:0
+BRH:0
+FNF:2
+FNH:0
+end_of_record
+SF:/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/test/IdentityServer4.Server/Models/ApiResources.cs
+FN:8,System.Collections.Generic.IEnumerable`1<IdentityServer4.Models.ApiResource> IdentityServer4.Server.Models.ApiResources::get_GetApiResources()
+FNDA:0,System.Collections.Generic.IEnumerable`1<IdentityServer4.Models.ApiResource> IdentityServer4.Server.Models.ApiResources::get_GetApiResources()
+DA:9,0
+DA:10,0
+DA:11,0
+DA:12,0
+LF:4
+LH:0
+BRF:0
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/test/IdentityServer4.Server/Models/Clients.cs
+FN:11,System.Collections.Generic.IEnumerable`1<IdentityServer4.Models.Client> IdentityServer4.Server.Models.Clients::get_GetClients()
+FNDA:0,System.Collections.Generic.IEnumerable`1<IdentityServer4.Models.Client> IdentityServer4.Server.Models.Clients::get_GetClients()
+DA:12,0
+DA:13,0
+DA:14,0
+DA:15,0
+DA:16,0
+DA:17,0
+DA:18,0
+DA:19,0
+DA:20,0
+DA:21,0
+DA:22,0
+DA:23,0
+DA:24,0
+DA:25,0
+DA:26,0
+DA:27,0
+DA:28,0
+DA:29,0
+DA:30,0
+DA:31,0
+DA:32,0
+DA:33,0
+DA:34,0
+DA:35,0
+LF:24
+LH:0
+BRF:0
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/test/IdentityServer4.Server/Models/IdentityResources.cs
+FN:8,System.Collections.Generic.IEnumerable`1<IdentityServer4.Models.IdentityResource> IdentityServer4.Server.Models.IdentityResources::get_GetIdentityResources()
+FNDA:0,System.Collections.Generic.IEnumerable`1<IdentityServer4.Models.IdentityResource> IdentityServer4.Server.Models.IdentityResources::get_GetIdentityResources()
+DA:9,0
+DA:10,0
+DA:11,0
+DA:12,0
+DA:13,0
+LF:5
+LH:0
+BRF:0
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/test/IdentityServer4.Server/Models/TestUsers.cs
+FN:9,System.Collections.Generic.List`1<IdentityServer4.Test.TestUser> IdentityServer4.Server.Models.TestUsers::GeTestUsers()
+FNDA:0,System.Collections.Generic.List`1<IdentityServer4.Test.TestUser> IdentityServer4.Server.Models.TestUsers::GeTestUsers()
+DA:10,0
+DA:11,0
+DA:12,0
+DA:13,0
+DA:14,0
+DA:15,0
+DA:16,0
+DA:17,0
+DA:18,0
+DA:19,0
+LF:10
+LH:0
+BRF:0
+BRH:0
+FNF:1
+FNH:0
+end_of_record

@@ -1,0 +1,283 @@
+/home/sami/.nuget/packages/coverlet.msbuild/2.9.0/build/coverlet.msbuild.targets(31,5): warning : [coverlet] Unable to instrument module: /home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/test/IdentityServer4.Contrib.AspNetCore.Testing.Tests/bin/Release/netcoreapp3.1/System.Text.Encodings.Web.dll because : No symbol found for file: /home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/test/IdentityServer4.Contrib.AspNetCore.Testing.Tests/bin/Release/netcoreapp3.1/System.Text.Encodings.Web.dll [/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/test/IdentityServer4.Contrib.AspNetCore.Testing.Tests/IdentityServer4.Contrib.AspNetCore.Testing.Tests.csproj]
+Test run for /home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/test/IdentityServer4.Contrib.AspNetCore.Testing.Tests/bin/Release/netcoreapp3.1/IdentityServer4.Contrib.AspNetCore.Testing.Tests.dll(.NETCoreApp,Version=v3.1)
+Microsoft (R) Test Execution Command Line Tool Version 16.7.0
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+Starting test execution, please wait...
+
+A total of 1 test files matched the specified pattern.
+[20:10:02 Error] IdentityServer4.Contrib.AspNetCore.Testing.Tests.IdentityServerWebHostBuilderTests
+Logging to path /home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/test/IdentityServer4.Contrib.AspNetCore.Testing.Tests/bin/Release/netcoreapp3.1/Logs/IdentityServer4.Contrib.AspNetCore.Testing.Tests-20200929.log works!
+
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[0]
+      User profile is available. Using '/home/sami/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost/api/auth  
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler[2]
+      Successfully validated the token.
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[3]
+      Route matched with {action = "TestAuth", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult TestAuth() on controller IdentityServer4.Api.AuthController (IdentityServer4.Api).
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      Authorization was successful.
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[2]
+      Executed action IdentityServer4.Api.AuthController.TestAuth (IdentityServer4.Api) in 4.7931ms
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 82.1432ms 200 application/json; charset=utf-8
+[20:10:03 Debug] Microsoft.AspNetCore.Hosting.Diagnostics
+Hosting starting
+
+[20:10:03 Information] IdentityServer4.Startup
+Starting IdentityServer4 version 4.1.0+5a4433f83e8c6fca7d8979141fa5a92684ad56f6
+
+[20:10:03 Information] IdentityServer4.Startup
+You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+
+[20:10:03 Information] IdentityServer4.Startup
+Using the default authentication scheme idsrv for IdentityServer
+
+[20:10:03 Debug] IdentityServer4.Startup
+Using idsrv as default ASP.NET Core scheme for authentication
+
+[20:10:03 Debug] IdentityServer4.Startup
+Using idsrv as default ASP.NET Core scheme for sign-in
+
+[20:10:03 Debug] IdentityServer4.Startup
+Using idsrv as default ASP.NET Core scheme for sign-out
+
+[20:10:03 Debug] IdentityServer4.Startup
+Using idsrv as default ASP.NET Core scheme for challenge
+
+[20:10:03 Debug] IdentityServer4.Startup
+Using idsrv as default ASP.NET Core scheme for forbid
+
+[20:10:03 Information] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager
+User profile is available. Using '/home/sami/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+
+[20:10:03 Debug] Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository
+Reading data from file '/home/sami/.aspnet/DataProtection-Keys/key-415ae8f0-a314-4f62-9310-024319e331ba.xml'.
+
+[20:10:03 Debug] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager
+Found key {415ae8f0-a314-4f62-9310-024319e331ba}.
+
+[20:10:03 Debug] Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver
+Considering key {415ae8f0-a314-4f62-9310-024319e331ba} with expiration date 2020-12-28 18:10:02Z as default key.
+
+[20:10:03 Debug] Microsoft.AspNetCore.DataProtection.TypeForwardingActivator
+Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+
+[20:10:03 Debug] Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ManagedAuthenticatedEncryptorFactory
+Using managed symmetric algorithm 'System.Security.Cryptography.Aes'.
+
+[20:10:03 Debug] Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ManagedAuthenticatedEncryptorFactory
+Using managed keyed hash algorithm 'System.Security.Cryptography.HMACSHA256'.
+
+[20:10:03 Debug] Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider
+Using key {415ae8f0-a314-4f62-9310-024319e331ba} as the default key.
+
+[20:10:03 Debug] Microsoft.AspNetCore.DataProtection.Internal.DataProtectionHostedService
+Key ring with default key {415ae8f0-a314-4f62-9310-024319e331ba} was loaded during application startup.
+
+[20:10:03 Debug] Microsoft.AspNetCore.Hosting.Diagnostics
+Hosting started
+
+[20:10:03 Debug] Microsoft.AspNetCore.Hosting.Diagnostics
+Loaded hosting startup assembly IdentityServer4.Server
+
+[20:10:03 Information] Microsoft.AspNetCore.Hosting.Diagnostics
+Request starting HTTP/1.1 GET http://localhost/.well-known/openid-configuration  
+
+[20:10:03 Debug] Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware
+Wildcard detected, all requests with hosts will be allowed.
+
+[20:10:03 Debug] IdentityServer4.Startup
+Login Url: /Account/Login
+
+[20:10:03 Debug] IdentityServer4.Startup
+Login Return Url Parameter: ReturnUrl
+
+[20:10:03 Debug] IdentityServer4.Startup
+Logout Url: /Account/Logout
+
+[20:10:03 Debug] IdentityServer4.Startup
+ConsentUrl Url: /consent
+
+[20:10:03 Debug] IdentityServer4.Startup
+Consent Return Url Parameter: returnUrl
+
+[20:10:03 Debug] IdentityServer4.Startup
+Error Url: /home/error
+
+[20:10:03 Debug] IdentityServer4.Startup
+Error Id Parameter: errorId
+
+[20:10:03 Debug] Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler
+AuthenticationScheme: idsrv was not authenticated.
+
+[20:10:03 Debug] Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler
+AuthenticationScheme: idsrv was not authenticated.
+
+[20:10:03 Debug] IdentityServer4.Hosting.EndpointRouter
+Request path /.well-known/openid-configuration matched to endpoint type Discovery
+
+[20:10:03 Debug] IdentityServer4.Hosting.EndpointRouter
+Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+
+[20:10:03 Information] IdentityServer4.Hosting.IdentityServerMiddleware
+Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+
+[20:10:03 Debug] IdentityServer4.Endpoints.DiscoveryEndpoint
+Start discovery request
+
+[20:10:03 Information] Microsoft.AspNetCore.Hosting.Diagnostics
+Request finished in 9.7782ms 200 application/json; charset=UTF-8
+
+[20:10:03 Information] Microsoft.AspNetCore.Hosting.Diagnostics
+Request starting HTTP/1.1 GET http://localhost/.well-known/openid-configuration/jwks  
+
+[20:10:03 Debug] Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler
+AuthenticationScheme: idsrv was not authenticated.
+
+[20:10:03 Debug] Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler
+AuthenticationScheme: idsrv was not authenticated.
+
+[20:10:03 Debug] IdentityServer4.Hosting.EndpointRouter
+Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+
+[20:10:03 Debug] IdentityServer4.Hosting.EndpointRouter
+Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+
+[20:10:03 Information] IdentityServer4.Hosting.IdentityServerMiddleware
+Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+
+[20:10:03 Debug] IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+Start key discovery request
+
+[20:10:03 Information] Microsoft.AspNetCore.Hosting.Diagnostics
+Request finished in 1.0031ms 200 application/json; charset=UTF-8
+
+[20:10:03 Information] Microsoft.AspNetCore.Hosting.Diagnostics
+Request starting HTTP/1.1 POST http://localhost/connect/token application/x-www-form-urlencoded 
+
+[20:10:03 Debug] Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler
+AuthenticationScheme: idsrv was not authenticated.
+
+[20:10:03 Debug] Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler
+AuthenticationScheme: idsrv was not authenticated.
+
+[20:10:03 Debug] IdentityServer4.Hosting.EndpointRouter
+Request path /connect/token matched to endpoint type Token
+
+[20:10:03 Debug] IdentityServer4.Hosting.EndpointRouter
+Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+
+[20:10:03 Information] IdentityServer4.Hosting.IdentityServerMiddleware
+Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+
+[20:10:03 Debug] IdentityServer4.Endpoints.TokenEndpoint
+Start token request.
+
+[20:10:03 Debug] IdentityServer4.Validation.ClientSecretValidator
+Start client validation
+
+[20:10:03 Debug] IdentityServer4.Validation.BasicAuthenticationSecretParser
+Start parsing Basic Authentication secret
+
+[20:10:03 Debug] IdentityServer4.Validation.PostBodySecretParser
+Start parsing for secret in post body
+
+[20:10:03 Debug] IdentityServer4.Validation.ISecretsListParser
+Parser found secret: PostBodySecretParser
+
+[20:10:03 Debug] IdentityServer4.Validation.ISecretsListParser
+Secret id found: sampleclient
+
+[20:10:03 Debug] IdentityServer4.Stores.ValidatingClientStore
+client configuration validation for client sampleclient succeeded.
+
+[20:10:03 Debug] IdentityServer4.Validation.ISecretsListValidator
+Secret validator success: HashedSharedSecretValidator
+
+[20:10:03 Debug] IdentityServer4.Validation.ClientSecretValidator
+Client validation success
+
+[20:10:03 Information] IdentityServer4.Events.DefaultEventService
+{"ClientId": "sampleclient", "AuthenticationMethod": "SharedSecret", "Category": "Authentication", "Name": "Client Authentication Success", "EventType": "Success", "Id": 1010, "Message": null, "ActivityId": "0HM34KBHEBL8G", "TimeStamp": "2020-09-29T18:10:03.0000000Z", "ProcessId": 30797, "LocalIpAddress": "unknown", "RemoteIpAddress": "unknown", "$type": "ClientAuthenticationSuccessEvent"}
+
+[20:10:03 Debug] IdentityServer4.Validation.TokenRequestValidator
+Start token request validation
+
+[20:10:03 Debug] IdentityServer4.Validation.TokenRequestValidator
+Start resource owner password token request validation
+
+[20:10:03 Debug] IdentityServer4.Test.TestUserProfileService
+IsActive called from: ResourceOwnerValidation
+
+[20:10:03 Information] IdentityServer4.Events.DefaultEventService
+{"Username": "user1", "Provider": null, "ProviderUserId": null, "SubjectId": "user1", "DisplayName": null, "Endpoint": "Token", "ClientId": "sampleclient", "Category": "Authentication", "Name": "User Login Success", "EventType": "Success", "Id": 1000, "Message": null, "ActivityId": "0HM34KBHEBL8G", "TimeStamp": "2020-09-29T18:10:03.0000000Z", "ProcessId": 30797, "LocalIpAddress": "unknown", "RemoteIpAddress": "unknown", "$type": "UserLoginSuccessEvent"}
+
+[20:10:03 Debug] IdentityServer4.Validation.TokenRequestValidator
+Resource owner password token request validation success.
+
+[20:10:03 Information] IdentityServer4.Validation.TokenRequestValidator
+Token request validation success, {"ClientId": "sampleclient", "ClientName": null, "GrantType": "password", "Scopes": "api1 offline_access openid profile", "AuthorizationCode": null, "RefreshToken": null, "UserName": "user1", "AuthenticationContextReferenceClasses": null, "Tenant": null, "IdP": null, "Raw": {"grant_type": "password", "username": "user1", "password": "***REDACTED***", "scope": "api1 offline_access openid profile", "client_id": "sampleclient", "client_secret": "***REDACTED***"}, "$type": "TokenRequestValidationLog"}
+
+[20:10:03 Debug] IdentityServer4.Services.DefaultClaimsService
+Getting claims for access token for client: sampleclient
+
+[20:10:03 Debug] IdentityServer4.Services.DefaultClaimsService
+Getting claims for access token for subject: user1
+
+[20:10:03 Debug] IdentityServer4.Test.TestUserProfileService
+Get profile called for subject user1 from client sampleclient with claim types [] via ClaimsProviderAccessToken
+
+[20:10:03 Debug] IdentityServer4.Test.TestUserProfileService
+Issued claims: []
+
+[20:10:03 Debug] IdentityServer4.Services.DefaultRefreshTokenService
+Creating refresh token
+
+[20:10:03 Debug] IdentityServer4.Services.DefaultRefreshTokenService
+Setting an absolute lifetime: 2592000
+
+[20:10:03 Information] IdentityServer4.Events.DefaultEventService
+{"ClientId": "sampleclient", "ClientName": null, "RedirectUri": null, "Endpoint": "Token", "SubjectId": "user1", "Scopes": "api1 offline_access openid profile", "GrantType": "password", "Tokens": [{"TokenType": "refresh_token", "TokenValue": "****4762", "$type": "Token"}, {"TokenType": "access_token", "TokenValue": "****Yx3g", "$type": "Token"}], "Category": "Token", "Name": "Token Issued Success", "EventType": "Success", "Id": 2000, "Message": null, "ActivityId": "0HM34KBHEBL8G", "TimeStamp": "2020-09-29T18:10:03.0000000Z", "ProcessId": 30797, "LocalIpAddress": "unknown", "RemoteIpAddress": "unknown", "$type": "TokenIssuedSuccessEvent"}
+
+[20:10:03 Debug] IdentityServer4.Endpoints.TokenEndpoint
+Token request success.
+
+[20:10:03 Information] Microsoft.AspNetCore.Hosting.Diagnostics
+Request finished in 21.823ms 200 application/json; charset=UTF-8
+
+
+Test Run Successful.
+Total tests: 31
+     Passed: 31
+ Total time: 1.7699 Seconds
+
+Calculating coverage result...
+  Generating report '../../coverage/coverage.json'
+  Generating report '../../coverage/coverage.info'
+  Generating report '../../coverage/coverage.opencover.xml'
+
++--------------------------------------------+--------+--------+--------+
+| Module                                     | Line   | Branch | Method |
++--------------------------------------------+--------+--------+--------+
+| IdentityServer4.Testing.Infrastructure     | 80.64% | 50%    | 100%   |
++--------------------------------------------+--------+--------+--------+
+| IdentityServer4.Contrib.AspNetCore.Testing | 86.32% | 64.63% | 79.41% |
++--------------------------------------------+--------+--------+--------+
+| IdentityServer4.Api                        | 0%     | 100%   | 0%     |
++--------------------------------------------+--------+--------+--------+
+| IdentityServer4.Server                     | 0%     | 100%   | 0%     |
++--------------------------------------------+--------+--------+--------+
+
++---------+--------+--------+--------+
+|         | Line   | Branch | Method |
++---------+--------+--------+--------+
+| Total   | 66.3%  | 63.33% | 68.18% |
++---------+--------+--------+--------+
+| Average | 41.73% | 78.65% | 44.85% |
++---------+--------+--------+--------+
+

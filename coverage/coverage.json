@@ -1,0 +1,1786 @@
+{
+  "IdentityServer4.Testing.Infrastructure.dll": {
+    "/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/test/IdentityServer4.Testing.Infrastructure/Validators/ExtensionsGrantValidator.cs": {
+      "IdentityServer4.Testing.Infrastructure.Validators.ExtensionsGrantValidator": {
+        "System.Threading.Tasks.Task IdentityServer4.Testing.Infrastructure.Validators.ExtensionsGrantValidator::ValidateAsync(IdentityServer4.Validation.ExtensionGrantValidationContext)": {
+          "Lines": {
+            "14": 1,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "21": 1,
+            "22": 1,
+            "23": 1,
+            "24": 1,
+            "26": 1
+          },
+          "Branches": [
+            {
+              "Line": 14,
+              "Offset": 31,
+              "EndOffset": 33,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 14,
+              "Offset": 31,
+              "EndOffset": 66,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 14,
+              "Offset": 64,
+              "EndOffset": 66,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 14,
+              "Offset": 64,
+              "EndOffset": 90,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.String IdentityServer4.Testing.Infrastructure.Validators.ExtensionsGrantValidator::get_GrantType()": {
+          "Lines": {
+            "29": 3
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/test/IdentityServer4.Testing.Infrastructure/Validators/ResourceOwnerValidatorWithDependencies.cs": {
+      "IdentityServer4.Testing.Infrastructure.Validators.ResourceOwnerValidatorWithDependencies": {
+        "System.Void IdentityServer4.Testing.Infrastructure.Validators.ResourceOwnerValidatorWithDependencies::.ctor(Microsoft.Extensions.Logging.ILogger`1<IdentityServer4.Testing.Infrastructure.Validators.ResourceOwnerValidatorWithDependencies>)": {
+          "Lines": {
+            "10": 2,
+            "12": 2,
+            "13": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/test/IdentityServer4.Testing.Infrastructure/Validators/SimpleResourceOwnerPasswordValidator.cs": {
+      "IdentityServer4.Testing.Infrastructure.Validators.SimpleResourceOwnerPasswordValidator": {
+        "System.Threading.Tasks.Task IdentityServer4.Testing.Infrastructure.Validators.SimpleResourceOwnerPasswordValidator::ValidateAsync(IdentityServer4.Validation.ResourceOwnerPasswordValidationContext)": {
+          "Lines": {
+            "14": 7,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "21": 7,
+            "22": 7,
+            "23": 7,
+            "24": 7,
+            "25": 7,
+            "27": 7
+          },
+          "Branches": [
+            {
+              "Line": 14,
+              "Offset": 16,
+              "EndOffset": 18,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 14,
+              "Offset": 16,
+              "EndOffset": 36,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 14,
+              "Offset": 34,
+              "EndOffset": 36,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 14,
+              "Offset": 34,
+              "EndOffset": 60,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 7
+            }
+          ]
+        }
+      }
+    },
+    "/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/test/IdentityServer4.Testing.Infrastructure/Services/SimpleProfileService.cs": {
+      "IdentityServer4.Testing.Infrastructure.Services.SimpleProfileService": {
+        "System.Threading.Tasks.Task IdentityServer4.Testing.Infrastructure.Services.SimpleProfileService::GetProfileDataAsync(IdentityServer4.Models.ProfileDataRequestContext)": {
+          "Lines": {
+            "16": 4,
+            "18": 2,
+            "19": 2,
+            "20": 2,
+            "21": 2,
+            "23": 2
+          },
+          "Branches": []
+        },
+        "System.Threading.Tasks.Task IdentityServer4.Testing.Infrastructure.Services.SimpleProfileService::IsActiveAsync(IdentityServer4.Models.IsActiveContext)": {
+          "Lines": {
+            "28": 3,
+            "29": 3
+          },
+          "Branches": []
+        }
+      }
+    }
+  },
+  "IdentityServer4.Contrib.AspNetCore.Testing.dll": {
+    "/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/src/IdentityServer4.Contrib.AspNetCore.Testing/Sinks/EventCaptureSink.cs": {
+      "IdentityServer4.Contrib.AspNetCore.Testing.Sinks.EventCaptureSink": {
+        "System.Threading.Tasks.Task IdentityServer4.Contrib.AspNetCore.Testing.Sinks.EventCaptureSink::PersistAsync(IdentityServer4.Events.Event)": {
+          "Lines": {
+            "19": 32,
+            "20": 32
+          },
+          "Branches": []
+        },
+        "System.Void IdentityServer4.Contrib.AspNetCore.Testing.Sinks.EventCaptureSink::.ctor(IdentityServer4.Contrib.AspNetCore.Testing.Misc.IdentityServerEventCaptureStore)": {
+          "Lines": {
+            "12": 26,
+            "14": 26,
+            "15": 26
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/src/IdentityServer4.Contrib.AspNetCore.Testing/Services/AbstractIdentityServerProxy.cs": {
+      "IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy": {
+        "System.Threading.Tasks.Task`1<IdentityModel.Client.TokenResponse> IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy::ExecuteResourceOwnerAccessTokenRequestAsync(System.Net.Http.HttpMessageInvoker,IdentityModel.Client.DiscoveryDocumentResponse,IdentityServer4.Contrib.AspNetCore.Testing.Configuration.ClientConfiguration,IdentityServer4.Contrib.AspNetCore.Testing.Configuration.UserLoginConfiguration,System.Collections.Generic.IDictionary`2<System.String,System.String>,System.Collections.Generic.IEnumerable`1<System.String>)": {
+          "Lines": {
+            "152": 10,
+            "153": 10,
+            "154": 10,
+            "155": 10,
+            "156": 10,
+            "157": 10,
+            "158": 10,
+            "159": 10,
+            "160": 10,
+            "161": 10,
+            "162": 10
+          },
+          "Branches": []
+        },
+        "System.Threading.Tasks.Task`1<IdentityModel.Client.TokenResponse> IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy::ExecuteRefreshAccessTokenRequestAsync(System.Net.Http.HttpMessageInvoker,IdentityModel.Client.DiscoveryDocumentResponse,IdentityServer4.Contrib.AspNetCore.Testing.Configuration.ClientConfiguration,System.String,System.Collections.Generic.IDictionary`2<System.String,System.String>,System.Collections.Generic.IEnumerable`1<System.String>)": {
+          "Lines": {
+            "168": 2,
+            "169": 2,
+            "170": 2,
+            "171": 2,
+            "172": 2,
+            "173": 2,
+            "174": 2,
+            "175": 2,
+            "176": 2,
+            "177": 2
+          },
+          "Branches": []
+        },
+        "System.Threading.Tasks.Task`1<IdentityModel.Client.TokenResponse> IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy::ExecuteClientAccessTokenRequestAsync(System.Net.Http.HttpMessageInvoker,IdentityModel.Client.DiscoveryDocumentResponse,IdentityServer4.Contrib.AspNetCore.Testing.Configuration.ClientConfiguration,System.Collections.Generic.IDictionary`2<System.String,System.String>,System.Collections.Generic.IEnumerable`1<System.String>)": {
+          "Lines": {
+            "182": 3,
+            "183": 3,
+            "184": 3,
+            "185": 3,
+            "186": 3,
+            "187": 3,
+            "188": 3,
+            "189": 3,
+            "190": 3
+          },
+          "Branches": []
+        },
+        "System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy::EnsureDiscoverResponse(IdentityModel.Client.ProtocolResponse)": {
+          "Lines": {
+            "194": 34,
+            "196": 0,
+            "197": 0
+          },
+          "Branches": [
+            {
+              "Line": 194,
+              "Offset": 6,
+              "EndOffset": 8,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 17
+            },
+            {
+              "Line": 194,
+              "Offset": 6,
+              "EndOffset": 9,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy/<GetDiscoverResponseAsync>d__2": {
+        "System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy/<GetDiscoverResponseAsync>d__2::MoveNext()": {
+          "Lines": {
+            "19": 19,
+            "20": 19,
+            "21": 19,
+            "22": 19
+          },
+          "Branches": []
+        }
+      },
+      "IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy/<GetTokenAsync>d__3": {
+        "System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy/<GetTokenAsync>d__3::MoveNext()": {
+          "Lines": {
+            "27": 1,
+            "29": 1,
+            "31": 1,
+            "32": 1,
+            "34": 1,
+            "35": 1,
+            "36": 1,
+            "37": 1,
+            "38": 1,
+            "39": 1,
+            "40": 1,
+            "41": 1,
+            "42": 1
+          },
+          "Branches": []
+        }
+      },
+      "IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy/<GetClientAccessTokenAsync>d__4": {
+        "System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy/<GetClientAccessTokenAsync>d__4::MoveNext()": {
+          "Lines": {
+            "47": 2,
+            "49": 2,
+            "51": 2,
+            "52": 2,
+            "54": 2,
+            "55": 2,
+            "56": 2
+          },
+          "Branches": []
+        }
+      },
+      "IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy/<GetClientAccessTokenAsync>d__5": {
+        "System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy/<GetClientAccessTokenAsync>d__5::MoveNext()": {
+          "Lines": {
+            "61": 1,
+            "63": 1,
+            "65": 1,
+            "67": 1,
+            "68": 1,
+            "70": 1,
+            "71": 1,
+            "72": 1
+          },
+          "Branches": [
+            {
+              "Line": 65,
+              "Offset": 132,
+              "EndOffset": 134,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 65,
+              "Offset": 132,
+              "EndOffset": 140,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy/<GetResourceOwnerPasswordAccessTokenAsync>d__6": {
+        "System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy/<GetResourceOwnerPasswordAccessTokenAsync>d__6::MoveNext()": {
+          "Lines": {
+            "78": 8,
+            "80": 8,
+            "82": 8,
+            "83": 8,
+            "85": 8,
+            "86": 8,
+            "87": 8
+          },
+          "Branches": []
+        }
+      },
+      "IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy/<GetResourceOwnerPasswordAccessTokenAsync>d__7": {
+        "System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy/<GetResourceOwnerPasswordAccessTokenAsync>d__7::MoveNext()": {
+          "Lines": {
+            "93": 2,
+            "95": 2,
+            "97": 2,
+            "98": 2,
+            "100": 2,
+            "101": 2,
+            "102": 2
+          },
+          "Branches": []
+        }
+      },
+      "IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy/<GetRefreshTokenAsync>d__8": {
+        "System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy/<GetRefreshTokenAsync>d__8::MoveNext()": {
+          "Lines": {
+            "107": 1,
+            "109": 1,
+            "111": 1,
+            "112": 1,
+            "114": 1,
+            "115": 1,
+            "116": 1
+          },
+          "Branches": []
+        }
+      },
+      "IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy/<GetRefreshTokenAsync>d__9": {
+        "System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy/<GetRefreshTokenAsync>d__9::MoveNext()": {
+          "Lines": {
+            "121": 1,
+            "123": 1,
+            "125": 1,
+            "126": 1,
+            "128": 1,
+            "129": 1,
+            "130": 1
+          },
+          "Branches": []
+        }
+      },
+      "IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy/<GetUserInfoAsync>d__10": {
+        "System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.AbstractIdentityServerProxy/<GetUserInfoAsync>d__10::MoveNext()": {
+          "Lines": {
+            "134": 1,
+            "136": 1,
+            "138": 1,
+            "139": 1,
+            "141": 1,
+            "142": 1,
+            "143": 1,
+            "144": 1,
+            "145": 1,
+            "146": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/src/IdentityServer4.Contrib.AspNetCore.Testing/Services/IdentityServerHostProxy.cs": {
+      "IdentityServer4.Contrib.AspNetCore.Testing.Services.IdentityServerHostProxy": {
+        "Microsoft.AspNetCore.TestHost.TestServer IdentityServer4.Contrib.AspNetCore.Testing.Services.IdentityServerHostProxy::get_IdentityServer()": {
+          "Lines": {
+            "19": 2
+          },
+          "Branches": []
+        },
+        "System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.IdentityServerHostProxy::.ctor(Microsoft.Extensions.Hosting.IHostBuilder)": {
+          "Lines": {
+            "12": 1,
+            "14": 0,
+            "16": 1,
+            "17": 1
+          },
+          "Branches": [
+            {
+              "Line": 14,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 14,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "IdentityServer4.Contrib.AspNetCore.Testing.Services.IdentityServerHostProxy/<DisposeAsync>d__4": {
+        "System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.IdentityServerHostProxy/<DisposeAsync>d__4::MoveNext()": {
+          "Lines": {
+            "23": 0,
+            "25": 0,
+            "26": 0
+          },
+          "Branches": [
+            {
+              "Line": 23,
+              "Offset": 23,
+              "EndOffset": 25,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 23,
+              "Offset": 23,
+              "EndOffset": 30,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/src/IdentityServer4.Contrib.AspNetCore.Testing/Services/IdentityServerProxy.cs": {
+      "IdentityServer4.Contrib.AspNetCore.Testing.Services.IdentityServerProxy": {
+        "System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.IdentityServerProxy::.ctor(Microsoft.AspNetCore.Hosting.IWebHostBuilder)": {
+          "Lines": {
+            "11": 0,
+            "13": 0
+          },
+          "Branches": []
+        },
+        "System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.IdentityServerProxy::.ctor(Microsoft.AspNetCore.TestHost.TestServer)": {
+          "Lines": {
+            "15": 0,
+            "17": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/src/IdentityServer4.Contrib.AspNetCore.Testing/Services/IdentityServerWebHostProxy.cs": {
+      "IdentityServer4.Contrib.AspNetCore.Testing.Services.IdentityServerWebHostProxy": {
+        "Microsoft.AspNetCore.TestHost.TestServer IdentityServer4.Contrib.AspNetCore.Testing.Services.IdentityServerWebHostProxy::get_IdentityServer()": {
+          "Lines": {
+            "24": 54
+          },
+          "Branches": []
+        },
+        "System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.IdentityServerWebHostProxy::.ctor(Microsoft.AspNetCore.Hosting.IWebHostBuilder)": {
+          "Lines": {
+            "9": 15,
+            "11": 15,
+            "12": 0,
+            "13": 0,
+            "15": 15,
+            "16": 15
+          },
+          "Branches": [
+            {
+              "Line": 11,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 11,
+              "Offset": 7,
+              "EndOffset": 25,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 15
+            }
+          ]
+        },
+        "System.Void IdentityServer4.Contrib.AspNetCore.Testing.Services.IdentityServerWebHostProxy::.ctor(Microsoft.AspNetCore.TestHost.TestServer)": {
+          "Lines": {
+            "19": 0,
+            "21": 0,
+            "22": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/src/IdentityServer4.Contrib.AspNetCore.Testing/Misc/DefaultLoggerProvider.cs": {
+      "IdentityServer4.Contrib.AspNetCore.Testing.Misc.DefaultLoggerProvider": {
+        "Microsoft.Extensions.Logging.ILogger IdentityServer4.Contrib.AspNetCore.Testing.Misc.DefaultLoggerProvider::CreateLogger(System.String)": {
+          "Lines": {
+            "16": 872
+          },
+          "Branches": []
+        },
+        "System.Void IdentityServer4.Contrib.AspNetCore.Testing.Misc.DefaultLoggerProvider::Dispose()": {
+          "Lines": {
+            "21": 0,
+            "22": 0
+          },
+          "Branches": []
+        },
+        "System.Void IdentityServer4.Contrib.AspNetCore.Testing.Misc.DefaultLoggerProvider::.ctor(Microsoft.Extensions.Logging.ILoggerFactory)": {
+          "Lines": {
+            "9": 23,
+            "11": 23,
+            "12": 23
+          },
+          "Branches": [
+            {
+              "Line": 11,
+              "Offset": 9,
+              "EndOffset": 11,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 23
+            },
+            {
+              "Line": 11,
+              "Offset": 9,
+              "EndOffset": 17,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 23
+            }
+          ]
+        }
+      }
+    },
+    "/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/src/IdentityServer4.Contrib.AspNetCore.Testing/Misc/IdentityServerEventCaptureStore.cs": {
+      "IdentityServer4.Contrib.AspNetCore.Testing.Misc.IdentityServerEventCaptureStore": {
+        "System.Void IdentityServer4.Contrib.AspNetCore.Testing.Misc.IdentityServerEventCaptureStore::AddEvent(IdentityServer4.Events.Event)": {
+          "Lines": {
+            "19": 0,
+            "21": 32,
+            "22": 32
+          },
+          "Branches": [
+            {
+              "Line": 19,
+              "Offset": 1,
+              "EndOffset": 3,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 19,
+              "Offset": 1,
+              "EndOffset": 14,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 32
+            }
+          ]
+        },
+        "IdentityServer4.Events.Event IdentityServer4.Contrib.AspNetCore.Testing.Misc.IdentityServerEventCaptureStore::GetById(System.Int32)": {
+          "Lines": {
+            "26": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IEnumerable`1<IdentityServer4.Events.Event> IdentityServer4.Contrib.AspNetCore.Testing.Misc.IdentityServerEventCaptureStore::GetEvents()": {
+          "Lines": {
+            "31": 0
+          },
+          "Branches": []
+        },
+        "System.Boolean IdentityServer4.Contrib.AspNetCore.Testing.Misc.IdentityServerEventCaptureStore::ContainsEventType(IdentityServer4.Events.EventTypes)": {
+          "Lines": {
+            "36": 0,
+            "37": 0
+          },
+          "Branches": []
+        },
+        "System.Boolean IdentityServer4.Contrib.AspNetCore.Testing.Misc.IdentityServerEventCaptureStore::ContainsMessage(System.String,System.StringComparison)": {
+          "Lines": {
+            "42": 0,
+            "44": 0,
+            "45": 0
+          },
+          "Branches": [
+            {
+              "Line": 42,
+              "Offset": 31,
+              "EndOffset": 33,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 42,
+              "Offset": 31,
+              "EndOffset": 44,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Boolean IdentityServer4.Contrib.AspNetCore.Testing.Misc.IdentityServerEventCaptureStore::ContainsMessageStartsWith(System.String,System.StringComparison)": {
+          "Lines": {
+            "51": 0,
+            "53": 0,
+            "54": 0
+          },
+          "Branches": [
+            {
+              "Line": 51,
+              "Offset": 31,
+              "EndOffset": 33,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 51,
+              "Offset": 31,
+              "EndOffset": 44,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Void IdentityServer4.Contrib.AspNetCore.Testing.Misc.IdentityServerEventCaptureStore::.ctor()": {
+          "Lines": {
+            "12": 26,
+            "14": 26,
+            "15": 26
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/src/IdentityServer4.Contrib.AspNetCore.Testing/Configuration/ClientConfiguration.cs": {
+      "IdentityServer4.Contrib.AspNetCore.Testing.Configuration.ClientConfiguration": {
+        "System.String IdentityServer4.Contrib.AspNetCore.Testing.Configuration.ClientConfiguration::get_Id()": {
+          "Lines": {
+            "11": 34
+          },
+          "Branches": []
+        },
+        "System.String IdentityServer4.Contrib.AspNetCore.Testing.Configuration.ClientConfiguration::get_Secret()": {
+          "Lines": {
+            "13": 34
+          },
+          "Branches": []
+        },
+        "System.Void IdentityServer4.Contrib.AspNetCore.Testing.Configuration.ClientConfiguration::.ctor(System.String,System.String)": {
+          "Lines": {
+            "5": 19,
+            "7": 19,
+            "8": 19,
+            "9": 19
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/src/IdentityServer4.Contrib.AspNetCore.Testing/Configuration/UserLoginConfiguration.cs": {
+      "IdentityServer4.Contrib.AspNetCore.Testing.Configuration.UserLoginConfiguration": {
+        "System.String IdentityServer4.Contrib.AspNetCore.Testing.Configuration.UserLoginConfiguration::get_Username()": {
+          "Lines": {
+            "11": 10
+          },
+          "Branches": []
+        },
+        "System.String IdentityServer4.Contrib.AspNetCore.Testing.Configuration.UserLoginConfiguration::get_Password()": {
+          "Lines": {
+            "13": 10
+          },
+          "Branches": []
+        },
+        "System.Void IdentityServer4.Contrib.AspNetCore.Testing.Configuration.UserLoginConfiguration::.ctor(System.String,System.String)": {
+          "Lines": {
+            "5": 10,
+            "7": 10,
+            "8": 10,
+            "9": 10
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/src/IdentityServer4.Contrib.AspNetCore.Testing/Builder/AbstractIdentityServerHostBuilder.cs": {
+      "IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1": {
+        "TBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::AddApiResources(IdentityServer4.Models.ApiResource[])": {
+          "Lines": {
+            "56": 19,
+            "57": 0,
+            "59": 19,
+            "61": 19
+          },
+          "Branches": [
+            {
+              "Line": 56,
+              "Offset": 1,
+              "EndOffset": 3,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 56,
+              "Offset": 1,
+              "EndOffset": 6,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 19
+            },
+            {
+              "Line": 56,
+              "Offset": 15,
+              "EndOffset": 17,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 56,
+              "Offset": 15,
+              "EndOffset": 33,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 19
+            }
+          ]
+        },
+        "TBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::AddApiScopes(IdentityServer4.Models.ApiScope[])": {
+          "Lines": {
+            "66": 19,
+            "67": 0,
+            "69": 19,
+            "71": 19
+          },
+          "Branches": [
+            {
+              "Line": 66,
+              "Offset": 1,
+              "EndOffset": 3,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 66,
+              "Offset": 1,
+              "EndOffset": 6,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 19
+            },
+            {
+              "Line": 66,
+              "Offset": 15,
+              "EndOffset": 17,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 66,
+              "Offset": 15,
+              "EndOffset": 33,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 19
+            }
+          ]
+        },
+        "TBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::AddClients(IdentityServer4.Models.Client[])": {
+          "Lines": {
+            "76": 19,
+            "77": 0,
+            "79": 19,
+            "81": 19
+          },
+          "Branches": [
+            {
+              "Line": 76,
+              "Offset": 1,
+              "EndOffset": 3,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 76,
+              "Offset": 1,
+              "EndOffset": 6,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 19
+            },
+            {
+              "Line": 76,
+              "Offset": 15,
+              "EndOffset": 17,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 76,
+              "Offset": 15,
+              "EndOffset": 33,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 19
+            }
+          ]
+        },
+        "TBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::AddIdentityResources(IdentityServer4.Models.IdentityResource[])": {
+          "Lines": {
+            "86": 2,
+            "87": 0,
+            "89": 2,
+            "91": 2
+          },
+          "Branches": [
+            {
+              "Line": 86,
+              "Offset": 1,
+              "EndOffset": 3,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 86,
+              "Offset": 1,
+              "EndOffset": 6,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 86,
+              "Offset": 15,
+              "EndOffset": 17,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 86,
+              "Offset": 15,
+              "EndOffset": 33,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            }
+          ]
+        },
+        "TBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::UseApplicationBuilder(System.Action`1<Microsoft.AspNetCore.Builder.IApplicationBuilder>)": {
+          "Lines": {
+            "97": 0,
+            "98": 0,
+            "100": 0
+          },
+          "Branches": [
+            {
+              "Line": 97,
+              "Offset": 3,
+              "EndOffset": 5,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 97,
+              "Offset": 3,
+              "EndOffset": 17,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "TBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::UseResourceOwnerPasswordValidator(System.Type)": {
+          "Lines": {
+            "105": 9,
+            "106": 2,
+            "107": 2,
+            "109": 7,
+            "111": 7
+          },
+          "Branches": [
+            {
+              "Line": 105,
+              "Offset": 16,
+              "EndOffset": 18,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 105,
+              "Offset": 16,
+              "EndOffset": 34,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 7
+            }
+          ]
+        },
+        "TBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::UseResourceOwnerPasswordValidator(TResourceOwnerPasswordValidator)": {
+          "Lines": {
+            "118": 7,
+            "120": 7
+          },
+          "Branches": []
+        },
+        "TBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::UseProfileService(System.Type)": {
+          "Lines": {
+            "125": 4,
+            "126": 2,
+            "127": 2,
+            "129": 2,
+            "131": 2
+          },
+          "Branches": [
+            {
+              "Line": 125,
+              "Offset": 16,
+              "EndOffset": 18,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 125,
+              "Offset": 16,
+              "EndOffset": 34,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            }
+          ]
+        },
+        "TBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::UseProfileService(TProfileService)": {
+          "Lines": {
+            "137": 2,
+            "139": 2
+          },
+          "Branches": []
+        },
+        "TBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::UseIdentityServerOptionsBuilder(System.Action`1<IdentityServer4.Configuration.IdentityServerOptions>)": {
+          "Lines": {
+            "145": 1,
+            "146": 1,
+            "147": 1,
+            "148": 1,
+            "150": 1
+          },
+          "Branches": [
+            {
+              "Line": 145,
+              "Offset": 3,
+              "EndOffset": 5,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 145,
+              "Offset": 3,
+              "EndOffset": 22,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        },
+        "TBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::UseIdentityServerBuilder(System.Func`2<Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.DependencyInjection.IIdentityServerBuilder>)": {
+          "Lines": {
+            "156": 1,
+            "157": 1,
+            "158": 1,
+            "160": 1
+          },
+          "Branches": [
+            {
+              "Line": 156,
+              "Offset": 3,
+              "EndOffset": 5,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 156,
+              "Offset": 3,
+              "EndOffset": 22,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Void IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::ConfigureIdentityServerServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)": {
+          "Lines": {
+            "165": 26,
+            "167": 26,
+            "168": 14,
+            "170": 26,
+            "171": 7,
+            "172": 7,
+            "174": 30,
+            "176": 26,
+            "177": 2,
+            "178": 26
+          },
+          "Branches": [
+            {
+              "Line": 167,
+              "Offset": 23,
+              "EndOffset": 25,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 167,
+              "Offset": 23,
+              "EndOffset": 44,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 26
+            },
+            {
+              "Line": 170,
+              "Offset": 56,
+              "EndOffset": 58,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 7
+            },
+            {
+              "Line": 170,
+              "Offset": 56,
+              "EndOffset": 81,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 26
+            },
+            {
+              "Line": 174,
+              "Offset": 87,
+              "EndOffset": 89,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 2
+            },
+            {
+              "Line": 174,
+              "Offset": 87,
+              "EndOffset": 108,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 26
+            },
+            {
+              "Line": 176,
+              "Offset": 120,
+              "EndOffset": 122,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 2
+            },
+            {
+              "Line": 176,
+              "Offset": 120,
+              "EndOffset": 145,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 26
+            }
+          ]
+        },
+        "Microsoft.Extensions.DependencyInjection.IIdentityServerBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::CreatePreconfiguredIdentityServerBuilder(Microsoft.Extensions.DependencyInjection.IServiceCollection)": {
+          "Lines": {
+            "182": 27,
+            "184": 25,
+            "185": 25,
+            "186": 25,
+            "187": 25,
+            "188": 25
+          },
+          "Branches": [
+            {
+              "Line": 182,
+              "Offset": 6,
+              "EndOffset": 8,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 182,
+              "Offset": 6,
+              "EndOffset": 21,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 25
+            }
+          ]
+        },
+        "System.Void IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::ConfigureIdentityServerResources(Microsoft.Extensions.DependencyInjection.IIdentityServerBuilder)": {
+          "Lines": {
+            "193": 45,
+            "195": 26,
+            "196": 19,
+            "198": 26,
+            "199": 19,
+            "201": 26,
+            "202": 2,
+            "203": 26
+          },
+          "Branches": [
+            {
+              "Line": 193,
+              "Offset": 11,
+              "EndOffset": 13,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 19
+            },
+            {
+              "Line": 193,
+              "Offset": 11,
+              "EndOffset": 26,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 26
+            },
+            {
+              "Line": 195,
+              "Offset": 37,
+              "EndOffset": 39,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 19
+            },
+            {
+              "Line": 195,
+              "Offset": 37,
+              "EndOffset": 52,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 26
+            },
+            {
+              "Line": 198,
+              "Offset": 63,
+              "EndOffset": 65,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 19
+            },
+            {
+              "Line": 198,
+              "Offset": 63,
+              "EndOffset": 78,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 26
+            },
+            {
+              "Line": 201,
+              "Offset": 89,
+              "EndOffset": 91,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 2
+            },
+            {
+              "Line": 201,
+              "Offset": 89,
+              "EndOffset": 104,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 26
+            }
+          ]
+        },
+        "System.Void IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::Validate()": {
+          "Lines": {
+            "207": 26,
+            "208": 0,
+            "209": 0,
+            "210": 26
+          },
+          "Branches": [
+            {
+              "Line": 207,
+              "Offset": 11,
+              "EndOffset": 13,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 19
+            },
+            {
+              "Line": 207,
+              "Offset": 35,
+              "EndOffset": 37,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 207,
+              "Offset": 11,
+              "EndOffset": 48,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 26
+            },
+            {
+              "Line": 207,
+              "Offset": 35,
+              "EndOffset": 48,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 26
+            }
+          ]
+        },
+        "System.Void IdentityServer4.Contrib.AspNetCore.Testing.Builder.AbstractIdentityServerHostBuilder`1::.ctor()": {
+          "Lines": {
+            "33": 31,
+            "35": 50,
+            "37": 31,
+            "39": 31,
+            "41": 31,
+            "43": 31,
+            "45": 31,
+            "46": 31,
+            "47": 48,
+            "48": 48,
+            "49": 48,
+            "50": 48,
+            "51": 48,
+            "52": 31
+          },
+          "Branches": [
+            {
+              "Line": 35,
+              "Offset": 13,
+              "EndOffset": 15,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 35,
+              "Offset": 13,
+              "EndOffset": 38,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 31
+            },
+            {
+              "Line": 45,
+              "Offset": 94,
+              "EndOffset": 96,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 2
+            },
+            {
+              "Line": 45,
+              "Offset": 94,
+              "EndOffset": 119,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 31
+            }
+          ]
+        }
+      }
+    },
+    "/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/src/IdentityServer4.Contrib.AspNetCore.Testing/Builder/IdentityServerTestHostBuilder.cs": {
+      "IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestHostBuilder": {
+        "IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestHostBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestHostBuilder::UseConfigurationBuilder(System.Action`2<Microsoft.Extensions.Hosting.HostBuilderContext,Microsoft.Extensions.Configuration.IConfigurationBuilder>)": {
+          "Lines": {
+            "34": 0,
+            "36": 0
+          },
+          "Branches": []
+        },
+        "IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestHostBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestHostBuilder::UseServices(System.Action`2<Microsoft.Extensions.Hosting.HostBuilderContext,Microsoft.Extensions.DependencyInjection.IServiceCollection>)": {
+          "Lines": {
+            "42": 0,
+            "44": 0
+          },
+          "Branches": []
+        },
+        "IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestHostBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestHostBuilder::UseLoggingBuilder(System.Action`2<Microsoft.Extensions.Hosting.HostBuilderContext,Microsoft.Extensions.Logging.ILoggingBuilder>)": {
+          "Lines": {
+            "50": 1,
+            "51": 1,
+            "52": 1,
+            "54": 1
+          },
+          "Branches": [
+            {
+              "Line": 50,
+              "Offset": 3,
+              "EndOffset": 5,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 50,
+              "Offset": 3,
+              "EndOffset": 22,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        },
+        "Microsoft.Extensions.Hosting.IHostBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestHostBuilder::CreateHostBuilder()": {
+          "Lines": {
+            "59": 0,
+            "61": 0
+          },
+          "Branches": []
+        },
+        "Microsoft.Extensions.Hosting.IHostBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestHostBuilder::CreateHostBuilder(Microsoft.Extensions.DependencyInjection.IServiceProviderFactory`1<TContainer>,System.Action`1<TContainer>)": {
+          "Lines": {
+            "67": 0,
+            "68": 0,
+            "70": 5,
+            "72": 5,
+            "73": 5,
+            "74": 5
+          },
+          "Branches": [
+            {
+              "Line": 67,
+              "Offset": 1,
+              "EndOffset": 3,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 67,
+              "Offset": 1,
+              "EndOffset": 14,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 5
+            },
+            {
+              "Line": 68,
+              "Offset": 15,
+              "EndOffset": 17,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 68,
+              "Offset": 15,
+              "EndOffset": 28,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 5
+            }
+          ]
+        },
+        "Microsoft.Extensions.Hosting.IHostBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestHostBuilder::CreateHostBuilderInternal()": {
+          "Lines": {
+            "79": 5,
+            "80": 5,
+            "81": 5,
+            "82": 5,
+            "83": 10,
+            "84": 10,
+            "85": 10,
+            "86": 10,
+            "87": 15,
+            "88": 15,
+            "89": 15,
+            "90": 10,
+            "91": 5,
+            "92": 5,
+            "93": 10,
+            "94": 5,
+            "95": 10,
+            "96": 5,
+            "97": 10,
+            "98": 5,
+            "99": 10,
+            "100": 10,
+            "101": 5
+          },
+          "Branches": []
+        },
+        "System.Void IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestHostBuilder::.ctor()": {
+          "Lines": {
+            "21": 7,
+            "23": 12,
+            "25": 12,
+            "27": 7,
+            "28": 11,
+            "29": 7
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/src/IdentityServer4.Contrib.AspNetCore.Testing/Builder/IdentityServerTestWebHostBuilder.cs": {
+      "IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestWebHostBuilder": {
+        "IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestWebHostBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestWebHostBuilder::UseConfigurationBuilder(System.Action`2<Microsoft.AspNetCore.Hosting.WebHostBuilderContext,Microsoft.Extensions.Configuration.IConfigurationBuilder>)": {
+          "Lines": {
+            "32": 1,
+            "34": 1
+          },
+          "Branches": []
+        },
+        "IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestWebHostBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestWebHostBuilder::UseServices(System.Action`2<Microsoft.AspNetCore.Hosting.WebHostBuilderContext,Microsoft.Extensions.DependencyInjection.IServiceCollection>)": {
+          "Lines": {
+            "40": 1,
+            "42": 1
+          },
+          "Branches": []
+        },
+        "IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestWebHostBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestWebHostBuilder::UseLoggingBuilder(System.Action`2<Microsoft.AspNetCore.Hosting.WebHostBuilderContext,Microsoft.Extensions.Logging.ILoggingBuilder>)": {
+          "Lines": {
+            "48": 2,
+            "49": 2,
+            "50": 2,
+            "52": 2
+          },
+          "Branches": [
+            {
+              "Line": 48,
+              "Offset": 3,
+              "EndOffset": 5,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 48,
+              "Offset": 3,
+              "EndOffset": 22,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            }
+          ]
+        },
+        "IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestWebHostBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestWebHostBuilder::UseWebHostBuilder(Microsoft.AspNetCore.Hosting.IWebHostBuilder)": {
+          "Lines": {
+            "57": 1,
+            "59": 1
+          },
+          "Branches": [
+            {
+              "Line": 57,
+              "Offset": 3,
+              "EndOffset": 5,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 57,
+              "Offset": 3,
+              "EndOffset": 17,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        },
+        "Microsoft.AspNetCore.Hosting.IWebHostBuilder IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestWebHostBuilder::CreateWebHostBuider()": {
+          "Lines": {
+            "64": 23,
+            "66": 21,
+            "68": 21,
+            "69": 21,
+            "70": 21,
+            "71": 21,
+            "72": 35,
+            "73": 35,
+            "74": 35,
+            "75": 21,
+            "76": 21,
+            "77": 42,
+            "78": 21,
+            "79": 42,
+            "80": 21,
+            "81": 42,
+            "82": 21,
+            "83": 42,
+            "84": 42,
+            "85": 21
+          },
+          "Branches": [
+            {
+              "Line": 64,
+              "Offset": 6,
+              "EndOffset": 8,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 64,
+              "Offset": 6,
+              "EndOffset": 15,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "System.Void IdentityServer4.Contrib.AspNetCore.Testing.Builder.IdentityServerTestWebHostBuilder::.ctor()": {
+          "Lines": {
+            "19": 24,
+            "21": 44,
+            "23": 44,
+            "25": 24,
+            "26": 43,
+            "27": 24
+          },
+          "Branches": []
+        }
+      }
+    }
+  },
+  "IdentityServer4.Api.dll": {
+    "/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/test/IdentityServer4.Api/AuthController.cs": {
+      "IdentityServer4.Api.AuthController": {
+        "Microsoft.AspNetCore.Mvc.IActionResult IdentityServer4.Api.AuthController::TestAuth()": {
+          "Lines": {
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/test/IdentityServer4.Api/Program.cs": {
+      "IdentityServer4.Api.Program": {
+        "System.Void IdentityServer4.Api.Program::Main(System.String[])": {
+          "Lines": {
+            "9": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/test/IdentityServer4.Api/Startup.cs": {
+      "IdentityServer4.Api.Startup": {
+        "System.Void IdentityServer4.Api.Startup::ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)": {
+          "Lines": {
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0
+          },
+          "Branches": []
+        },
+        "System.Void IdentityServer4.Api.Startup::Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder)": {
+          "Lines": {
+            "31": 0,
+            "32": 0,
+            "33": 0
+          },
+          "Branches": []
+        },
+        "System.Void IdentityServer4.Api.Startup::.ctor(System.Net.Http.HttpMessageHandler)": {
+          "Lines": {
+            "12": 0,
+            "14": 0,
+            "15": 0
+          },
+          "Branches": []
+        }
+      }
+    }
+  },
+  "IdentityServer4.Server.dll": {
+    "/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/test/IdentityServer4.Server/Program.cs": {
+      "IdentityServer4.Server.Program": {
+        "System.Threading.Tasks.Task IdentityServer4.Server.Program::Main(System.String[])": {
+          "Lines": {
+            "16": 0,
+            "18": 0,
+            "19": 0
+          },
+          "Branches": []
+        },
+        "Microsoft.AspNetCore.Hosting.IWebHostBuilder IdentityServer4.Server.Program::CreateWebHostBuilder(System.String[])": {
+          "Lines": {
+            "23": 0,
+            "24": 0,
+            "25": 0
+          },
+          "Branches": []
+        },
+        "System.Void IdentityServer4.Server.Program::ConfigureLogger(Microsoft.AspNetCore.Hosting.WebHostBuilderContext,Serilog.LoggerConfiguration)": {
+          "Lines": {
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/test/IdentityServer4.Server/Startup.cs": {
+      "IdentityServer4.Server.Startup": {
+        "System.Void IdentityServer4.Server.Startup::ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)": {
+          "Lines": {
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0
+          },
+          "Branches": []
+        },
+        "System.Void IdentityServer4.Server.Startup::Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder)": {
+          "Lines": {
+            "38": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/test/IdentityServer4.Server/Models/ApiResources.cs": {
+      "IdentityServer4.Server.Models.ApiResources": {
+        "System.Collections.Generic.IEnumerable`1<IdentityServer4.Models.ApiResource> IdentityServer4.Server.Models.ApiResources::get_GetApiResources()": {
+          "Lines": {
+            "9": 0,
+            "10": 0,
+            "11": 0,
+            "12": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/test/IdentityServer4.Server/Models/Clients.cs": {
+      "IdentityServer4.Server.Models.Clients": {
+        "System.Collections.Generic.IEnumerable`1<IdentityServer4.Models.Client> IdentityServer4.Server.Models.Clients::get_GetClients()": {
+          "Lines": {
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/test/IdentityServer4.Server/Models/IdentityResources.cs": {
+      "IdentityServer4.Server.Models.IdentityResources": {
+        "System.Collections.Generic.IEnumerable`1<IdentityServer4.Models.IdentityResource> IdentityServer4.Server.Models.IdentityResources::get_GetIdentityResources()": {
+          "Lines": {
+            "9": 0,
+            "10": 0,
+            "11": 0,
+            "12": 0,
+            "13": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/sami/Dev/IdentityServer4.Contrib.AspNetCore.Testing/test/IdentityServer4.Server/Models/TestUsers.cs": {
+      "IdentityServer4.Server.Models.TestUsers": {
+        "System.Collections.Generic.List`1<IdentityServer4.Test.TestUser> IdentityServer4.Server.Models.TestUsers::GeTestUsers()": {
+          "Lines": {
+            "10": 0,
+            "11": 0,
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0
+          },
+          "Branches": []
+        }
+      }
+    }
+  }
+}
