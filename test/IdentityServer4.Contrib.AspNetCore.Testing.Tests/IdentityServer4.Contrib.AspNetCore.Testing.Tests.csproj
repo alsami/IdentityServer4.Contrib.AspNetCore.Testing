@@ -8,14 +8,17 @@
 
     <ItemGroup>
         <FrameworkReference Include="Microsoft.AspNetCore.App" />
-        <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="6.0.0" />
-        <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.5" />
-        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.6.1" />
+        <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.0.1" />
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.8" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
         <PackageReference Include="Serilog.Extensions.Logging" Version="3.0.2-dev-10256" />
         <PackageReference Include="Serilog.Sinks.Console" Version="3.1.2-dev-00824" />
         <PackageReference Include="Serilog.Sinks.RollingFile" Version="3.3.1-dev-00771" />
         <PackageReference Include="xunit" Version="2.4.1" />
-        <PackageReference Include="xunit.runner.visualstudio" Version="2.4.2" />
+        <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
     </ItemGroup>
 
     <ItemGroup>

@@ -1,21 +1,32 @@
 sudo: required
 dist: bionic
 language: csharp
-solution: IdentityServer4.Contrib.Caching
 mono: none
-dotnet: 3.1.301
+dotnet: 3.1.402
+solution: IdentityServer4.Contrib.AspNetCore.Testing.sln
+
+addons:
+  apt:
+    update: true
+
 stages:
   - build
   - test
   - publish
+
 jobs:
   include:
     - stage: build
-      name: build solution
-      script: dotnet restore && dotnet build
+      name: dotnet-build
+      if: tag IS NOT present
+      script:
+        - dotnet build
     - stage: test
-      name: run-tests
-      script: ./run-tests.sh
+      name: dotnet-test
+      before_script:
+        - sudo apt-get update && sudo apt-get install curl -y
+      script:
+        - ./test.sh
     - stage: publish
       name: publish-packages
       if: tag IS present
