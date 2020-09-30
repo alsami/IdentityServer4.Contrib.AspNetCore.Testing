@@ -1,5 +1,5 @@
 function run_tests() {
-  dotnet test -c Release -p:CoverletOutput="../../coverage/" -p:MergeWith="../../coverage/coverage.json" -p:CollectCoverage=true -p:CoverletOutputFormat=\"json,lcov,opencover\" -p:ThresholdType=line -p:ThresholdStat=total | tee testoutput.txt
+  dotnet test -c Release -p:CoverletOutput="../../coverage/" -p:MergeWith="../../coverage/coverage.json" -p:CollectCoverage=true -p:CoverletOutputFormat=\"json,lcov,opencover\" -p:ThresholdType=line -p:ThresholdStat=total -p:ExcludeFromCoverage="test/IdentitiyServer4.Api" | tee testoutput.txt
   return ${?}
 }
 
