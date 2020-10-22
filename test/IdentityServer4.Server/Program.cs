@@ -9,7 +9,7 @@ using Serilog.Sinks.SystemConsole.Themes;
 
 namespace IdentityServer4.Server
 {
-    public class Program
+    public static class Program
     {
         public static Task Main(string[] args)
         {

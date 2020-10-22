@@ -2,7 +2,7 @@ using System;
 
 namespace IdentityServer4.Api
 {
-    public class Program
+    public static class Program
     {
         public static void Main(string[] args)
         {

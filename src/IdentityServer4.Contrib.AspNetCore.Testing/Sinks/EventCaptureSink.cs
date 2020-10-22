@@ -14,9 +14,9 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Sinks
             this.identityServerEventCaptureStore = identityServerEventCaptureStore;
         }
 
-        public Task PersistAsync(Event @event)
+        public Task PersistAsync(Event evt)
         {
-            this.identityServerEventCaptureStore.AddEvent(@event);
+            this.identityServerEventCaptureStore.AddEvent(evt);
             return Task.CompletedTask;
         }
     }
