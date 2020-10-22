@@ -2,7 +2,7 @@ sudo: required
 dist: bionic
 language: csharp
 mono: none
-dotnet: 3.1.402
+dotnet: 3.1.403
 solution: IdentityServer4.Contrib.AspNetCore.Testing.sln
 
 addons:
@@ -21,12 +21,14 @@ jobs:
       if: tag IS NOT present
       script:
         - dotnet build
+
     - stage: test
       name: dotnet-test
       before_script:
         - sudo apt-get update && sudo apt-get install curl -y
       script:
         - ./test.sh
+
     - stage: publish
       name: publish-packages
       if: tag IS present

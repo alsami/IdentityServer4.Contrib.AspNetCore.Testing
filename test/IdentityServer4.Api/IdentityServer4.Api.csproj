@@ -8,8 +8,4 @@
         <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="3.0.1" />
     </ItemGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\IdentityServer4.Testing.Infrastructure\IdentityServer4.Testing.Infrastructure.csproj" />
-    </ItemGroup>
-
 </Project>

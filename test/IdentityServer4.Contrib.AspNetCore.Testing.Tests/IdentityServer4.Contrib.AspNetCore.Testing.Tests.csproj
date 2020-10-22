@@ -8,8 +8,8 @@
 
     <ItemGroup>
         <FrameworkReference Include="Microsoft.AspNetCore.App" />
-        <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.0.1" />
-        <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.8" />
+        <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.0.2" />
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.9" />
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
         <PackageReference Include="Serilog.Extensions.Logging" Version="3.0.2-dev-10256" />
         <PackageReference Include="Serilog.Sinks.Console" Version="3.1.2-dev-00824" />
@@ -30,9 +30,9 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\src\IdentityServer4.Contrib.AspNetCore.Testing\IdentityServer4.Contrib.AspNetCore.Testing.csproj" />
       <ProjectReference Include="..\IdentityServer4.Api\IdentityServer4.Api.csproj" />
       <ProjectReference Include="..\IdentityServer4.Server\IdentityServer4.Server.csproj" />
-      <ProjectReference Include="..\IdentityServer4.Testing.Infrastructure\IdentityServer4.Testing.Infrastructure.csproj" />
     </ItemGroup>
 
     <ItemGroup>
