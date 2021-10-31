@@ -204,9 +204,17 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Builder
 
         protected void Validate()
         {
-            if (this.internalApiResources.Any() && this.internalApiResources.Count != this.internalApiScopes.Count)
-                throw new InvalidOperationException(
-                    "IdentityServer4 version 4 requires API scopes for each API resource!");
+            foreach (var apiResource in this.internalApiResources)
+            {
+                foreach (var scopeName in apiResource.Scopes)
+                {
+                    if (!this.internalApiScopes.Any(s => s.Name == scopeName))
+                    {
+                        throw new InvalidOperationException(
+                            $"Resource {apiResource.Name} contains scope {scopeName} not found in ApiScopes");
+                    }
+                }
+            }                    
         }
     }
 }

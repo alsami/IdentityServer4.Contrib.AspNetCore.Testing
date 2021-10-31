@@ -102,6 +102,35 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
             host.Services.GetRequiredService<Dependency>();
         }
 
+        [Fact]
+        public void CreateHostBuilder_ValidateScopes()
+        {
+            var apiResource = new ApiResource("res1");
+            apiResource.Scopes = new List<string> { "scope1", "scope3" };
+            // Bad scope specs
+            Assert.Throws<InvalidOperationException>(() => new IdentityServerTestHostBuilder()
+                .AddApiResources(apiResource)
+                .AddApiScopes(new ApiScope("scope3"))
+                .CreateHostBuilder());
+            Assert.Throws<InvalidOperationException>(() => new IdentityServerTestHostBuilder()
+                .AddApiResources(apiResource)
+                .AddApiScopes(new ApiScope("scope1"), new ApiScope("scope2"))
+                .CreateHostBuilder());
+            Assert.Throws<InvalidOperationException>(() => new IdentityServerTestHostBuilder()
+                .AddApiResources(apiResource)
+                .AddApiScopes(new ApiScope("scope2"), new ApiScope("scope3"))
+                .CreateHostBuilder());
+            // Good scope specs
+            new IdentityServerTestHostBuilder()
+                .AddApiResources(apiResource)
+                .AddApiScopes(new ApiScope("scope1"), new ApiScope("scope2"), new ApiScope("scope3"))
+                .CreateHostBuilder();
+            new IdentityServerTestHostBuilder()
+                .AddApiResources(apiResource)
+                .AddApiScopes(new ApiScope("scope1"), new ApiScope("scope3"))
+                .CreateHostBuilder();
+        }
+
         private static (Client client, ApiResource apiResource, ApiScope apiScope) CreateTestData()
         {
             var clientConfiguration = new ClientConfiguration("MyClient", "MySecret");
