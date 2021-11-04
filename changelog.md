@@ -1,3 +1,9 @@
+# [4.2.0](https://www.nuget.org/packages/IdentityServer4.Contrib.AspNetCore.Testing/4.2.0) (2021-11-04)
+
+## Features
+
+Allow `ApiResource` and `ApiScope` to differ and only check that an `ApiResource` has corresponding `ApiScope`. Thanks to [@gerrylowe](https://github.com/gerrylowe)! Closes [#5](https://github.com/alsami/IdentityServer4.Contrib.AspNetCore.Testing/issues/5)
+
 # [4.0.0](https://www.nuget.org/packages/IdentityServer4.Contrib.AspNetCore.Testing/4.0.0) (2020-06-20)
 
 ## Features
