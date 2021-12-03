@@ -18,10 +18,10 @@
       <NoWarn>S3881</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-      <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0">
+      <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
           <PrivateAssets>all</PrivateAssets>
       </PackageReference>
-      <PackageReference Include="SonarAnalyzer.CSharp" Version="8.14.0.22654">
+      <PackageReference Include="SonarAnalyzer.CSharp" Version="8.32.0.39516">
           <PrivateAssets>all</PrivateAssets>
       </PackageReference>
   </ItemGroup>
