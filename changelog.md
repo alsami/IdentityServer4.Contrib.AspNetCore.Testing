@@ -1,3 +1,17 @@
+# [5.0.0](https://www.nuget.org/packages/IdentityServer4.Contrib.AspNetCore.Testing/5.0.0) (2021-12-03)
+
+## Breaking changes
+
+* Fix spelling and rename `CreateWebHostBuider` to `CreateWebHostBuilder`. Thanks to [pgermishuys](https://github.com/pgermishuys)
+
+## Chore
+
+* Update IdentityServer4 to version `4.1.2`
+* Update IdentityModel to version `4.6.0`
+* Update Microsoft.AspNetCore.Mvc.Testing to version `3.1.21`
+* Update Microsoft.Extensions.Hosting to version `3.1.21`
+* Update Microsoft.Extensions.Logging to version `3.1.21`
+
 # [4.2.0](https://www.nuget.org/packages/IdentityServer4.Contrib.AspNetCore.Testing/4.2.0) (2021-11-04)
 
 ## Features

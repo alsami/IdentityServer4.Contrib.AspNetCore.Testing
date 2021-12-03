@@ -4,14 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.28729.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{171C9B08-8431-4E4C-A343-CA8D277A2419}"
-ProjectSection(SolutionItems) = preProject
-	src\Directory.Build.props = src\Directory.Build.props
-EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		src\Directory.Build.props = src\Directory.Build.props
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{FED78C85-8EE1-4C8E-9758-44CAF0070C10}"
-ProjectSection(SolutionItems) = preProject
-	test\Directory.Build.props = test\Directory.Build.props
-EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer4.Contrib.AspNetCore.Testing", "src\IdentityServer4.Contrib.AspNetCore.Testing\IdentityServer4.Contrib.AspNetCore.Testing.csproj", "{5169FE1E-64A2-4BF0-9DA0-2480107FD444}"
 EndProject
@@ -24,7 +21,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "misc", "misc", "{E2FB8DD0-B
 		.travis.yml = .travis.yml
 		README.md = README.md
 		global.json = global.json
-		Directory.Build.props = Directory.Build.props
 		test.sh = test.sh
 	EndProjectSection
 EndProject

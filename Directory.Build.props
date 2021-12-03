@@ -1,13 +1,34 @@
 <Project>
-    <PropertyGroup>
-        <LangVersion>8.0</LangVersion>
-        <Nullable>Enable</Nullable>
-        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    </PropertyGroup>
+  <PropertyGroup>
+      <LangVersion>8.0</LangVersion>
+      <IsPackable>true</IsPackable>
+      <Copyright>2021©Sami Al Khatib</Copyright>
+      <Authors>Sami Al Khatib</Authors>
+      <Description>OpenID Connect and OAuth 2.0 Testing-Framework for ASP.NET Core and IdentityServer4</Description>
+      <PackageTags>OAuth2;OAuth 2.0;OpenID Connect;Security;Identity;IdentityServer;IdentityServer4;AspNetCore;AspNetCore Testing;IntegrationTesting;Testing;IdentityServer Proxy;</PackageTags>
+      <PackageIcon>icon.png</PackageIcon>
+      <PackageProjectUrl>https://github.com/alsami/IdentityServer4.Contrib.AspNetCore.Testing</PackageProjectUrl>
+      <PackageLicenseExpression>MIT</PackageLicenseExpression>
+      <PackageReleaseNotes>https://github.com/alsami/IdentityServer4.Contrib.AspNetCore.Testing/blob/master/changelog.md</PackageReleaseNotes>
+      <RepositoryType>git</RepositoryType>
+      <RepositoryUrl>git://github.com/alsami/IdentityServer4.Contrib.AspNetCore.Testing</RepositoryUrl>
+      <Version>5.0.0</Version>
+      <FileVersion>5.0.0</FileVersion>
+      <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+      <EmbedAllSources>true</EmbedAllSources>
+      <NoWarn>S3881</NoWarn>
+  </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="SonarAnalyzer.CSharp" Version="8.13.1.21947">
-            <PrivateAssets>all</PrivateAssets>
-        </PackageReference>
+        <None Include="icon.png" Pack="true" PackagePath="\" />
     </ItemGroup>
+    
+  <ItemGroup>
+      <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
+          <PrivateAssets>all</PrivateAssets>
+      </PackageReference>
+      <PackageReference Include="SonarAnalyzer.CSharp" Version="8.32.0.39516">
+          <PrivateAssets>all</PrivateAssets>
+      </PackageReference>
+  </ItemGroup>
 </Project>
