@@ -59,7 +59,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Builder
             return this;
         }
 
-        public IWebHostBuilder CreateWebHostBuider()
+        public IWebHostBuilder CreateWebHostBuilder()
         {
             if (this.internalHostBuilder != null) return this.internalHostBuilder;
 

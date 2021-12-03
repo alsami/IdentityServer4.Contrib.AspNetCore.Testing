@@ -42,7 +42,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
                     context.HostingEnvironment.WebRootPath = AppContext.BaseDirectory;
                     builder.AddJsonFile(Path.Combine(AppContext.BaseDirectory, "testappsettings.json"), false);
                 })
-                .CreateWebHostBuider()
+                .CreateWebHostBuilder()
                 .Build();
 
             var configuration = webHost.Services.GetRequiredService<IConfiguration>();
@@ -60,7 +60,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
 
             var webHost = new IdentityServerTestWebHostBuilder()
                 .UseLoggingBuilder((context, builder) => builder.AddSerilog())
-                .CreateWebHostBuider()
+                .CreateWebHostBuilder()
                 .UseContentRoot(AppContext.BaseDirectory)
                 .Build();
 
@@ -79,7 +79,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
         {
             var webHost = new IdentityServerTestWebHostBuilder()
                 .UseProfileService(new SimpleProfileService())
-                .CreateWebHostBuider()
+                .CreateWebHostBuilder()
                 .Build();
 
             webHost.Services.GetRequiredService<IProfileService>();
@@ -97,7 +97,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
         {
             var webHost = new IdentityServerTestWebHostBuilder()
                 .UseProfileService(typeof(SimpleProfileService))
-                .CreateWebHostBuider()
+                .CreateWebHostBuilder()
                 .Build();
 
             webHost.Services.GetRequiredService<IProfileService>();
@@ -108,7 +108,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
         {
             var webHost = new IdentityServerTestWebHostBuilder()
                 .UseResourceOwnerPasswordValidator(new SimpleResourceOwnerPasswordValidator())
-                .CreateWebHostBuider()
+                .CreateWebHostBuilder()
                 .Build();
 
             webHost.Services.GetRequiredService<IResourceOwnerPasswordValidator>();
@@ -126,7 +126,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
         {
             var webHost = new IdentityServerTestWebHostBuilder()
                 .UseResourceOwnerPasswordValidator(typeof(SimpleResourceOwnerPasswordValidator))
-                .CreateWebHostBuider()
+                .CreateWebHostBuilder()
                 .Build();
 
             webHost.Services.GetRequiredService<IResourceOwnerPasswordValidator>();
@@ -140,7 +140,7 @@ namespace IdentityServer4.Contrib.AspNetCore.Testing.Tests
             var webHost = new IdentityServerTestWebHostBuilder()
                 .UseLoggingBuilder((context, builder) => builder.AddSerilog())
                 .UseResourceOwnerPasswordValidator(typeof(ResourceOwnerValidatorWithDependencies))
-                .CreateWebHostBuider()
+                .CreateWebHostBuilder()
                 .Build();
 
             webHost.Services.GetRequiredService<IResourceOwnerPasswordValidator>();
