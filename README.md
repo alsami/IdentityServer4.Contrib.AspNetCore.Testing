@@ -1,5 +1,11 @@
 # IdentityServer4.Contrib.AspNetCore.Testing
 
+## DEPRECATION NOTICE
+
+This package has been deprecated. Feel free to clone it and maintain it, if needed. The package has been ported to support `Duende.IdentityServer`. The repository can be found [here](https://github.com/alsami/alsami.Duende.IdentityServer.AspNetCore.Testing).
+
+## Infos
+
 [![Build Status](https://travis-ci.com/alsami/IdentityServer4.Contrib.AspNetCore.Testing.svg?branch=master)](https://travis-ci.com/alsami/IdentityServer4.Contrib.AspNetCore.Testing)
 [![codecov](https://codecov.io/gh/alsami/IdentityServer4.Contrib.AspNetCore.Testing/branch/master/graph/badge.svg)](https://codecov.io/gh/alsami/IdentityServer4.Contrib.AspNetCore.Testing)
 
